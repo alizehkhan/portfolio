@@ -11,7 +11,7 @@ import { CategoryKebabCase } from '../../utils/types';
 
 const HikingGear = () => {
   const [gearById, setGearById] = useState({});
-  const [openedIndex, setOpenedIndex] = useState<number | null>(null);
+  const [openedIndex, setOpenedIndex] = useState<number>(0);
   const [selectedFilter, setSelectedFilter] = useState<
     CategoryKebabCase | undefined
   >(undefined);
