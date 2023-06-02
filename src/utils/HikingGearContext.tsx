@@ -7,8 +7,8 @@ type HikingGear = {
   setGearById: Dispatch<SetStateAction<{}>>;
   selectedFilter: CategoryKebabCase | undefined;
   setSelectedFilter: Dispatch<SetStateAction<CategoryKebabCase | undefined>>;
-  openedIndex: number | null;
-  setOpenedIndex: Dispatch<SetStateAction<number | null>>;
+  openedIndex: number;
+  setOpenedIndex: Dispatch<SetStateAction<number>>;
 };
 
 export const HikingGearContext = createContext<HikingGear>({
@@ -16,6 +16,6 @@ export const HikingGearContext = createContext<HikingGear>({
   setGearById: () => {},
   selectedFilter: undefined,
   setSelectedFilter: () => {},
-  openedIndex: null,
+  openedIndex: 0,
   setOpenedIndex: () => {},
 });

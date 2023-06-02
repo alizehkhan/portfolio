@@ -6,7 +6,7 @@ import { GearItem } from '../utils/types.js';
 import { getKebabCase } from '../utils/utils.js';
 import { HikingGearContext } from '../utils/HikingGearContext.js';
 
-import Modal from './HikingModal.jsx';
+import HikingModal from './HikingModal';
 
 const HikingCard = ({
   gearItem,
@@ -50,7 +50,7 @@ const HikingCard = ({
         className="modal"
         overlayClassName="overlay"
       >
-        <Modal hikingGear={hikingGear} setIsModalOpen={setIsModalOpen} />
+        <HikingModal hikingGear={hikingGear} setIsModalOpen={setIsModalOpen} />
       </ReactModal>
     </>
   );

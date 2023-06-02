@@ -5,15 +5,22 @@ import {
   IconTag,
   IconX,
 } from '@tabler/icons-react';
-import { useContext } from 'react';
+import { Dispatch, SetStateAction, useContext } from 'react';
 import { useCallback, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useMediaQuery } from 'react-responsive';
 
 import { HikingGearContext } from '../utils/HikingGearContext';
 import { getKebabCase } from '../utils/utils';
+import { GearItem } from '../utils/types';
 
-const HikingModal = ({ hikingGear, setIsModalOpen }) => {
+const HikingModal = ({
+  hikingGear,
+  setIsModalOpen,
+}: {
+  hikingGear: Array<GearItem>;
+  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
+}) => {
   const { openedIndex, setOpenedIndex } = useContext(HikingGearContext);
 
   const isTabletOrDesktop = useMediaQuery({ query: '(min-width: 720px)' });
@@ -34,7 +41,7 @@ const HikingModal = ({ hikingGear, setIsModalOpen }) => {
   }, [openedIndex, lastItemIndex, setOpenedIndex]);
 
   useEffect(() => {
-    const navigationListener = (event) => {
+    const navigationListener = (event: KeyboardEvent) => {
       if (event.code === 'ArrowRight') {
         onRightNavigation();
       } else if (event.code === 'ArrowLeft') {
@@ -74,7 +81,11 @@ const HikingModal = ({ hikingGear, setIsModalOpen }) => {
       )}
       <div className="modal-left">
         <div className="modal-gear-card">
-          <p className={`card-category ${getKebabCase(gear.Category)}`}>
+          <p
+            className={`card-category ${
+              gear ? getKebabCase(gear.Category) : ''
+            }`}
+          >
             {gear.Category}
           </p>
           <img src={gear.Photo[0].url} alt="" />
