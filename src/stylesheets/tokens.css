@@ -1,0 +1,51 @@
+/**
+ * Do not edit directly
+ * Generated on Sat, 10 Dec 2022 22:51:52 GMT
+ */
+
+:root {
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  --border-radius-pill: 999px;
+  --border-radius-circle: 50%;
+  --font-family-serif: "Merriweather", serif;
+  --font-family-sans-serif: "Source Sans Pro", sans-serif;
+  --font-family-monospace: "Menlo", monospace;
+  --font-size-1: 12px;
+  --font-size-2: 14px;
+  --font-size-3: 16px;
+  --font-size-4: 18px;
+  --font-size-5: 20px;
+  --font-size-6: 24px;
+  --font-size-7: 32px;
+  --font-size-8: 40px;
+  --shadow-sm: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0px 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0px 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --color-neutral-100: #f4f2ed;
+  --color-neutral-300: #dcd6cb;
+  --color-neutral-500: #928b80;
+  --color-neutral-700: #4e4d49;
+  --color-green-700: #2e6b34;
+  --color-yellow-700: #854714;
+  --color-red-700: #811823;
+  --color-blue-700: #1b437e;
+  --color-green-300: #ecf9e6;
+  --color-yellow-300: #fdf6e2;
+  --color-red-300: #fcefe8;
+  --color-blue-300: #e2f4fe;
+  --color-grey-100: #fafafa;
+  --color-grey-300: #e4e4e7;
+}

@@ -1,0 +1,117 @@
+import Container from '../../components/Container';
+import Code from '../../components/Code';
+
+<Container>
+
+# Beginner's Frontend Setup Guide for MacOS
+
+This guide aims to explain the basic utilities and config files needed to set up your mac for frontend development. We’ll cover **Dotfiles, Xcode Command Line Tools, Homebrew, Shell (Zsh)** and **Oh My Zsh**.
+
+Let’s get into it…
+
+## ⚫️ Dotfiles
+
+Dotfiles are configuration files for various programs in plain text format. They are called dotfiles because they start with a `.` 🧐. On Unix based systems, these are hidden by the operating system by default and are usually stored in your home directory `~`. To make these visible you can either press `cmd + shift + .` in finder or run the `ls -a` command in the directory you’re in.
+
+## 🛠️ Xcode Command Line Tools
+
+Out the box, a Mac doesn’t come with all the software and tools needed for programming since most users won’t use ‘em. Instead, Apple makes this available to install separately. Xcode is their integrated development environment used to develop software for macOS, iOS, iPadOS, watchOS, and tvOS.
+
+Since we’re not developing software for Apple devices as frontend engineers, we don’t need the whole package which is like 40GB+. Fortunately, Apple provides a separate and much smaller download, the Xcode Command Line Tools. This installs some of the most-needed utilities for software development.
+
+### Install Xcode Command Line Tools
+
+```shell
+xcode-select --install
+```
+
+## 🍺 Homebrew
+
+Homebrew is a package manager which simplifies the installation of software on macOS. This could be Command Line Interfaces (CLIs) like node or Graphical User Interfaces (GUIs) like Figma, Chrome etc.
+
+### Install Homebrew
+
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+*If you haven’t already installed XCode Command Line Tools, you’ll see this prompt “The XCode Command Line Tools will be installed.” Press return to continue.*
+
+### Install a CLI (example)
+
+```shell
+brew install node
+```
+
+### Install a GUI app using cask (example)
+
+```shell
+brew install --cask figma
+```
+
+### Install CLIs and GUIs in bulk
+
+Create a `Brewfile` in your home directory. List all the CLIs and GUIs you need (you can check out my Brewfile as an example). Then using bundle, install all of them with the command below:
+
+```shell
+brew bundle --file ~/Brewfile
+```
+
+### Search
+
+Don’t know the exact keyword for the tool / app you want to install? You can use the brew search command 🔍. For example, entering `brew search adobe` would list any tool or app that contains the word adobe in its keyword.
+
+You could also just Google / check on Homebrew’s site 😉
+
+## 🐚 Shell — Zsh
+
+Shells provide a way for us to communicate with the operating system. It’s called the “shell” because it’s the outer layer separating you from the innermost parts of the operating system, called the kernel 🥜. Technically, your operating system’s Graphical User Interface is also a “shell,” but the Command Line Interface is frequently referred to casually as “the shell.”
+
+Apple replaced `bash` (Bourne again shell) with `zsh` (Z shell) as its default shell from macOS Catalina and onwards. `Zsh` is built on top of `bash` so it has additional features such as plug-in support, theme support, better customisation, etc.
+
+You can check which shell you’re using with the `which $SHELL` command. This will print out the file path to your shell eg. `/bin/zsh`. Bin stands for “binary”, a directory of all executable commands for your apps.
+
+`.zsh_history` is a file in your home directory that stores a list of all your previous terminal commands.
+
+## 🪄 Oh My Zsh
+Oh My Zsh is an open source, community-driven framework for managing your Zsh configuration. It comes with heaps of helpful plugins, themes, and functions.
+
+### Install Oh My Zsh
+
+```shell
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+### Configure
+
+The `.zshrc` file in your home directory is where any custom configuration lives for zsh. It’s run whenever you start the shell, either by entering the zsh command or opening a new session in terminal. When you install Oh My Zsh, `.zshrc` is populated with some of their default configuration which you can amend. You can check out how I configured my [`.zshrc` file](#).
+
+### Plugins
+
+Oh My Zsh comes with a whole bunch of preinstalled plugins🔌, these are located in `~/.oh-my-zsh/plugins`. To use a plugin, add it to your plugins list in your `~/.zshrc` file like so (these are the ones I use):
+
+```shell
+plugins=(
+  git
+  zsh-syntax-highlighting
+  history-substring-search
+  last-working-dir
+)
+```
+
+### Install custom Oh My Zsh plugins
+
+You can also install and use custom plugins. To install a custom plugin, navigate to `~/.oh-my-zsh/custom/plugins` and clone the repo of your custom plugin like so:
+
+```shell
+cd ~/.oh-my-zsh/custom/plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting
+```
+
+Then add don’t forgot to add the plugin name to your plugin list in `.zshrc`.
+
+## Create your own dotfiles repo
+
+You’re now equipped with enough knowledge to build your your own dotfiles repo with your personal config. You're welcome to check out my minimalist dotfiles repo for a bit of inspiration. I've commented on the purpose of each of the scripts in the files.
+
+</Container>
