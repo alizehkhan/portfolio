@@ -36,5 +36,5 @@ export const components = {
       {children}
     </code>
   ),
-  pre: ({ children }: { children: ReactNode }) => <Code>{children}</Code>,
+  pre: ({ children }: { children?: ReactNode }) => <Code>{children}</Code>,
 };

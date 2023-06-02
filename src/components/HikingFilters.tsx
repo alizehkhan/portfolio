@@ -1,14 +1,13 @@
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
 
-import { setSelectedFilter } from '../store/actions';
-import { useAppDispatch, useAppSelector } from '../store/hooks';
-import { CategoryKebabCase } from '../types';
+import { CategoryKebabCase } from '../utils/types';
 import { getKebabCase } from '../utils/utils';
 import { capitalisedFilters } from '../content/hikingGearFilters';
+import { HikingGearContext } from '../utils/HikingGearContext';
 
 const HikingFilters = () => {
-  const dispatch = useAppDispatch();
-  const selectedFilter = useAppSelector((state) => state.selectedFilter);
+  const { selectedFilter, setSelectedFilter } = useContext(HikingGearContext);
 
   return (
     <nav aria-label="Navigation for filtering hiking gear">
@@ -19,7 +18,7 @@ const HikingFilters = () => {
             className={`filter-show-all filter ${
               !selectedFilter ? 'active' : ''
             }`}
-            onClick={() => dispatch(setSelectedFilter(selectedFilter))}
+            onClick={() => setSelectedFilter(selectedFilter)}
           >
             Show all
           </Link>
@@ -33,12 +32,10 @@ const HikingFilters = () => {
               }`}
               onClick={(event) => {
                 if (capitalisedFilters.includes(event.currentTarget.innerText))
-                  dispatch(
-                    setSelectedFilter(
-                      getKebabCase(
-                        event.currentTarget.innerText
-                      ) as CategoryKebabCase
-                    )
+                  setSelectedFilter(
+                    getKebabCase(
+                      event.currentTarget.innerText
+                    ) as CategoryKebabCase
                   );
               }}
             >

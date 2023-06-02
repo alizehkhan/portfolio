@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { Post } from '../types';
+import { Post } from '../utils/types';
 
 const PostCard = ({ link, image, title, description }: Post) => {
   return (

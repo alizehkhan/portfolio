@@ -1,16 +1,13 @@
 import { IconScale, IconTag } from '@tabler/icons-react';
+import { useContext } from 'react';
 
-import { useAppSelector } from '../store/hooks';
 import { getFilterdHikingGear } from '../utils/utils';
+import { HikingGearContext } from '../utils/HikingGearContext';
 
 const HikingStats = () => {
-  const hikingGear = useAppSelector((state) => state.gearById);
-  const selectedFilter = useAppSelector((state) => state.selectedFilter);
-  const dataFetched = useAppSelector((state) => state.fetched);
+  const { gearById, selectedFilter } = useContext(HikingGearContext);
 
-  if (!dataFetched) return null;
-
-  const filteredHikingGear = getFilterdHikingGear(hikingGear, selectedFilter);
+  const filteredHikingGear = getFilterdHikingGear(gearById, selectedFilter);
 
   let totalPrice = 0;
   filteredHikingGear.forEach((gear) => {

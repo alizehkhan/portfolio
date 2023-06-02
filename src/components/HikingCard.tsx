@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import ReactModal from 'react-modal';
 
-import { setOpenedIndex } from '../store/actions.js';
-import { useAppDispatch } from '../store/hooks.js';
-import { GearItem } from '../types.js';
+import { GearItem } from '../utils/types.js';
 import { getKebabCase } from '../utils/utils.js';
+import { HikingGearContext } from '../utils/HikingGearContext.js';
 
 import Modal from './HikingModal.jsx';
 
@@ -18,12 +17,13 @@ const HikingCard = ({
   filteredGearIndex: number;
   hikingGear: Array<GearItem>;
 }) => {
-  const dispatch = useAppDispatch();
+  const { setOpenedIndex } = useContext(HikingGearContext);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
     setIsModalOpen(true);
-    dispatch(setOpenedIndex(filteredGearIndex));
+    setOpenedIndex(filteredGearIndex);
   };
 
   return (

@@ -1,17 +1,15 @@
 import { IconFilter, IconX } from '@tabler/icons-react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { setSelectedFilter } from '../store/actions';
-import { useAppDispatch, useAppSelector } from '../store/hooks';
-import { CategoryKebabCase } from '../types';
+import { CategoryKebabCase } from '../utils/types';
 import { getKebabCase } from '../utils/utils';
 import { capitalisedFilters } from '../content/hikingGearFilters';
+import { HikingGearContext } from '../utils/HikingGearContext';
 
 const HikingMobileFilters = () => {
-  const dispatch = useAppDispatch();
-  const selectedFilter = useAppSelector((state) => state.selectedFilter);
+  const { selectedFilter, setSelectedFilter } = useContext(HikingGearContext);
   const [showMobileFilters, setShowMobileFitlers] = useState(false);
 
   const container = {
@@ -69,7 +67,7 @@ const HikingMobileFilters = () => {
                   className={`mobile-filter filter-show-all ${
                     !selectedFilter && 'active'
                   }`}
-                  onClick={() => dispatch(setSelectedFilter(undefined))}
+                  onClick={() => setSelectedFilter(undefined)}
                 >
                   Show all
                 </Link>
@@ -82,12 +80,10 @@ const HikingMobileFilters = () => {
                       selectedFilter === getKebabCase(filter) && 'active'
                     }`}
                     onClick={(event) => {
-                      dispatch(
-                        setSelectedFilter(
-                          getKebabCase(
-                            event.currentTarget.innerText
-                          ) as CategoryKebabCase
-                        )
+                      setSelectedFilter(
+                        getKebabCase(
+                          event.currentTarget.innerText
+                        ) as CategoryKebabCase
                       );
                     }}
                   >

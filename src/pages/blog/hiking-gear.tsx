@@ -1,32 +1,39 @@
-import { useEffect, useRef } from 'react';
-import { useDispatch } from 'react-redux';
+import { useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { Route, Routes } from 'react-router-dom';
 
-import { setHikingGear } from '../../store/actions';
 import HikingFilters from '../../components/HikingFilters';
 import HikingMobileFilters from '../../components/HikingMobileFilters';
 import HikingGrid from '../../components/HikingGrid';
 import HikingStats from '../../components/HikingStats';
+import { HikingGearContext } from '../../utils/HikingGearContext';
+import { CategoryKebabCase } from '../../utils/types';
 
 const HikingGear = () => {
+  const [gearById, setGearById] = useState({});
+  const [openedIndex, setOpenedIndex] = useState<number | null>(null);
+  const [selectedFilter, setSelectedFilter] = useState<
+    CategoryKebabCase | undefined
+  >(undefined);
+
   const url =
     'https://api.airtable.com/v0/appnNWtIST8PkjtLZ/Gear?sort%5B0%5D%5Bfield%5D=Order&sort%5B0%5D%5Bdirection%5D=asc&api_key=keypPM03FSXY4VjgX';
 
-  const dispatch = useDispatch();
-
   useEffect(() => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        dispatch(setHikingGear(data));
-      })
-      .catch(() =>
-        console.log(
-          "Oops, we're having trouble fetching Alizeh's hiking gear list!"
-        )
-      );
-  }, [dispatch]);
+    const getGear = async () => {
+      const res = await fetch(url);
+      const { records } = await res.json();
+
+      const normalisedData = records.reduce((accumulator: any, gear: any) => {
+        accumulator[gear.id] = { ...gear.fields, id: gear.id };
+        return accumulator;
+      }, {});
+
+      setGearById(normalisedData);
+    };
+
+    getGear();
+  }, []);
 
   const filterBarRef = useRef(null);
   const isTabletOrDesktop = useMediaQuery({ query: '(min-width: 880px)' });
@@ -51,7 +58,16 @@ const HikingGear = () => {
   }, []);
 
   return (
-    <>
+    <HikingGearContext.Provider
+      value={{
+        gearById,
+        setGearById,
+        selectedFilter,
+        setSelectedFilter,
+        openedIndex,
+        setOpenedIndex,
+      }}
+    >
       <h1 className="container font-serif text-5xl leading-tight text-neutral-700 md:text-7xl md:leading-tight">
         My Hiking Gear
       </h1>
@@ -68,7 +84,7 @@ const HikingGear = () => {
         <Route index element={<HikingGrid />} />
         <Route path=":selectedFilter" element={<HikingGrid />} />
       </Routes>
-    </>
+    </HikingGearContext.Provider>
   );
 };
 

@@ -5,18 +5,16 @@ import {
   IconTag,
   IconX,
 } from '@tabler/icons-react';
+import { useContext } from 'react';
 import { useCallback, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useMediaQuery } from 'react-responsive';
 
-import { decrementOpenedIndex, incrementOpenedIndex } from '../store/actions';
-import { useAppDispatch, useAppSelector } from '../store/hooks';
+import { HikingGearContext } from '../utils/HikingGearContext';
 import { getKebabCase } from '../utils/utils';
 
 const HikingModal = ({ hikingGear, setIsModalOpen }) => {
-  const openedIndex = useAppSelector((state) => state.openedIndex);
-  const dataFetched = useAppSelector((state) => state.fetched);
-  const dispatch = useAppDispatch();
+  const { openedIndex, setOpenedIndex } = useContext(HikingGearContext);
 
   const isTabletOrDesktop = useMediaQuery({ query: '(min-width: 720px)' });
 
@@ -25,15 +23,15 @@ const HikingModal = ({ hikingGear, setIsModalOpen }) => {
 
   const onLeftNavigation = useCallback(() => {
     if (openedIndex > 0) {
-      dispatch(decrementOpenedIndex());
+      setOpenedIndex((openedIndex) => openedIndex - 1);
     }
-  }, [dispatch, openedIndex]);
+  }, [openedIndex, setOpenedIndex]);
 
   const onRightNavigation = useCallback(() => {
     if (openedIndex < lastItemIndex) {
-      dispatch(incrementOpenedIndex());
+      setOpenedIndex((openedIndex) => openedIndex + 1);
     }
-  }, [dispatch, openedIndex, lastItemIndex]);
+  }, [openedIndex, lastItemIndex, setOpenedIndex]);
 
   useEffect(() => {
     const navigationListener = (event) => {
@@ -44,18 +42,14 @@ const HikingModal = ({ hikingGear, setIsModalOpen }) => {
       }
     };
 
-    if (dataFetched) {
-      window.addEventListener('keydown', navigationListener);
-      document.body.style.overflow = 'hidden';
-    }
+    window.addEventListener('keydown', navigationListener);
+    document.body.style.overflow = 'hidden';
 
     return () => {
       window.removeEventListener('keydown', navigationListener);
       document.body.style.overflow = 'visible';
     };
-  }, [dataFetched, onRightNavigation, onLeftNavigation]);
-
-  if (!dataFetched) return null;
+  }, [onRightNavigation, onLeftNavigation]);
 
   return (
     <>
