@@ -4,7 +4,6 @@ import { useMediaQuery } from 'react-responsive';
 import { Route, Routes } from 'react-router-dom';
 
 import { setHikingGear } from '../../store/actions';
-
 import HikingFilters from '../../components/HikingFilters';
 import HikingMobileFilters from '../../components/HikingMobileFilters';
 import HikingGrid from '../../components/HikingGrid';

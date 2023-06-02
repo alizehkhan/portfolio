@@ -1,10 +1,12 @@
 import { Helmet } from 'react-helmet';
 import { Route, Routes } from 'react-router-dom';
+
+import { components } from '../../components/MDXComponents';
+
 import List from './List';
 import Wandern from './wandern.mdx';
 import Portfolio from './portfolio.mdx';
 import Splitify from './splitify.mdx';
-import { components } from '../../components/MDXComponents';
 
 const Projects = () => {
   return (

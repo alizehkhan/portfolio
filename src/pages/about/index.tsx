@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet';
+
 import { ReactComponent as Venn } from '../../../public/illustrations/venn.svg';
 
 const About = () => {

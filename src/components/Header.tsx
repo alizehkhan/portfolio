@@ -2,8 +2,9 @@ import { IconExternalLink } from '@tabler/icons-react';
 import { useMediaQuery } from 'react-responsive';
 import { Link, NavLink } from 'react-router-dom';
 
-import MobileHeader from './MobileHeader';
 import { LINKS } from '../content/links';
+
+import MobileHeader from './MobileHeader';
 
 const Header = () => {
   const isTabletOrDesktop = useMediaQuery({ query: '(min-width: 880px)' });

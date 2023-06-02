@@ -1,4 +1,5 @@
 import { IconScale, IconTag } from '@tabler/icons-react';
+
 import { useAppSelector } from '../store/hooks';
 import { getFilterdHikingGear } from '../utils/utils';
 

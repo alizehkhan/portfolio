@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+
 import { Post } from '../types';
 
 const PostCard = ({ link, image, title, description }: Post) => {

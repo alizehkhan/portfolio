@@ -5,8 +5,9 @@ import { setSelectedFilter } from '../store/actions';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { CategoryKebabCase } from '../types';
 import { getFilterdHikingGear } from '../utils/utils';
-import HikingCard from './HikingCard';
 import { filters } from '../content/hikingGearFilters';
+
+import HikingCard from './HikingCard';
 
 const HikingGrid = () => {
   const { selectedFilter } = useParams();

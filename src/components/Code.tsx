@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism.css';
 import { IconClipboard } from '@tabler/icons-react';

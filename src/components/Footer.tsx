@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+
 import { SOCIAL_MEDIA } from '../content/socialMedia';
 
 const Footer = () => {
