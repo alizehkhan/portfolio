@@ -33,14 +33,22 @@ const HikingCard = ({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="card"
+        className="flex flex-col items-center justify-between rounded-lg bg-white px-2 pb-4 pt-2 shadow-sm hover:scale-[1.02] hover:shadow-lg"
         onClick={openModal}
       >
-        <p className={`card-category ${getKebabCase(gearItem.Category)}`}>
+        <p
+          className={`mr-auto inline-block w-fit rounded-full px-3 py-1 text-xs font-bold ${getKebabCase(
+            gearItem.Category
+          )}`}
+        >
           {gearItem.Category}
         </p>
-        <img src={gearItem.Photo[0].url} alt={gearItem.Name} />
-        <h2 className="card-name">{gearItem.Name}</h2>
+        <img
+          src={gearItem.Photo[0].url}
+          alt={gearItem.Name}
+          className="mx-auto h-[132px]"
+        />
+        <h2 className="text-md font-serif font-bold">{gearItem.Name}</h2>
       </motion.button>
 
       <ReactModal

@@ -1,15 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&family=Merriweather:wght@400;700&display=swap');
-
 @import url(tokens.css);
-@import url(header.css);
-@import url(footer.css);
 @import url(hiking-gear.css);
-@import url(card.css);
-@import url(modal.css);
-@import url(stats.css);
-@import url(filters.css);
-@import url(home.css);
-@import url(code.css);
 
 @tailwind base;
 @tailwind components;
@@ -22,13 +13,11 @@
 }
 
 * {
-  margin: 0;
   color: var(--color-neutral-700);
 }
 
 body {
   background: var(--color-neutral-100);
-  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   font-synthesis: none;
 }
@@ -43,23 +32,19 @@ svg {
 }
 
 input,
-button,
-textarea,
-select {
+button {
   font: inherit;
 }
 
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
+h4 {
   overflow-wrap: break-word;
   font-family: var(--font-family-serif);
 }
 
-/* ------------------------------------------ */
+/* ------------------------ */
 
 #root {
   display: flex;
@@ -76,4 +61,52 @@ main {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* ------------------------ */
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: rgba(78, 77, 73, 0.1) !important;
+}
+
+code[class*='language-'],
+pre[class*='language-'],
+.token.punctuation {
+  color: var(--color-neutral-700) !important;
+  text-shadow: none !important;
+}
+
+pre[class*='language-'] {
+  margin: 0 !important;
+}
+
+/* ------------------------ */
+
+.scribble {
+  stroke-dasharray: 3820;
+  stroke-dashoffset: 3820;
+  animation: dash 2s linear forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ------------------------ */
+
+header a {
+  text-decoration: none;
+}
+
+header a:hover,
+header .active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.hidden {
+  display: none;
 }

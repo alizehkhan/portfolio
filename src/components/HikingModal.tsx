@@ -63,7 +63,7 @@ const HikingModal = ({
       {isTabletOrDesktop ? (
         !(openedIndex === 0) && (
           <button
-            className="previous-button"
+            className="previous-button absolute -left-6 top-[calc(50%-24px)] rounded-full bg-neutral-700 p-3 shadow-lg"
             aria-label="Previous gear item"
             onClick={() => onLeftNavigation()}
           >
@@ -72,7 +72,7 @@ const HikingModal = ({
         )
       ) : (
         <button
-          className="close-modal"
+          className="mb-3 ml-auto block rounded-full border-2 border-solid border-neutral-700 bg-transparent p-2 hover:bg-neutral-300"
           aria-label="Close modal"
           onClick={() => setIsModalOpen(false)}
         >
@@ -80,21 +80,29 @@ const HikingModal = ({
         </button>
       )}
       <div className="modal-left">
-        <div className="modal-gear-card">
+        <div className="mb-4 rounded-lg bg-white p-3 shadow-sm">
           <p
-            className={`card-category ${
+            className={`mr-auto inline-block w-fit rounded-full px-3 py-1 text-xs font-bold ${
               gear ? getKebabCase(gear.Category) : ''
             }`}
           >
             {gear.Category}
           </p>
-          <img src={gear.Photo[0].url} alt="" />
+          <img
+            src={gear.Photo[0].url}
+            alt=""
+            className="mt-1 h-[190px] w-full object-contain"
+          />
         </div>
-        <p className="modal-card-brand">{gear.Brand}</p>
-        <p className="modal-card-product">{gear.Product}</p>
-        <div className="stats">
+        <p className="font-serif text-lg font-bold">{gear.Brand}</p>
+        <p className="mb-4">{gear.Product}</p>
+        <div className="flex items-center text-lg font-bold">
           {gear.Price && (
-            <div aria-label="Total price" title="Total price">
+            <div
+              aria-label="Total price"
+              title="Total price"
+              className="mr-6 flex items-center justify-between"
+            >
               <IconTag
                 size={20}
                 color="#928b80"
@@ -110,7 +118,11 @@ const HikingModal = ({
             </div>
           )}
           {gear.Weight && (
-            <div aria-label="Total weight" title="Total weight">
+            <div
+              aria-label="Total weight"
+              title="Total weight"
+              className="mr-6 flex items-center justify-between"
+            >
               <IconScale
                 size={20}
                 color="#928b80"
@@ -123,12 +135,12 @@ const HikingModal = ({
         </div>
       </div>
       <div className="modal-right">
-        <h2 className="modal-card-name">{gear.Name}</h2>
+        <h2 className="my-4 font-serif text-3xl font-bold">{gear.Name}</h2>
         <ReactMarkdown>{gear.Notes}</ReactMarkdown>
       </div>
       {isTabletOrDesktop && !(openedIndex === lastItemIndex) && (
         <button
-          className="next-button"
+          className="next-button absolute -right-6 top-[calc(50%-24px)] rounded-full bg-neutral-700 p-3 shadow-lg"
           aria-label="Next gear item"
           onClick={() => onRightNavigation()}
         >

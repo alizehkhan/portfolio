@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -14,6 +15,7 @@ export default {
       'neutral-300': '#dcd6cb',
       'neutral-500': '#928b80',
       'neutral-700': '#4e4d49',
+      'neutral-800': '#403f3c',
       'grey-100': '#ECEAE5',
       'grey-200': '#E4E3DE',
       'grey-300': '#D6D5D0',

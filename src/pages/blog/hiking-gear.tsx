@@ -68,13 +68,13 @@ const HikingGear = () => {
         setOpenedIndex,
       }}
     >
-      <h1 className="container font-serif text-5xl leading-tight text-neutral-700 md:text-7xl md:leading-tight">
+      <h1 className="container font-serif text-4xl leading-tight text-neutral-700 md:text-7xl md:leading-tight">
         My Hiking Gear
       </h1>
       {!isTabletOrDesktop && <HikingMobileFilters />}
 
-      <div className="control-panel" ref={filterBarRef}>
-        <div className="container">
+      <div className="sticky top-0 z-[1] bg-neutral-100" ref={filterBarRef}>
+        <div className="container flex justify-center py-8 md:justify-between">
           {isTabletOrDesktop && <HikingFilters />}
           <HikingStats />
         </div>

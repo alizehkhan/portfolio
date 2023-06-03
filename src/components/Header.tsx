@@ -10,17 +10,27 @@ const Header = () => {
   const isTabletOrDesktop = useMediaQuery({ query: '(min-width: 880px)' });
 
   return isTabletOrDesktop ? (
-    <header className="desktop-header container">
+    <header className="container my-8 flex items-center justify-between">
       <Link to="/">
-        <img src="/assets/avatar.jpg" alt="" />
+        <img
+          src="/assets/avatar.jpg"
+          className="h-14 shrink-0 rounded-full border-[3px] border-solid border-white shadow-md"
+          alt=""
+        />
       </Link>
       <nav>
-        <ul>
-          {LINKS.map((link) => (
-            <NavLink to={link.to}>{link.name}</NavLink>
+        <ul className="flex items-center gap-6">
+          {LINKS.map((link, index) => (
+            <NavLink key={index} to={link.to}>
+              {link.name}
+            </NavLink>
           ))}
           <li>
-            <a href="/Alizeh Khan.pdf" className="download-cv" target="_blank">
+            <a
+              href="/Alizeh Khan.pdf"
+              className="flex items-center justify-center gap-2 rounded-full bg-neutral-700 px-4 py-2 text-white no-underline hover:bg-neutral-800 hover:no-underline"
+              target="_blank"
+            >
               <IconExternalLink color="white" size={16} />
               Resume
             </a>

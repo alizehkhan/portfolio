@@ -11,11 +11,11 @@ const HikingFilters = () => {
 
   return (
     <nav aria-label="Navigation for filtering hiking gear">
-      <ul className="filters">
+      <ul className="flex justify-center">
         <li>
           <Link
             to="/blog/hiking-gear"
-            className={`filter-show-all filter ${
+            className={`filter-show-all no-underline filter ${
               !selectedFilter ? 'active' : ''
             }`}
             onClick={() => setSelectedFilter(selectedFilter)}
@@ -27,7 +27,7 @@ const HikingFilters = () => {
           <li key={filter}>
             <Link
               to={getKebabCase(filter)}
-              className={`filter filter-${getKebabCase(filter)} ${
+              className={`no-underline filter filter-${getKebabCase(filter)} ${
                 selectedFilter === getKebabCase(filter) ? 'active' : ''
               }`}
               onClick={(event) => {

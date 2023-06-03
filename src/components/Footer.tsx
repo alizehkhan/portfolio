@@ -4,7 +4,7 @@ import { SOCIAL_MEDIA } from '../content/socialMedia';
 
 const Footer = () => {
   return (
-    <footer className="container mx-auto mt-6 flex justify-center gap-3 px-5">
+    <footer className="container mx-auto mt-6 flex justify-center gap-3 px-5 py-8">
       {SOCIAL_MEDIA.map(({ Icon, link }, index) => (
         <Link
           to={link}

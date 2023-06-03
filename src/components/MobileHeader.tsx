@@ -34,12 +34,14 @@ const MobileHeader = () => {
 
   return (
     <header
-      className={`container ${isMobileNavOpen ? 'mobile-header' : ''}`}
+      className={`container ${
+        isMobileNavOpen ? 'h-screen w-screen bg-neutral-100' : ''
+      }`}
       ref={MobileNavRef}
       onKeyDown={handleKeyDown}
     >
       <button
-        className="mobile-menu-button"
+        className="ml-auto mt-3 flex items-center gap-1 bg-transparent p-2"
         aria-expanded={isMobileNavOpen}
         aria-controls="primary-menu"
         onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}

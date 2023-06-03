@@ -20,7 +20,11 @@ const MobileNav = ({
 
   return (
     <nav>
-      <ul hidden={!isMobileNavOpen} id="primary-menu">
+      <ul
+        hidden={!isMobileNavOpen}
+        id="primary-menu"
+        className="flex flex-col items-start gap-4 text-2xl"
+      >
         {LINKS.map((link) => (
           <li>
             <NavLink to={link.to} onClick={() => setIsMobileNavOpen(false)}>

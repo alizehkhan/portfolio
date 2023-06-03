@@ -34,9 +34,9 @@ const HikingMobileFilters = () => {
   };
 
   return (
-    <div className="mobile-filters-container">
+    <div className="fixed bottom-4 right-4 z-[2] flex flex-col-reverse items-end text-right">
       <button
-        className="mobile-filters-button"
+        className="mt-3 cursor-pointer rounded-full bg-neutral-700 p-4 shadow-lg"
         aria-label={
           showMobileFilters ? 'Close filter options' : 'Filter hiking gear by'
         }
@@ -55,7 +55,7 @@ const HikingMobileFilters = () => {
         {showMobileFilters && (
           <nav aria-label="Filter hiking gear by">
             <motion.ul
-              className="mobile-filters"
+              className="flex flex-col gap-4"
               variants={container}
               initial="hidden"
               animate="show"
@@ -64,7 +64,7 @@ const HikingMobileFilters = () => {
               <motion.li variants={item}>
                 <Link
                   to="/blog/hiking-gear"
-                  className={`mobile-filter filter-show-all ${
+                  className={`filter-show-all mx-1 inline-block rounded-full bg-neutral-100 px-4 py-2 text-lg font-bold no-underline shadow-lg ${
                     !selectedFilter && 'active'
                   }`}
                   onClick={() => setSelectedFilter(undefined)}
@@ -76,9 +76,9 @@ const HikingMobileFilters = () => {
                 <motion.li key={filter} variants={item}>
                   <Link
                     to={getKebabCase(filter)}
-                    className={`mobile-filter filter-${getKebabCase(filter)} ${
-                      selectedFilter === getKebabCase(filter) && 'active'
-                    }`}
+                    className={`mx-1 inline-block rounded-full bg-neutral-100 px-4 py-2 text-lg font-bold no-underline shadow-lg filter-${getKebabCase(
+                      filter
+                    )} ${selectedFilter === getKebabCase(filter) && 'active'}`}
                     onClick={(event) => {
                       setSelectedFilter(
                         getKebabCase(

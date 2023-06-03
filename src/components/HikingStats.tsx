@@ -20,8 +20,11 @@ const HikingStats = () => {
   });
 
   return (
-    <div className="stats">
-      <div aria-label="total price">
+    <div className="flex items-center text-lg font-bold">
+      <div
+        aria-label="total price"
+        className="mr-6 flex items-center justify-between"
+      >
         <IconTag
           size={20}
           color="#928b80"
@@ -37,7 +40,10 @@ const HikingStats = () => {
             .slice(0, -3)}
         </p>
       </div>
-      <div aria-label="total weight">
+      <div
+        aria-label="total weight"
+        className="flex items-center justify-between"
+      >
         <IconScale
           size={20}
           color="#928b80"
