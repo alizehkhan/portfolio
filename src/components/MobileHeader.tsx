@@ -41,7 +41,7 @@ const MobileHeader = () => {
       onKeyDown={handleKeyDown}
     >
       <button
-        className="ml-auto mt-3 flex items-center gap-1 bg-transparent p-2"
+        className="ml-auto mt-3 flex items-center gap-1 bg-transparent p-3"
         aria-expanded={isMobileNavOpen}
         aria-controls="primary-menu"
         onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}

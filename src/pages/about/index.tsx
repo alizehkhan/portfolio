@@ -9,7 +9,7 @@ const About = () => {
         <title>About | Alizeh Khan</title>
       </Helmet>
       <div className="container">
-        <div className="mb-20 flex items-center justify-center lg:mb-48 lg:mt-32">
+        <div className="mb-20 flex min-h-[calc(100vh-100px)] items-center justify-center md:min-h-fit lg:mb-48 lg:mt-32">
           <Venn />
         </div>
         <div className="mb-40 max-w-4xl lg:mb-80">
@@ -38,7 +38,7 @@ const About = () => {
             I am an avid hiker, CrossFitter, minimalist
           </p>
           <p className="mb-32 font-serif text-lg leading-normal">
-            and a budding comedy improviser 🎙️.
+            and, more recently, a comedy improv rookie 🎙️.
           </p>
         </div>
       </div>
