@@ -9,6 +9,8 @@ type HikingGear = {
   setSelectedFilter: Dispatch<SetStateAction<CategoryKebabCase | undefined>>;
   openedIndex: number;
   setOpenedIndex: Dispatch<SetStateAction<number>>;
+  isLoading: boolean;
+  setIsLoading: Dispatch<SetStateAction<boolean>>;
 };
 
 export const HikingGearContext = createContext<HikingGear>({
@@ -18,4 +20,6 @@ export const HikingGearContext = createContext<HikingGear>({
   setSelectedFilter: () => {},
   openedIndex: 0,
   setOpenedIndex: () => {},
+  isLoading: true,
+  setIsLoading: () => {},
 });

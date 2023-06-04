@@ -10,7 +10,8 @@ import HikingCard from './HikingCard';
 
 const HikingGrid = () => {
   const { selectedFilter } = useParams();
-  const { gearById, setSelectedFilter } = useContext(HikingGearContext);
+  const { gearById, setSelectedFilter, isLoading } =
+    useContext(HikingGearContext);
 
   useEffect(() => {
     if (!selectedFilter || filters.includes(selectedFilter)) {
@@ -25,19 +26,24 @@ const HikingGrid = () => {
 
   return (
     <div className="container mt-1 grid auto-rows-[232px] grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
-      {getFilterdHikingGear(gearById, selectedFilter as CategoryKebabCase).map(
-        (gearItem, index) => (
-          <HikingCard
-            key={gearItem.id}
-            filteredGearIndex={index}
-            gearItem={gearItem}
-            hikingGear={getFilterdHikingGear(
-              gearById,
-              selectedFilter as CategoryKebabCase
-            )}
-          />
-        )
-      )}
+      {!isLoading
+        ? getFilterdHikingGear(
+            gearById,
+            selectedFilter as CategoryKebabCase
+          ).map((gearItem, index) => (
+            <HikingCard
+              key={gearItem.id}
+              filteredGearIndex={index}
+              gearItem={gearItem}
+              hikingGear={getFilterdHikingGear(
+                gearById,
+                selectedFilter as CategoryKebabCase
+              )}
+            />
+          ))
+        : Array.from({ length: 12 }, (_, i) => (
+            <div key={i} className="loading-state" />
+          ))}
     </div>
   );
 };

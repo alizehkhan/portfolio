@@ -15,6 +15,7 @@ const HikingGear = () => {
   const [selectedFilter, setSelectedFilter] = useState<
     CategoryKebabCase | undefined
   >(undefined);
+  const [isLoading, setIsLoading] = useState(true);
 
   const url =
     'https://api.airtable.com/v0/appnNWtIST8PkjtLZ/Gear?sort%5B0%5D%5Bfield%5D=Order&sort%5B0%5D%5Bdirection%5D=asc&api_key=keypPM03FSXY4VjgX';
@@ -30,6 +31,7 @@ const HikingGear = () => {
       }, {});
 
       setGearById(normalisedData);
+      setIsLoading(false);
     };
 
     getGear();
@@ -66,6 +68,8 @@ const HikingGear = () => {
         setSelectedFilter,
         openedIndex,
         setOpenedIndex,
+        isLoading,
+        setIsLoading,
       }}
     >
       <h1 className="container font-serif text-4xl leading-tight text-neutral-700 md:text-7xl md:leading-tight">
