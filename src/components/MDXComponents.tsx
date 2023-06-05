@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { AnchorHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react';
 
 import Code from './Code';
 
@@ -22,6 +22,20 @@ export const components = {
     <p className="my-4 font-sans text-xl leading-normal text-neutral-700">
       {children}
     </p>
+  ),
+  a: ({
+    children,
+    href,
+  }: DetailedHTMLProps<
+    AnchorHTMLAttributes<HTMLAnchorElement>,
+    HTMLAnchorElement
+  >) => (
+    <a
+      href={href}
+      className="my-4 font-sans text-xl leading-normal text-neutral-700 underline underline-offset-2"
+    >
+      {children}
+    </a>
   ),
   li: ({ children }: { children?: ReactNode }) => (
     <li className="list-disc font-sans text-xl leading-normal text-neutral-700">

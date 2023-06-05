@@ -35,7 +35,7 @@ const Code = ({ children }: { children: any }) => {
             {isCopied ? 'Copied' : <IconClipboard color="#4e4d49" size={18} />}
           </button>
         )}
-        <pre className="rounded-md shadow-sm">
+        <pre className="rounded-md">
           <code className={children?.props.className}>{children}</code>
         </pre>
       </div>

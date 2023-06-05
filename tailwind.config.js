@@ -6,7 +6,7 @@ export default {
     fontFamily: {
       sans: ['Source Sans Pro', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
-      mono: ['Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', 'monospace'],
+      mono: ['Menlo', 'Monaco', 'Andale Mono', 'Ubuntu Mono', 'monospace'],
     },
     colors: {
       transparent: 'transparent',
@@ -28,7 +28,11 @@ export default {
       'green-300': '#ecf9e6',
       'green-700': '#2e6b34',
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        key: 'inset 0 -2px 0 0 #dcd6cb,inset 0 0 1px 1px #fff,0 1px 2px 1px rgba(78,77,73,0.4)',
+      },
+    },
   },
   plugins: [],
 };
