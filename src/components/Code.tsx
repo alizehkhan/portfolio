@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
-import Prism from 'prismjs';
-import 'prismjs/themes/prism.css';
-import { IconClipboard } from '@tabler/icons-react';
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+import { useEffect, useState } from "react";
+import Prism from "prismjs";
+import "prismjs/themes/prism.css";
+import { IconClipboard } from "@tabler/icons-react";
 
 const Code = ({ children }: { children: any }) => {
   useEffect(() => Prism.highlightAll(), []);
@@ -32,7 +33,7 @@ const Code = ({ children }: { children: any }) => {
               copyToClipboard(children?.props.children);
             }}
           >
-            {isCopied ? 'Copied' : <IconClipboard color="#4e4d49" size={18} />}
+            {isCopied ? "Copied" : <IconClipboard color="#4e4d49" size={18} />}
           </button>
         )}
         <pre className="rounded-md">

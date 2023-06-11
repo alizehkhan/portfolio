@@ -1,5 +1,5 @@
-import PostCard from '../../components/PostCard';
-import { POSTS } from '../../content/posts';
+import PostCard from "../../components/PostCard";
+import { POSTS } from "../../content/posts";
 
 const List = () => {
   return (
@@ -12,6 +12,7 @@ const List = () => {
           description={post.description}
           image={post.image}
           link={post.link}
+          labels={post.labels}
         />
       ))}
     </div>

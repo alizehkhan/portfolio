@@ -1,0 +1,73 @@
+import Container from "../../components/Container";
+import Key from "../../components/Key";
+
+<Container>
+
+# Manual accessibility testing
+
+🚧 Post under construction 🚧
+
+Tackling accessibility can feel overwhelming and it's pretty much impossible to have a 100% accessible website. So instead of creating a guide that tries to boil the ocean, I thought I would share the manual testing rituals I've managed to incorporate into my development workflow. I'll try to keep this up to date as I learn more.
+
+If you've never used the screen reader on your Mac, my hope is that by the end of this post you will have at least pressed <Key>command</Key> + <Key>F5</Key>. I mean you could even press it now if you want 🤷.
+
+## To learn
+
+Not everyone uses a mouse to navigate a website, so here are the commands and tools I've learnt to use on my Mac to test user flows and components for keyboard and screen reader user.
+
+### ⌨️ Keyboard user commands
+
+<Key>tab</Key> to focus on the next interactive element.
+
+<Key>shift</Key> + <Key>tab</Key> to focus on the previous interactive element.
+
+<Key>↑</Key>/<Key>↓</Key>/<Key>←</Key>/<Key>→</Key> to cycle through related controls
+such a dropdown list or radio group.
+
+<Key>spacebar</Key> to toggle states (eg. a checkbox) or move down the page
+
+<Key>enter</Key> to interact.
+
+### 🔉 Screen reader user commands
+
+<Key>command</Key> + <Key>F5</Key> to activate MacOS's built-in screen reader, Voiceover.
+
+<Key>control</Key> + <Key>option</Key> + <Key>←</Key>/<Key>→</Key> to move between
+elements
+
+<Key>control</Key> + <Key>option</Key> + <Key>U</Key> to open up the rotor. Then
+<Key>←</Key>/<Key>→</Key> to navigate through the lists available eg. landmarks,
+headers, links etc.
+
+### 🌳 Accessibility tree
+
+## My checklist
+
+### Structure
+
+1. Are any heading tags misused?
+2. Are there any headings missing?
+3. Does each heading accurately describe the content that immediately follows it?
+4. Are there any list tags being misused?
+5. Are there any lists missing?
+6. Does the page title accurately describe the purpose of the page?
+
+### Interactive elements
+
+1. Is the tabbing order logical and intuitive?
+2. Are there any interactive elements missing from the tab sequence?
+3. Is the keyboard focus indicator always visible?
+4. Can you navigate behind or around an element that should be trapping focus like a modal?
+5. Are all the states (eg. `disabled`, `expanded`, `selected`, `pressed`, `checked`, `readonly`) that apply to the interactive element correct?
+6. Select the role which accurately conveys the element's purpose.
+7. Does the accessible text for the interactive element accurately describe the element's meaning?
+
+### Images
+
+1. Do the decorative images have a null `alt` attribute and the decorative SVGs have an `aria-hidden=true`?
+2. Does the alt text accurately describe what the image is and what it’s for?
+3. Are there any images that contain text?
+
+## Real user testing
+
+</Container>

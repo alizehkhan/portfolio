@@ -137,6 +137,10 @@
   margin-bottom: 16px;
 }
 
+.modal-right a {
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 720px) {
   .modal {
     height: 100vh;

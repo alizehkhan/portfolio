@@ -1,12 +1,14 @@
-import { Helmet } from 'react-helmet';
-import { Route, Routes } from 'react-router-dom';
+import { Helmet } from "react-helmet";
+import { Route, Routes } from "react-router-dom";
 
-import { components } from '../../components/MDXComponents';
+import { components } from "../../components/MDXComponents";
 
-import EmailSetup from './email-setup.mdx';
-import FrontendSetup from './frontend-setup.mdx';
-import List from './List';
-import HikingGear from './hiking-gear';
+import EmailSetup from "./email-setup.mdx";
+import FrontendSetup from "./frontend-setup.mdx";
+import List from "./List";
+import HikingGear from "./hiking-gear";
+import AutomatedTesting from "./automated-testing.mdx";
+import ManualTesting from "./manual-testing.mdx";
 
 const Blog = () => {
   return (
@@ -24,6 +26,14 @@ const Blog = () => {
         <Route
           path="frontend-setup/"
           element={<FrontendSetup components={components} />}
+        />
+        <Route
+          path="automated-accessibility-testing/"
+          element={<AutomatedTesting components={components} />}
+        />
+        <Route
+          path="manual-accessibility-testing/"
+          element={<ManualTesting components={components} />}
         />
       </Routes>
     </>

@@ -1,17 +1,17 @@
-import { IconExternalLink } from '@tabler/icons-react';
-import { useMediaQuery } from 'react-responsive';
-import { Link, NavLink } from 'react-router-dom';
+import { IconExternalLink } from "@tabler/icons-react";
+import { useMediaQuery } from "react-responsive";
+import { Link, NavLink } from "react-router-dom";
 
-import { LINKS } from '../content/links';
+import { LINKS } from "../content/links";
 
-import MobileHeader from './MobileHeader';
+import MobileHeader from "./MobileHeader";
 
 const Header = () => {
-  const isTabletOrDesktop = useMediaQuery({ query: '(min-width: 880px)' });
+  const isTabletOrDesktop = useMediaQuery({ query: "(min-width: 880px)" });
 
   return isTabletOrDesktop ? (
     <header className="container my-8 flex items-center justify-between">
-      <Link to="/">
+      <Link aria-label="Alizeh Khan" to="/">
         <img
           src="/assets/avatar.jpg"
           className="h-14 shrink-0 rounded-full border-[3px] border-solid border-white shadow-md"
@@ -21,9 +21,11 @@ const Header = () => {
       <nav>
         <ul className="flex items-center gap-6">
           {LINKS.map((link, index) => (
-            <NavLink key={index} to={link.to}>
-              {link.name}
-            </NavLink>
+            <li>
+              <NavLink key={index} to={link.to}>
+                {link.name}
+              </NavLink>
+            </li>
           ))}
           <li>
             <a

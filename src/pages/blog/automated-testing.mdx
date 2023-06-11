@@ -1,0 +1,85 @@
+import Container from "../../components/Container";
+import Key from "../../components/Key";
+
+<Container>
+
+# Automated accessibility testing
+
+🚧 Post under construction 🚧
+
+We can leverage tooling and automated tests during our development workflow to help us:
+
+- uncover "low-hanging fruit" type accessibility issues
+- improve accessibility test coverage
+- develop accessible user flows and components more efficiently
+- avoid introducing technical debt.
+
+## Axe
+
+[`axe-core`](https://github.com/dequelabs/axe-core) is an open source accessibility rules engine that can be used to empower linters, browser extensions and automated testing tools like `jest` and `cypress` to uncover up to 57% of WCAG issues.
+
+## Linter
+
+**Up to 25% of WCAG issues** can be caught whilst coding. [axe Linter](https://marketplace.visualstudio.com/items?itemName=deque-systems.vscode-axe-linter) is a VSCode extension that uses a subset of `axe-core`'s rules engine to catch things like:
+
+- Missing `alt` attribute for images
+- Missing `label` for inputs
+- Missing accessible text for buttons and links
+- Improper use of `tabindex` (positive integer)
+- Improper use of ARIA
+
+Linters are an easy way to catch some low-hanging fruit and a great first step to raising awareness of accessibility among an engineering team. When working on a codebase with multiple contributors, we can install [`eslint-plugin-jsx-a11y`](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y), activate the plugin and use it's `recommended` (or `strict`) rule set in the `.eslintrc.json` like so:
+
+```json
+{
+  "plugins": ["jsx-a11y"],
+  "extends": ["plugin:jsx-a11y/recommended"]
+}
+```
+
+Then using [`lint-staged`](https://github.com/okonet/lint-staged) and [`husky`](https://github.com/typicode/husky) we can enforce these rules by running the `eslint` script pre-commit.
+
+## Browser extension
+
+**Up to 57% of WCAG issues** can be caught by in-browser testing tools. [Axe Devtools Chrome extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) can scan a page for things like:
+
+- Insufficient text to background contrast ratios
+- Missing or incorrect usage of headings
+
+I prefer axe Devtools to Chrome's Lighthouse as it doesn't reload the page, so any local state, like an open modal, can be preserved when testing.
+
+The Pro version of Axe Devtools includes a series of guided tests that assists you in assessing the structure, images, interactive elements, forms and modals on a page. This can bring your accessibility test coverage to 80%.
+
+## Unit testing
+
+Unit testing is helpful for component-specific accessibility behaviour. This is especially important when building design system components that will be used across the site. I use the [ARIA patterns guide](https://www.w3.org/WAI/ARIA/apg/patterns/) as acceptance criteria and unit test specs for the component I'm building.
+
+## UI testing
+
+I use [`cypress-axe`](https://github.com/component-driven/cypress-axe) to run the `axe-core` checks as part of my UI testing.
+
+Install the dependencies
+
+```shell
+yarn add -D axe-core cypress-axe
+```
+
+Add the axe commands to `cypress/support/index.ts` file so they are available to use on the `cy` object.
+
+```typescript
+import "cypress-axe";
+```
+
+Now testing can be as simple as: visiting the page, injecting axe and checking the page's accessibility.
+
+```typescript
+describe("Home page", () => {
+  it("should be accessible", () => {
+    cy.visit("/");
+    cy.injectAxe();
+    cy.checkA11y();
+  });
+});
+```
+
+</Container>

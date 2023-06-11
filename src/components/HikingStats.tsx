@@ -1,13 +1,13 @@
-import { IconScale, IconTag } from '@tabler/icons-react';
-import { useContext } from 'react';
+import { IconScale, IconTag } from "@tabler/icons-react";
+import { useContext } from "react";
 
-import { getFilterdHikingGear } from '../utils/utils';
-import { HikingGearContext } from '../utils/HikingGearContext';
+import { HikingGearContext } from "../utils/HikingGearContext";
+import { getFilteredHikingGear } from "../utils/utils";
 
 const HikingStats = () => {
   const { gearById, selectedFilter } = useContext(HikingGearContext);
 
-  const filteredHikingGear = getFilterdHikingGear(gearById, selectedFilter);
+  const filteredHikingGear = getFilteredHikingGear(gearById, selectedFilter);
 
   let totalPrice = 0;
   filteredHikingGear.forEach((gear) => {
@@ -28,14 +28,14 @@ const HikingStats = () => {
         <IconTag
           size={20}
           color="#928b80"
-          style={{ marginRight: '8px' }}
+          style={{ marginRight: "8px" }}
           aria-hidden="true"
         />
         <p>
           {totalPrice
-            .toLocaleString('en-GB', {
-              style: 'currency',
-              currency: 'EUR',
+            .toLocaleString("en-GB", {
+              style: "currency",
+              currency: "EUR",
             })
             .slice(0, -3)}
         </p>
@@ -47,7 +47,7 @@ const HikingStats = () => {
         <IconScale
           size={20}
           color="#928b80"
-          style={{ marginRight: '8px' }}
+          style={{ marginRight: "8px" }}
           aria-hidden="true"
         />
         <p>{Math.round(totalWeight / 10) / 100} kg</p>

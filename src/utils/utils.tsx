@@ -1,9 +1,9 @@
-import { CategoryKebabCase, GearById } from './types';
+import { CategoryKebabCase, GearById } from "./types";
 
 export const getKebabCase = (word: string) =>
-  word.toLowerCase().replaceAll(' ', '-');
+  word.toLowerCase().replaceAll(" ", "-");
 
-export const getFilterdHikingGear = (
+export const getFilteredHikingGear = (
   gearById: GearById,
   filterSelected?: CategoryKebabCase
 ) => {
