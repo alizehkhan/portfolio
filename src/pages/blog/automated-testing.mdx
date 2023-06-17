@@ -5,18 +5,18 @@ import Key from "../../components/Key";
 
 # Automated accessibility testing
 
-🚧 Post under construction 🚧
-
 We can leverage tooling and automated tests during our development workflow to help us:
 
-- uncover "low-hanging fruit" type accessibility issues
-- improve accessibility test coverage
-- develop accessible user flows and components more efficiently
+- uncover "low-hanging fruit" type accessibility issues,
+- develop accessible components more efficiently,
+- improve test coverage, and
 - avoid introducing technical debt.
 
-## Axe
+⚠️ Please note, automated testing alone does not guarantee what you build is accessible. Some things cannot be automated and require a human to review. This includes how our interface works with assistive technologies such as screen readers and more nuanced things like the quality of image alt text. I've popped the [manual testing](/blog/manual-accessibility-testing) rituals I've managed to incorporate into my workflow so far in another post but it's by no means an exhaustive list.
 
-[`axe-core`](https://github.com/dequelabs/axe-core) is an open source accessibility rules engine that can be used to empower linters, browser extensions and automated testing tools like `jest` and `cypress` to uncover up to 57% of WCAG issues.
+## Axe core API
+
+[`axe-core`](https://github.com/dequelabs/axe-core) is an open source accessibility rules engine that can be used to empower linters, browser extensions and automated testing tools like `jest` and `cypress` to uncover up to 57% of WCAG issues. Below are the tools I use that leverage this popular API.
 
 ## Linter
 
@@ -52,7 +52,9 @@ The Pro version of Axe Devtools includes a series of guided tests that assists y
 
 ## Unit testing
 
-Unit testing is helpful for component-specific accessibility behaviour. This is especially important when building design system components that will be used across the site. I use the [ARIA patterns guide](https://www.w3.org/WAI/ARIA/apg/patterns/) as acceptance criteria and unit test specs for the component I'm building.
+In unit testing we can automate assertions for things like keyboard support, ARIA states etc. When building components such as a `Checkbox`, `Dialog`, `Tab` etc. I use the [ARIA patterns guide](https://www.w3.org/WAI/ARIA/apg/patterns/) as acceptance criteria. Before building, I write unit test cases for the component based on this criteria for example `"the dialog should close with the escape key and return focus to the triggering item"`. This test driven approach helps me build and maintain accessible components more efficiently.
+
+I use `react-testing-library`'s [priority guide](https://testing-library.com/docs/queries/about/#priority) on how to make use of semantic queries to in the most accessible way.
 
 ## UI testing
 
@@ -66,13 +68,13 @@ yarn add -D axe-core cypress-axe
 
 Add the axe commands to `cypress/support/index.ts` file so they are available to use on the `cy` object.
 
-```typescript
+```javascript
 import "cypress-axe";
 ```
 
 Now testing can be as simple as: visiting the page, injecting axe and checking the page's accessibility.
 
-```typescript
+```javascript
 describe("Home page", () => {
   it("should be accessible", () => {
     cy.visit("/");

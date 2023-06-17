@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&family=Merriweather:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&family=Merriweather:wght@400;700&display=swap');
 @import url(tokens.css);
 @import url(hiking-gear.css);
 
@@ -65,25 +65,61 @@ main {
 
 /* ------------------------ */
 
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
   background: rgba(78, 77, 73, 0.1) !important;
 }
 
-code[class*="language-"],
-pre[class*="language-"],
+code[class*='language-'],
+pre[class*='language-'],
 .token.punctuation {
   color: var(--color-neutral-700) !important;
   text-shadow: none !important;
 }
 
-pre[class*="language-"] {
+pre[class*='language-'] {
   margin: 0 !important;
 }
 
 code,
 pre {
-  font-family: "Menlo", "Monaco", "Andale Mono", "Ubuntu Mono", "monospace" !important;
+  font-family: 'Menlo', 'Monaco', 'Andale Mono', 'Ubuntu Mono', 'monospace' !important;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  background-color: transparent !important;
+}
+
+.token.function,
+.token.class-name {
+  color: var(--color-red-700);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: var(--color-green-700);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: var(--color-neutral-500);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: var(--color-blue-700);
 }
 
 /* ------------------------ */

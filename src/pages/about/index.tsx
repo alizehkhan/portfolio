@@ -38,10 +38,10 @@ const About = () => {
             ⛰️ Offline,
           </p>
           <p className="mb-4 font-serif text-4xl leading-normal lg:text-6xl lg:leading-snug">
-            I am an avid hiker, CrossFitter, minimalist
+            I am an avid hiker, CrossFitter, improv performer and minimalist.
           </p>
           <p className="mb-32 font-serif text-lg leading-normal">
-            and comedy improv newbie 🎙️.
+            (Pretty much anything with a cult-like following really)
           </p>
         </div>
       </div>
