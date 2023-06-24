@@ -1,13 +1,13 @@
-import { IconExternalLink } from "@tabler/icons-react";
-import { useMediaQuery } from "react-responsive";
-import { Link, NavLink } from "react-router-dom";
+import { IconExternalLink } from '@tabler/icons-react';
+import { useMediaQuery } from 'react-responsive';
+import { Link, NavLink } from 'react-router-dom';
 
-import { LINKS } from "../content/links";
+import { LINKS } from '../content/links';
 
-import MobileHeader from "./MobileHeader";
+import MobileHeader from './MobileHeader';
 
 const Header = () => {
-  const isTabletOrDesktop = useMediaQuery({ query: "(min-width: 880px)" });
+  const isTabletOrDesktop = useMediaQuery({ query: '(min-width: 880px)' });
 
   return isTabletOrDesktop ? (
     <header className="container my-8 flex items-center justify-between">
@@ -21,10 +21,8 @@ const Header = () => {
       <nav>
         <ul className="flex items-center gap-6">
           {LINKS.map((link, index) => (
-            <li>
-              <NavLink key={index} to={link.to}>
-                {link.name}
-              </NavLink>
+            <li key={index}>
+              <NavLink to={link.to}>{link.name}</NavLink>
             </li>
           ))}
           <li>

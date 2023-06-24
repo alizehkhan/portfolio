@@ -6,6 +6,7 @@ import { IconClipboard } from '@tabler/icons-react';
 
 const Code = ({ children }: { children: any }) => {
   useEffect(() => Prism.highlightAll(), []);
+
   const [isCopied, setIsCopied] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 

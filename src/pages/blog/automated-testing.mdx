@@ -5,14 +5,16 @@ import Key from "../../components/Key";
 
 # Automated accessibility testing
 
-We can leverage tooling and automated tests during our development workflow to help us:
+*We can leverage tooling and automated tests during our development workflow to help us:*
 
-- uncover "low-hanging fruit" type accessibility issues,
-- develop accessible components more efficiently,
-- improve test coverage, and
-- avoid introducing technical debt.
+- *uncover "low-hanging fruit" type accessibility issues,*
+- *develop accessible components more efficiently,*
+- *improve test coverage, and*
+- *avoid introducing technical debt.*
 
-⚠️ Please note, automated testing alone does not guarantee what you build is accessible. Some things cannot be automated and require a human to review. This includes how our interface works with assistive technologies such as screen readers and more nuanced things like the quality of image alt text. I've popped the [manual testing](/blog/manual-accessibility-testing) rituals I've managed to incorporate into my workflow so far in another post but it's by no means an exhaustive list.
+*⚠️ Please note, automated testing alone does not guarantee what you build is accessible. Some things cannot be automated and require a human to review. This includes how our interface works with assistive technologies such as screen readers and more nuanced things like the quality of image alt text. I've popped the [manual testing](/blog/manual-accessibility-testing) rituals I've managed to incorporate into my workflow so far in another post but it's by no means an exhaustive list.*
+
+---
 
 ## Axe core API
 
@@ -52,9 +54,9 @@ The Pro version of Axe Devtools includes a series of guided tests that assists y
 
 ## Unit testing
 
-In unit testing we can automate assertions for things like keyboard support, ARIA states etc. When building components such as a `Checkbox`, `Dialog`, `Tab` etc. I use the [ARIA patterns guide](https://www.w3.org/WAI/ARIA/apg/patterns/) as acceptance criteria. Before building, I write unit test cases for the component based on this criteria for example `"the dialog should close with the escape key and return focus to the triggering item"`. This test driven approach helps me build and maintain accessible components more efficiently.
+Using unit testing we can automate assertions for things like keyboard support, ARIA states etc. When building components such as a `Checkbox`, `Dialog`, `Tab` etc. I use the [ARIA patterns guide](https://www.w3.org/WAI/ARIA/apg/patterns/) as acceptance criteria. Before building, I write unit test cases for the component based on this criteria for example `"the dialog should close with the escape key"`. This test driven approach helps me build and maintain accessible components more efficiently.
 
-I use `react-testing-library`'s [priority guide](https://testing-library.com/docs/queries/about/#priority) on how to make use of semantic queries to in the most accessible way.
+I use `react-testing-library`'s [priority guide](https://testing-library.com/docs/queries/about/#priority) to make use of semantic queries in the most accessible way.
 
 ## UI testing
 
@@ -66,7 +68,7 @@ Install the dependencies
 yarn add -D axe-core cypress-axe
 ```
 
-Add the axe commands to `cypress/support/index.ts` file so they are available to use on the `cy` object.
+Add the axe commands to `cypress/support/e2e.js` file so they are available to use on the `cy` object.
 
 ```javascript
 import "cypress-axe";
@@ -83,5 +85,7 @@ describe("Home page", () => {
   });
 });
 ```
+
+We can `injectAxe` `beforeEach` test case and `checkA11y` after opening a modal, tooltip, dropdown etc.
 
 </Container>
