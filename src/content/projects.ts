@@ -21,4 +21,11 @@ export const PROJECTS: Project[] = [
     link: '/projects/splitify',
     image: './assets/splitify.png',
   },
+  {
+    title: 'Communication Trainer',
+    description:
+      'A single page website offering in-person and online communication workshops for corporations.',
+    link: '/projects/haneen',
+    image: './assets/haneen.png',
+  },
 ];
