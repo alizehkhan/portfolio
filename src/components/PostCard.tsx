@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
-import { useMediaQuery } from "react-responsive";
+import { Link } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 
-import { Post } from "../utils/types";
+import { Post } from '../utils/types';
 
 const PostCard = ({ link, image, title, description, labels }: Post) => {
-  const isTabletOrDesktop = useMediaQuery({ query: "(min-width: 880px)" });
+  const isTabletOrDesktop = useMediaQuery({ query: '(min-width: 880px)' });
 
   return (
     <>
@@ -27,7 +27,7 @@ const PostCard = ({ link, image, title, description, labels }: Post) => {
               <div className="mt-1 flex gap-1">
                 {labels.map((label) => (
                   <span className="inline-block rounded-full bg-grey-200 px-3 py-1 text-sm">
-                    {label}
+                    {`#${label}`}
                   </span>
                 ))}
               </div>

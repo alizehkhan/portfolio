@@ -12,8 +12,6 @@ import Key from "../../components/Key";
 - *improve test coverage, and*
 - *avoid introducing technical debt.*
 
-*⚠️ Please note, automated testing alone does not guarantee what you build is accessible. Some things cannot be automated and require a human to review. This includes how our interface works with assistive technologies such as screen readers and more nuanced things like the quality of image alt text. I've popped the [manual testing](/blog/manual-accessibility-testing) rituals I've managed to incorporate into my workflow so far in another post but it's by no means an exhaustive list.*
-
 ---
 
 ## Axe core API
@@ -87,5 +85,9 @@ describe("Home page", () => {
 ```
 
 We can `injectAxe` `beforeEach` test case and `checkA11y` after opening a modal, tooltip, dropdown etc.
+
+---
+
+*⚠️ Please note, automated testing alone does not guarantee what you build is accessible. Some things cannot be automated and require a human to review. This includes how our interface works with assistive technologies such as screen readers and more nuanced things like the quality of image alt text. I've popped the [manual testing](/blog/manual-accessibility-testing) rituals I've managed to incorporate into my workflow so far in another post but it's by no means an exhaustive list.*
 
 </Container>

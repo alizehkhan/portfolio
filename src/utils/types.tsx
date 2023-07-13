@@ -1,12 +1,12 @@
-import { To } from "react-router-dom";
+import { To } from 'react-router-dom';
 
 export type CategoryKebabCase =
-  | "on-the-trail"
-  | "sleep"
-  | "cook"
-  | "clothing"
-  | "personal-care"
-  | "valuables"
+  | 'on-the-trail'
+  | 'sleep'
+  | 'cook'
+  | 'clothing'
+  | 'personal-care'
+  | 'valuables'
   | undefined;
 
 export type GearById = Record<number, GearItem>;
@@ -32,12 +32,12 @@ export type Post = {
   labels?: Label[];
 };
 
-type Label = `#${
-  | "minimalism"
-  | "frontend"
-  | "design-systems"
-  | "hiking"
-  | "accessibility"}`;
+export type Label =
+  | 'minimalism'
+  | 'frontend'
+  | 'design-systems'
+  | 'hiking'
+  | 'accessibility';
 
 export type Project = {
   title: string;

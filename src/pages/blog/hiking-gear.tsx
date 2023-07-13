@@ -38,7 +38,7 @@ const HikingGear = () => {
   }, []);
 
   const filterBarRef = useRef(null);
-  const isTabletOrDesktop = useMediaQuery({ query: '(min-width: 880px)' });
+  const isTabletOrDesktop = useMediaQuery({ query: '(min-width: 1000px)' });
 
   const handleScroll = () => {
     if (!filterBarRef.current) return;

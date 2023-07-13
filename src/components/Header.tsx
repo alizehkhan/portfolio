@@ -19,7 +19,7 @@ const Header = () => {
         />
       </Link>
       <nav>
-        <ul className="flex items-center gap-6">
+        <ul className="flex items-center gap-6 text-lg">
           {LINKS.map((link, index) => (
             <li key={index}>
               <NavLink to={link.to}>{link.name}</NavLink>
@@ -31,7 +31,7 @@ const Header = () => {
               className="flex items-center justify-center gap-2 rounded-full bg-neutral-700 px-4 py-2 text-white no-underline hover:bg-neutral-800 hover:no-underline"
               target="_blank"
             >
-              <IconExternalLink color="white" size={16} />
+              <IconExternalLink color="white" size={18} />
               Resume
             </a>
           </li>

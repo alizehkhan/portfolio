@@ -13,7 +13,7 @@ const Footer = () => {
           aria-label={name}
           key={index}
         >
-          <Icon size={24} stroke={1.5} color="#4e4d49" aria-hidden="true" />
+          <Icon size={28} stroke={1.5} color="#4e4d49" aria-hidden="true" />
         </Link>
       ))}
     </footer>

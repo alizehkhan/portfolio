@@ -13,7 +13,7 @@ const Projects = () => {
   return (
     <>
       <Helmet>
-        <title>Blog | Alizeh Khan</title>
+        <title>Projects | Alizeh Khan</title>
       </Helmet>
       <Routes>
         <Route index element={<List />} />
