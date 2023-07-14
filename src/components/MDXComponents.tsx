@@ -32,7 +32,7 @@ export const components = {
   >) => (
     <a
       href={href}
-      className="my-4 font-sans text-xl leading-normal text-neutral-700 underline underline-offset-2"
+      className="my-4 font-sans text-xl leading-normal text-neutral-700 underline underline-offset-[3px]"
     >
       {children}
     </a>

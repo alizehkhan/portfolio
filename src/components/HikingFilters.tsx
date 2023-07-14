@@ -15,7 +15,7 @@ const HikingFilters = () => {
         <li>
           <Link
             to="/blog/hiking-gear"
-            className={`filter-show-all text-lg no-underline filter ${
+            className={`filter-show-all text- no-underline filter ${
               !selectedFilter ? 'active' : ''
             }`}
             onClick={() => setSelectedFilter(selectedFilter)}
@@ -27,7 +27,7 @@ const HikingFilters = () => {
           <li key={filter}>
             <Link
               to={getKebabCase(filter)}
-              className={`text-lg no-underline filter filter-${getKebabCase(
+              className={`text-md no-underline filter filter-${getKebabCase(
                 filter
               )} ${selectedFilter === getKebabCase(filter) ? 'active' : ''}`}
               onClick={(event) => {
