@@ -26,22 +26,6 @@ export const POSTS: Post[] = [
     labels: ['frontend'],
   },
   {
-    title: 'My ruthlessly simple email setup',
-    description:
-      'If you are into high maintenance productivity systems like bullet journalling, look away! Here is my dead simple approach to managing emails.',
-    image: './illustrations/email.svg',
-    link: '/blog/email-setup',
-    labels: ['minimalism'],
-  },
-  {
-    title: 'Minimalism helped me unlearn',
-    description:
-      'A lot of people think minimalism is focused on the number of things you own and picture it in its most extreme form. Lets debunk some myths.',
-    image: './illustrations/minimalism.svg',
-    link: '/blog/minimalism',
-    labels: ['minimalism'],
-  },
-  {
     title: 'Automated accessibility testing',
     description:
       'How I leverage tooling and automated tests in my workflow to help build accessible experiences efficiently.',
@@ -56,6 +40,22 @@ export const POSTS: Post[] = [
     image: './illustrations/manual.svg',
     link: '/blog/manual-accessibility-testing',
     labels: ['frontend', 'accessibility'],
+  },
+  {
+    title: 'My ruthlessly simple email setup',
+    description:
+      'If you are into high maintenance productivity systems like bullet journalling, look away! Here is my dead simple approach to managing emails.',
+    image: './illustrations/email.svg',
+    link: '/blog/email-setup',
+    labels: ['minimalism'],
+  },
+  {
+    title: 'Minimalism helped me unlearn',
+    description:
+      'A lot of people think minimalism is focused on the number of things you own and picture it in its most extreme form. Lets debunk some myths.',
+    image: './illustrations/minimalism.svg',
+    link: '/blog/minimalism',
+    labels: ['minimalism'],
   },
 ];
 
