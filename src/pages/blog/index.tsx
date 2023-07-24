@@ -10,7 +10,7 @@ import HikingGear from './hiking-gear';
 import AutomatedTesting from './automated-testing.mdx';
 import ManualTesting from './manual-testing.mdx';
 import PlanHike from './plan-hike.mdx';
-// import Minimalism from './minimalism.mdx';
+import Minimalism from './minimalism.mdx';
 
 const Blog = () => {
   return (
@@ -41,10 +41,10 @@ const Blog = () => {
           path="plan-hike/"
           element={<PlanHike components={components} />}
         />
-        {/* <Route
+        <Route
           path="minimalism/"
           element={<Minimalism components={components} />}
-        /> */}
+        />
       </Routes>
     </>
   );

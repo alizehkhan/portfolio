@@ -33,14 +33,14 @@ export const POSTS: Post[] = [
     link: '/blog/email-setup',
     labels: ['minimalism'],
   },
-  // {
-  //   title: 'Minimalism helped me unlearn',
-  //   description:
-  //     'A lot of people think minimalism is focused on the number of things you own and picture it in its most extreme form. Lets debunk some myths.',
-  //   image: './illustrations/minimalism.svg',
-  //   link: '/blog/minimalism',
-  //   labels: ['minimalism'],
-  // },
+  {
+    title: 'Minimalism helped me unlearn',
+    description:
+      'A lot of people think minimalism is focused on the number of things you own and picture it in its most extreme form. Lets debunk some myths.',
+    image: './illustrations/minimalism.svg',
+    link: '/blog/minimalism',
+    labels: ['minimalism'],
+  },
   {
     title: 'Automated accessibility testing',
     description:
