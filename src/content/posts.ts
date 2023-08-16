@@ -10,6 +10,14 @@ export const POSTS: Post[] = [
     labels: ['hiking'],
   },
   {
+    title: 'Trail food',
+    description:
+      'Here is a breakdown of the food I tend to eat on trail and what I think about when resupplying on a long distance hike.',
+    link: '/blog/trail-food',
+    image: './illustrations/food.svg',
+    labels: ['hiking'],
+  },
+  {
     title: 'How I plan a hike',
     description:
       'Planning a long distance hike can appear intimidating but its a very structured process! Here is the checklist I follow when planning a hike.',
