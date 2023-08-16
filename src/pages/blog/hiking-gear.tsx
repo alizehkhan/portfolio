@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { Route, Routes } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 import HikingFilters from '../../components/HikingFilters';
 import HikingMobileFilters from '../../components/HikingMobileFilters';
@@ -60,35 +61,40 @@ const HikingGear = () => {
   }, []);
 
   return (
-    <HikingGearContext.Provider
-      value={{
-        gearById,
-        setGearById,
-        selectedFilter,
-        setSelectedFilter,
-        openedIndex,
-        setOpenedIndex,
-        isLoading,
-        setIsLoading,
-      }}
-    >
-      <h1 className="container font-serif text-4xl leading-tight text-neutral-700 md:text-7xl md:leading-tight">
-        My Hiking Gear
-      </h1>
-      {!isTabletOrDesktop && <HikingMobileFilters />}
+    <>
+      <Helmet>
+        <title>Hiking Gear | Alizeh Khan</title>
+      </Helmet>
+      <HikingGearContext.Provider
+        value={{
+          gearById,
+          setGearById,
+          selectedFilter,
+          setSelectedFilter,
+          openedIndex,
+          setOpenedIndex,
+          isLoading,
+          setIsLoading,
+        }}
+      >
+        <h1 className="container font-serif text-4xl leading-tight text-neutral-700 md:text-7xl md:leading-tight">
+          My Hiking Gear
+        </h1>
+        {!isTabletOrDesktop && <HikingMobileFilters />}
 
-      <div className="sticky top-0 z-[1] bg-neutral-100" ref={filterBarRef}>
-        <div className="container flex justify-center py-8 md:justify-between">
-          {isTabletOrDesktop && <HikingFilters />}
-          <HikingStats />
+        <div className="sticky top-0 z-[1] bg-neutral-100" ref={filterBarRef}>
+          <div className="container flex justify-center py-8 md:justify-between">
+            {isTabletOrDesktop && <HikingFilters />}
+            <HikingStats />
+          </div>
         </div>
-      </div>
 
-      <Routes>
-        <Route index element={<HikingGrid />} />
-        <Route path=":selectedFilter" element={<HikingGrid />} />
-      </Routes>
-    </HikingGearContext.Provider>
+        <Routes>
+          <Route index element={<HikingGrid />} />
+          <Route path=":selectedFilter" element={<HikingGrid />} />
+        </Routes>
+      </HikingGearContext.Provider>
+    </>
   );
 };
 
