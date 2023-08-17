@@ -47,6 +47,7 @@ const List = () => {
       {filteredPosts.map((post, index) => (
         <PostCard
           key={index}
+          date={post.date}
           title={post.title}
           description={post.description}
           image={post.image}

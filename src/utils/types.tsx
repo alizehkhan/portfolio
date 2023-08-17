@@ -30,6 +30,7 @@ export type Post = {
   link: To;
   image: string;
   labels?: Label[];
+  date?: any;
 };
 
 export type Label =

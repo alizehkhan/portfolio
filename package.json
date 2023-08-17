@@ -12,6 +12,7 @@
   "dependencies": {
     "@mdx-js/rollup": "^2.3.0",
     "@tabler/icons-react": "^2.20.0",
+    "date-fns": "^2.30.0",
     "framer-motion": "^10.12.16",
     "husky": "^8.0.3",
     "prismjs": "^1.29.0",

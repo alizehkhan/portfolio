@@ -8,6 +8,7 @@ export const POSTS: Post[] = [
     link: '/blog/hiking-gear',
     image: './illustrations/tent.svg',
     labels: ['hiking'],
+    date: new Date(2023, 7, 17),
   },
   {
     title: 'Trail food',
@@ -24,6 +25,7 @@ export const POSTS: Post[] = [
     link: '/blog/plan-hike',
     image: './illustrations/plan-hike.svg',
     labels: ['hiking'],
+    date: new Date(2023, 6, 20),
   },
   {
     title: "Beginner's frontend setup guide for MacOS",
@@ -32,6 +34,7 @@ export const POSTS: Post[] = [
     image: './illustrations/frontend-setup.svg',
     link: '/blog/frontend-setup',
     labels: ['frontend'],
+    date: new Date(2023, 0, 5),
   },
   {
     title: 'Automated accessibility testing',
@@ -40,6 +43,7 @@ export const POSTS: Post[] = [
     image: './illustrations/automated.svg',
     link: '/blog/automated-accessibility-testing',
     labels: ['frontend', 'accessibility'],
+    date: new Date(2023, 5, 11),
   },
   {
     title: 'Manual accessibility testing',
@@ -56,6 +60,7 @@ export const POSTS: Post[] = [
     image: './illustrations/email.svg',
     link: '/blog/email-setup',
     labels: ['minimalism'],
+    date: new Date(2023, 5, 2),
   },
   {
     title: 'Minimalism helped me unlearn',
@@ -64,6 +69,7 @@ export const POSTS: Post[] = [
     image: './illustrations/minimalism.svg',
     link: '/blog/minimalism',
     labels: ['minimalism'],
+    date: new Date(2023, 6, 24),
   },
 ];
 
