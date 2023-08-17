@@ -8,7 +8,7 @@ export const POSTS: Post[] = [
     link: '/blog/hiking-gear',
     image: './illustrations/tent.svg',
     labels: ['hiking'],
-    date: new Date(2023, 7, 17),
+    date: new Date(2023, 7, 16),
   },
   {
     title: 'Trail food',
@@ -60,7 +60,7 @@ export const POSTS: Post[] = [
     image: './illustrations/email.svg',
     link: '/blog/email-setup',
     labels: ['minimalism'],
-    date: new Date(2023, 5, 2),
+    date: new Date(2023, 1, 16),
   },
   {
     title: 'Minimalism helped me unlearn',

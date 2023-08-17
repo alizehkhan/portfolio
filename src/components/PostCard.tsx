@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
+import { format } from 'date-fns';
 
 import { Post } from '../utils/types';
 import { showDate } from '../utils/utils';
@@ -23,7 +24,12 @@ const PostCard = ({ link, image, title, description, labels, date }: Post) => {
           )}
           <div>
             {date && (
-              <p className="mb-2 text-sm opacity-90">{showDate(date)}</p>
+              <p
+                title={`${format(date, 'MMM d, yyyy')}`}
+                className="mb-2 text-sm opacity-90"
+              >
+                {showDate(date)}
+              </p>
             )}
             <p className="font-serif text-2xl">{title}</p>
             <p className="mt-2 text-lg opacity-90">{description}</p>
