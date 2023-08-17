@@ -12,6 +12,13 @@ const List = () => {
     ? POSTS.filter((post) => post.labels?.includes(selectedLabel))
     : POSTS;
 
+  const sortedPosts = filteredPosts.sort((a, b) => {
+    const dateA = a.date || new Date(0);
+    const dateB = b.date || new Date(0);
+
+    return dateB.getTime() - dateA.getTime();
+  });
+
   return (
     <div className="container">
       <h1 className="mb-6 font-serif text-5xl md:text-7xl">Blog</h1>
@@ -44,7 +51,7 @@ const List = () => {
           )}
         </ul>
       </nav>
-      {filteredPosts.map((post, index) => (
+      {sortedPosts.map((post, index) => (
         <PostCard
           key={index}
           date={post.date}
