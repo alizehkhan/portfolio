@@ -1,12 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IconX } from '@tabler/icons-react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 import PostCard from '../../components/PostCard';
 import { POSTS, labels } from '../../content/posts';
 import { Label } from '../../utils/types';
+import useNavigateSearch from '../../utils/useNavigateSearch';
 
 const List = () => {
   const [selectedLabel, setSelectedLabel] = useState<Label | null>(null);
+  const navigateSearch = useNavigateSearch();
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
 
   const filteredPosts = selectedLabel
     ? POSTS.filter((post) => post.labels?.includes(selectedLabel))
@@ -19,6 +24,10 @@ const List = () => {
     return dateB.getTime() - dateA.getTime();
   });
 
+  useEffect(() => {
+    setSelectedLabel(searchParams.get('filter') as Label);
+  }, [searchParams, setSelectedLabel]);
+
   return (
     <div className="container">
       <h1 className="mb-6 font-serif text-5xl md:text-7xl">Blog</h1>
@@ -27,7 +36,10 @@ const List = () => {
           {labels.map((label, index) => (
             <li key={index}>
               <button
-                onClick={() => setSelectedLabel(label)}
+                onClick={() => {
+                  setSelectedLabel(searchParams.get('filter') as Label);
+                  navigateSearch('/blog', { filter: label });
+                }}
                 className={`inline-block rounded-full px-3 py-1 text-lg ${
                   selectedLabel === label
                     ? 'bg-neutral-700 text-white'
@@ -41,7 +53,10 @@ const List = () => {
           {selectedLabel && (
             <li>
               <button
-                onClick={() => setSelectedLabel(null)}
+                onClick={() => {
+                  setSelectedLabel(null);
+                  navigate('/blog');
+                }}
                 className="flex items-center gap-1 text-lg"
               >
                 <IconX aria-hidden="true" size={20} />
