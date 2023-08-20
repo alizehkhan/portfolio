@@ -43,7 +43,11 @@ const HikingCard = ({
         >
           {gearItem.Category}
         </p>
-        <img src={gearItem.Photo[0].url} alt="" className="mx-auto h-[132px]" />
+        <img
+          src={gearItem.Photo?.[0].url}
+          alt=""
+          className="mx-auto h-[132px]"
+        />
         <h2 className="text-md font-serif font-bold">{gearItem.Name}</h2>
       </motion.button>
 

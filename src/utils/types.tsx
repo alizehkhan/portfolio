@@ -24,6 +24,18 @@ export type GearItem = {
   id: string;
 };
 
+export type FoodItem = {
+  Brand: string;
+  Category: string;
+  Name: string;
+  Photo?: Array<Record<string, any>>;
+  Notes: string;
+  Weight: number;
+  Calories: number;
+  Order: number;
+  id: string;
+};
+
 export type Post = {
   title: string;
   description: string;
