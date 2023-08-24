@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { TOKEN, URL } from '../utils/constants';
+import { URL } from '../utils/constants';
 
 const FoodGrid = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -9,7 +9,9 @@ const FoodGrid = () => {
   useEffect(() => {
     const getFood = async () => {
       const res = await fetch(`${URL}Food`, {
-        headers: { Authorization: `Bearer ${TOKEN}` },
+        headers: {
+          Authorization: `Bearer ${import.meta.env.VITE_AIRTABLE_TOKEN}`,
+        },
       });
       const { records } = await res.json();
 

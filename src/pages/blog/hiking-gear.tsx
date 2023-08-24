@@ -9,7 +9,7 @@ import HikingGrid from '../../components/HikingGrid';
 import HikingStats from '../../components/HikingStats';
 import { HikingGearContext } from '../../utils/HikingGearContext';
 import { CategoryKebabCase } from '../../utils/types';
-import { URL, TOKEN } from '../../utils/constants';
+import { URL } from '../../utils/constants';
 
 const HikingGear = () => {
   const [gearById, setGearById] = useState({});
@@ -24,7 +24,9 @@ const HikingGear = () => {
       const res = await fetch(
         `${URL}Gear?sort%5B0%5D%5Bfield%5D=Order&sort%5B0%5D%5Bdirection%5D=asc`,
         {
-          headers: { Authorization: `Bearer ${TOKEN}` },
+          headers: {
+            Authorization: `Bearer ${import.meta.env.VITE_AIRTABLE_TOKEN}`,
+          },
         }
       );
       const { records } = await res.json();
