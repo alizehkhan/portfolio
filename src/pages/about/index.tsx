@@ -17,7 +17,7 @@ const About = () => {
           <Venn />
         </div>
         <div className="mb-40 max-w-4xl lg:mb-80">
-          <p className="mb-7 font-serif text-2xl leading-normal lg:text-4xl">
+          <p className="mb-4 font-serif text-2xl leading-normal md:mb-6 lg:text-4xl">
             🤙🏼 Hiya, I'm Alizeh,
           </p>
           <p className="mb-5 font-serif text-4xl leading-normal lg:text-6xl lg:leading-snug">
@@ -33,12 +33,12 @@ const About = () => {
           </Link>
         </div>
 
-        <div className="mb-40 max-w-3xl lg:mb-80 lg:ml-auto">
-          <p className="mb-7 font-serif text-2xl leading-normal lg:text-right lg:text-4xl">
+        <div className="mb-40 max-w-4xl lg:mb-80 lg:ml-auto">
+          <p className="mb-4 font-serif text-2xl leading-normal md:mb-6 lg:text-right lg:text-4xl">
             🎒 I am nerdy about
           </p>
           <p className="mb-5 font-serif text-4xl leading-normal lg:text-right lg:text-6xl lg:leading-snug">
-            accessibility, design systems and clean code.
+            accessibility, design systems, form UX and clean code.
           </p>
           <Link
             to="/projects"
@@ -49,7 +49,7 @@ const About = () => {
         </div>
 
         <div className="max-w-4xl">
-          <p className="mb-7 font-serif text-2xl leading-normal lg:text-4xl">
+          <p className="mb-4 font-serif text-2xl leading-normal md:mb-6 lg:text-4xl">
             ⛰️ Offline,
           </p>
           <p className="mb-5 font-serif text-4xl leading-normal lg:text-6xl lg:leading-snug">

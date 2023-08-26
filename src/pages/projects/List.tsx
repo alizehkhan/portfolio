@@ -14,7 +14,7 @@ export default function List() {
               className="flex min-h-[140px] max-w-3xl flex-col p-4 pt-8 hover:bg-grey-100"
             >
               <div>
-                <p className="font-serif text-3xl font-bold md:text-4xl">
+                <p className="font-serif text-3xl md:text-4xl">
                   {project.title}
                 </p>
                 <p className="my-4 text-lg opacity-90 md:text-xl">
