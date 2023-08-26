@@ -32,7 +32,7 @@ const List = () => {
   return (
     <Container>
       <nav>
-        <ul className="mb-4 flex flex-wrap items-center gap-3">
+        <ul className="my-4 flex flex-wrap items-center gap-3">
           {labels.map((label, index) => (
             <li key={index}>
               <button
