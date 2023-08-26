@@ -6,6 +6,7 @@ import PostCard from '../../components/PostCard';
 import { POSTS, labels } from '../../content/posts';
 import { Label } from '../../utils/types';
 import useNavigateSearch from '../../utils/useNavigateSearch';
+import Container from '../../components/Container';
 
 const List = () => {
   const [selectedLabel, setSelectedLabel] = useState<Label | null>(null);
@@ -29,10 +30,9 @@ const List = () => {
   }, [searchParams, setSelectedLabel]);
 
   return (
-    <div className="container">
-      <h1 className="mb-6 font-serif text-5xl md:text-7xl">Blog</h1>
+    <Container>
       <nav>
-        <ul className="mb-4 flex flex-wrap items-center gap-4">
+        <ul className="mb-4 flex flex-wrap items-center gap-3">
           {labels.map((label, index) => (
             <li key={index}>
               <button
@@ -77,7 +77,7 @@ const List = () => {
           labels={post.labels}
         />
       ))}
-    </div>
+    </Container>
   );
 };
 
