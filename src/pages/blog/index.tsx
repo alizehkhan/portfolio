@@ -1,17 +1,18 @@
-import { Helmet } from 'react-helmet-async';
-import { Route, Routes } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async'
+import { Route, Routes } from 'react-router-dom'
 
-import { components } from '../../components/MDXComponents';
+import { components } from '../../components/MDXComponents'
 
-import EmailSetup from './email-setup.mdx';
-import FrontendSetup from './frontend-setup.mdx';
-import List from './List';
-import HikingGear from './hiking-gear';
-import AutomatedTesting from './automated-testing.mdx';
-import ManualTesting from './manual-testing.mdx';
-import PlanHike from './plan-hike.mdx';
-import TrailFood from './trail-food.mdx';
-import Minimalism from './minimalism.mdx';
+import EmailSetup from './email-setup.mdx'
+import FrontendSetup from './frontend-setup.mdx'
+import List from './List'
+import HikingGear from './hiking-gear'
+import AutomatedTesting from './automated-testing.mdx'
+import ManualTesting from './manual-testing.mdx'
+import PlanHike from './plan-hike.mdx'
+import TrailFood from './trail-food.mdx'
+import Minimalism from './minimalism.mdx'
+import Uses from './uses.mdx'
 
 const Blog = () => {
   return (
@@ -50,9 +51,10 @@ const Blog = () => {
           path="minimalism/"
           element={<Minimalism components={components} />}
         />
+        <Route path="uses/" element={<Uses components={components} />} />
       </Routes>
     </>
-  );
-};
+  )
+}
 
-export default Blog;
+export default Blog
