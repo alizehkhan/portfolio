@@ -48,33 +48,41 @@ headers, links etc.
 
 ### 🌳 Accessibility tree
 
+The browser takes the DOM tree and modifies it into a semantic version that is useful to assistive technology. This modified tree is called the Accessibility Tree. Any elements such as a `div` used only for visual presentation are omitted from the tree.
+
 ## My checklist
 
 ### Structure
 
-1. Are any heading tags misused?
-2. Are there any headings missing?
-3. Does each heading accurately describe the content that immediately follows it?
-4. Are there any list tags being misused?
-5. Are there any lists missing?
-6. Does the page title accurately describe the purpose of the page?
+- Open up the screen reader rotor <Key>control</Key> + <Key>option</Key> + <Key>U</Key> and check the headings list for the page. Are there any headings missing or heading tags being misused?
+- Check that each heading accurately describes the content that immediately follows it.
+- Check that no list tags are being misused or are missing.
+- Check that the page title (shown in the tab) accurately describes the purpose of the page.
 
 ### Interactive elements
 
-1. Is the tabbing order logical and intuitive?
-2. Are there any interactive elements missing from the tab sequence?
-3. Is the keyboard focus indicator always visible?
-4. Can you navigate behind or around an element that should be trapping focus like a modal?
-5. Are all the states (eg. `disabled`, `expanded`, `selected`, `pressed`, `checked`, `readonly`) that apply to the interactive element correct?
-6. Select the role which accurately conveys the element's purpose.
-7. Does the accessible text for the interactive element accurately describe the element's meaning?
+<Key>tab</Key> through the page and check:
+
+- The tabbing order is logical and intuitive.
+- There are no interactive elements missing from the tab sequence
+- The keyboard focus indicator is always visible.
+- You are unable to navigate behind or around an element that should be trapping focus like a modal.
+- The states (eg. `disabled`, `expanded`, `selected`, `pressed`, `checked`, `readonly`) that apply to the interactive element are correct. Check these are announced correctly by the screen reader.
+- If there is an `aria-label` for an interactive element such as an icon button, this should accurately describe the element's meaning. Although we should try our best to avoid using icon only buttons.
 
 ### Images
 
-1. Do the decorative images have a null `alt` attribute and the decorative SVGs have an `aria-hidden=true`?
-2. Does the alt text accurately describe what the image is and what it’s for?
-3. Are there any images that contain text?
+- Any decorative `img` has an `alt=""` attribute.
+- Any decorative `svg` has an `aria-hidden=true`.
+- Any `alt` text accurately describes what the image is and what it’s for.
+- No images contain text as these would not be picked up by assistive technologies.
 
-## Real user testing
+### Forms
+
+My go to resources for building accessible forms are adamsilver.io and gov.uk's design system.
+
+### Other components
+
+Each component has it's own list of acceptance criteria that needs to be checked. Some of these can be covered using tooling and automated testing. It's important to check these components are implemented and integrated into the page in an accessible way.
 
 </Container>
