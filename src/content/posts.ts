@@ -1,4 +1,4 @@
-import { Label, Post } from '../utils/types';
+import { Label, Post } from '../utils/types'
 
 export const POSTS: Post[] = [
   {
@@ -8,7 +8,7 @@ export const POSTS: Post[] = [
     link: '/blog/hiking-gear',
     image: './illustrations/tent.svg',
     labels: ['hiking'],
-    date: new Date(2023, 7, 16),
+    date: new Date(2023, 6, 1),
   },
   {
     title: 'Trail food',
@@ -71,11 +71,20 @@ export const POSTS: Post[] = [
     labels: ['minimalism'],
     date: new Date(2023, 6, 24),
   },
-];
+  {
+    title: 'My list of apps, extensions, configs etc.',
+    description:
+      "I enjoy reading other people's lists so I thought I'd share my own. I will try to keep this up to date.",
+    image: './illustrations/uses.svg',
+    link: '/blog/uses',
+    labels: ['minimalism', 'frontend'],
+    date: new Date(2023, 7, 31),
+  },
+]
 
 export const labels: Label[] = [
   'frontend',
   'accessibility',
   'hiking',
   'minimalism',
-];
+]
