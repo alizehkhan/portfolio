@@ -10,17 +10,15 @@ import { Helmet } from 'react-helmet-async';
 
 # Manual accessibility testing
 
-**🚧 Post under construction 🚧**
-
 *Tackling accessibility can feel overwhelming and it's pretty much impossible to have a 100% accessible website. So instead of creating a guide that tries to boil the ocean, I thought I would share the manual testing rituals I've managed to incorporate into my development workflow. I'll try to keep this up to date as I learn more.*
 
 *If you've never used the screen reader on your Mac, my hope is that by the end of this post you will have at least pressed <Key>command</Key> + <Key>F5</Key>. I mean you could even press it now if you want 🤷.*
 
 ---
 
-## To learn
+## Commands and tools for testing
 
-Not everyone uses a mouse to navigate a website, so here are the commands and tools I've learnt to use on my Mac to test user flows and components for keyboard and screen reader user.
+Not everyone uses a mouse to navigate a website, so here are the commands and tools I've learnt to use on my Mac to test user flows and components for assistive technology users.
 
 ### ⌨️ Keyboard user commands
 
@@ -31,11 +29,13 @@ Not everyone uses a mouse to navigate a website, so here are the commands and to
 <Key>↑</Key>/<Key>↓</Key>/<Key>←</Key>/<Key>→</Key> to cycle through related controls
 such a dropdown list or radio group.
 
-<Key>spacebar</Key> to toggle states (eg. a checkbox) or move down the page
+<Key>spacebar</Key> to toggle states (eg. for a checkbox) or move down the page
 
 <Key>enter</Key> to interact.
 
 ### 🔉 Screen reader user commands
+
+_Screen readers are software applications that render text and image content as speech or braille output._
 
 <Key>command</Key> + <Key>F5</Key> to activate MacOS's built-in screen reader, Voiceover.
 
@@ -48,7 +48,17 @@ headers, links etc.
 
 ### 🌳 Accessibility tree
 
-The browser takes the DOM tree and modifies it into a semantic version that is useful to assistive technology. This modified tree is called the Accessibility Tree. Any elements such as a `div` used only for visual presentation are omitted from the tree.
+Assistive technologies, such as screen readers, use a browser's accessibility tree as the API to understand and interact with a site. For each node in the DOM, the browser determines if the node is semantically "interesting" and if so, adds it to the accessibility tree. There are over 100 HTML elements that come with built-in semantic properties. These include:
+
+- **Role** - describes the purpose of an element e.g. `checkbox`, `list`, `table`.
+- **State** - describes the state of an interactive element e.g. `checked`, `disabled`, `expanded`, `readonly`;
+- **Name** - an element's accessible name can be derived from its content, an attribute such as `alt`, `aria-label`, `aria-labelledby`, `title`, or an associated element eg. an input's `label`.
+
+`div` and `span` are the only HTML elements that have no semantic properties and are therefore be omitted from the tree. These should be used only as  wrappers for styling or to build custom components with roles that cannot be replaced by a native HTML element.
+
+_To view a site's accessibility tree click on the `Accessibility` tab in Chrome's devtools, and check `Enable full-page accessibility tree`. You will then be able to toggle on and off between the DOM and the accessibility tree using the button that's appeared in the top right corner of the DOM._
+
+---
 
 ## My checklist
 
@@ -56,8 +66,9 @@ The browser takes the DOM tree and modifies it into a semantic version that is u
 
 - Open up the screen reader rotor <Key>control</Key> + <Key>option</Key> + <Key>U</Key> and check the headings list for the page. Are there any headings missing or heading tags being misused?
 - Check that each heading accurately describes the content that immediately follows it.
-- Check that no list tags are being misused or are missing.
-- Check that the page title (shown in the tab) accurately describes the purpose of the page.
+- Check that the page title (shown in the browser's tab) accurately describes the purpose of the page.
+- Check that any `div` or `span` elements that have semantic meaning are replaced with semantic elements or given an appropriate `aria-role` attribute.
+- Ensure that any elements with an `aria-role` attribute cannot be replaced with an [equivalent HTML element](https://www.w3.org/WAI/ARIA/apg/practices/structural-roles/).
 
 ### Interactive elements
 
@@ -66,23 +77,32 @@ The browser takes the DOM tree and modifies it into a semantic version that is u
 - The tabbing order is logical and intuitive.
 - There are no interactive elements missing from the tab sequence
 - The keyboard focus indicator is always visible.
-- You are unable to navigate behind or around an element that should be trapping focus like a modal.
-- The states (eg. `disabled`, `expanded`, `selected`, `pressed`, `checked`, `readonly`) that apply to the interactive element are correct. Check these are announced correctly by the screen reader.
+- For modals, you are unable to navigate behind or around an element that should be trapping focus.
+
+Use the accessibility tree to check:
+
+- The states (eg. `disabled`, `expanded`) that apply to the interactive element are correct.
 - If there is an `aria-label` for an interactive element such as an icon button, this should accurately describe the element's meaning. Although we should try our best to avoid using icon only buttons.
 
 ### Images
 
-- Any decorative `img` has an `alt=""` attribute.
-- Any decorative `svg` has an `aria-hidden=true`.
-- Any `alt` text accurately describes what the image is and what it’s for.
-- No images contain text as these would not be picked up by assistive technologies.
+- Any decorative `svg` has an `aria-hidden=true` so they can be ignored by assistive technologies.
+- Any decorative `img` has an `alt=""`. To determine whether it's decorative, ask yourself: _If the image was removed, would the user still get all the information from the page?_
+- If an image is helpful in interacting with or understanding a page, the `alt` text needs to be appropriate. The content of this would depend on the context.
+- If there is text in an image, this text needs to be included in the `alt` text.
 
 ### Forms
 
-My go to resources for building accessible forms are adamsilver.io and gov.uk's design system.
+My go-to resources for building accessible forms are [Adam Silver](https://adamsilver.io)'s content and [GOV.UK's design system](https://design-system.service.gov.uk/) components and patterns. Here are a couple of things to check:
+
+- If a field is part of a group of related fields ie. each field does not make sense on its own, then it should grouped using `<fieldset>`.
+- There a visual indication (that doesn't solely rely on colour alone) to distinguish which fields are required and/or optional.
+- When you leave a `required` field empty, then submit the form, an error message should show up.
+- Colour alone should not be used to indicate errors.
+- Error messages are informative enough to fill out the field correctly. Ideally the hint text is informative enough to mitigate the error in the first place.
 
 ### Other components
 
-Each component has it's own list of acceptance criteria that needs to be checked. Some of these can be covered using tooling and automated testing. It's important to check these components are implemented and integrated into the page in an accessible way.
+I use [ARIA patterns](https://www.w3.org/WAI/ARIA/apg/patterns/) to see what I need to test for components like modals, tooltips, accordions, switches etc to ensure they are accessible. Each component has it's own list of acceptance criteria. Even if a component has come from a design system, it's important to check these components have been implemented and integrated into the page in an accessible way.
 
 </Container>

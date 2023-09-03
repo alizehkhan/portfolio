@@ -1,22 +1,22 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-import { SOCIAL_MEDIA } from '../content/socialMedia';
+import { SOCIAL_MEDIA } from '../content/socialMedia'
 
 const Footer = () => {
   return (
-    <footer className="container mx-auto mt-6 flex justify-center gap-3 px-5 py-8">
-      {SOCIAL_MEDIA.map(({ Icon, link, name }, index) => (
+    <footer className="container mx-auto my-6 flex justify-center gap-3 rounded-md px-5 py-8">
+      {SOCIAL_MEDIA.map(({ link, name }, index) => (
         <Link
           to={link}
           target="_blank"
           rel="noreferrer"
-          aria-label={name}
           key={index}
+          className="text-neutral-600 hover:text-neutral-800"
         >
-          <Icon size={28} stroke={1.5} color="#4e4d49" aria-hidden="true" />
+          {name}
         </Link>
       ))}
     </footer>
-  );
-};
-export default Footer;
+  )
+}
+export default Footer

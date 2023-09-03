@@ -48,10 +48,11 @@ export const POSTS: Post[] = [
   {
     title: 'Manual accessibility testing',
     description:
-      'Manual checks I do using the keyboard and screen reader to test my website for accessibility.',
+      'Manual checks I do using the keyboard, screen reader and accessibility tree to test my website for accessibility.',
     image: './illustrations/manual.svg',
     link: '/blog/manual-accessibility-testing',
     labels: ['frontend', 'accessibility'],
+    date: new Date(2023, 8, 3),
   },
   {
     title: 'My ruthlessly simple email setup',

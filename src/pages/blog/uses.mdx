@@ -1,4 +1,5 @@
 import Container from "../../components/Container";
+import Pill from "../../components/Pill";
 import { Helmet } from 'react-helmet-async';
 
 <Helmet>
@@ -15,40 +16,47 @@ import { Helmet } from 'react-helmet-async';
 
 ## Apps
 
-I'm very minimalist when it comes to my digital setup. I'm not a fan of these elaborate productivity systems you see YouTube influencers sharing. I keep things as simple as possible. The system has to work for me, not the other way round. I will only introduce an extra layer of complexity like another app or a folder structure if it saves more time and effort than the additional maintenance required.
+I used to be a real productivity app junkie, discovering and downloading apps from Product Hunt that solved problems I never had 😅. I'm now super minimalist when it comes to my digital setup. I'm not a personal fan of elaborate productivity systems like bullet journalling and custom built notion dashboards. I like to keep things as simple as possible. The system has to work for me, not the other way round. I will only introduce an extra layer of complexity like another app or a folder structure if it saves more time and effort than the additional maintenance required.
 
-When it comes to a notes and lists app, the most important thing for me is an app that's quick to load when I open it up on my device and need to jot something down. Apple's native Notes and Reminders apps are lightning fast to start up. It also syncs across my devices and has a really simple UI. The only thing I don't like is there is no history tracking on the Notes app so you can't revert back to an old version of the note which can be a little dangerous if you accidentally delete something. When it comes to lists, I only have two:
+When it comes to a notes and lists app, the most important thing for me is an app that's quick to start up. Apple's native Notes and Reminders apps are lightning fast to load when I need to quickly jot something down, they sync across my devices and have a really simple UI. The only thing I don't like is there is no history tracking on the Notes app so you can't revert back to an old version of the note which can be a little dangerous if you accidentally delete something. When it comes to lists, I only have two:
 
-- **My grocery list:** I like with the Reminders app that I can easily check and uncheck items as and when I purchase them or need to restock.
+- **My grocery list:** with the Reminders app, I can easily check and uncheck items as and when I purchase them or need to restock.
 - **My to do list:** This is for everything else that needs to be done. I don't like having too many lists because it makes it harder to keep track and prioritise things when they are spread out across the place.
 
 So here's my app list...
 
 ### Productivity
 
-- Email - Gmail
-- Calendar - Google Calendar
-- Browser - Google Chrome
-- Storage - [Google Drive](https://www.google.com/drive/download/)
-- Notes - [Apple Notes](https://apps.apple.com/us/app/notes/id1110145109)
-- To do list & groceries - [Apple Reminders](https://apps.apple.com/us/app/reminders/id1108187841)
-- Window management shortcuts - [Rectangle](https://rectangleapp.com/)
-- Join meetings from my menu bar - [Meeter](https://www.bardeen.ai/meeter-old)
-- Tables - [Airtable](https://airtable.com)
+
+<div className="flex mt-4 flex-wrap gap-3">
+  <Pill purpose="📧 Email" app="Gmail"/>
+  <Pill purpose="🗓️ Calendar" app="Google Calendar"/>
+  <Pill purpose="🌐 Browser" app="Google Chrome"/>
+  <Pill purpose="📦 Storage" app="Google Drive"/>
+  <Pill purpose="✏️ Notes" app="Apple Notes"/>
+  <Pill purpose="✅ Lists" app="Apple Reminders"/>
+  <Pill purpose="⌨️ Window management shortcuts" app="Rectangle"/>
+  <Pill purpose="📞 Join meetings from menu bar" app="Meeter"/>
+  <Pill purpose="📊 Tables" app="Airtable"/>
+</div>
 
 ### Design & Engineering
 
-- Terminal - [iTerm](https://iterm2.com/)
-- Editor - [VS Code](https://code.visualstudio.com/)
-- Wireframes - [Whimsical](https://whimsical.com)
-- Design, presentations - [Figma](https://figma.com)
+<div className="flex mt-4 flex-wrap gap-3">
+  <Pill purpose="🖥️ Terminal" app="iTerm"/>
+  <Pill purpose="🧑‍💻 Editor" app="VS Code"/>
+  <Pill purpose="🖍️ Wireframes" app="Whimsical"/>
+  <Pill purpose="💅🏼 Design" app="Figma"/>
+</div>
 
 ### Other
 
-- Broker - [Trade Republic](https://ref.trade.re/rswnvsr9)
-- Hiking maps - [GAIA GPS](https://gaiagps.com/)
-- Public transport navigator - [Citymapper](https://citymapper.com)
-- Offline maps - [MAPS.ME](https://maps.me)
+<div className="flex mt-4 flex-wrap gap-3">
+  <Pill purpose="💶 Broker" app="Trade Republic"/>
+  <Pill purpose="⛰️ Hiking maps" app="GAIA GPS"/>
+  <Pill purpose="🚉 Public transport navigator" app="Citymapper"/>
+  <Pill purpose="🗺️ Offline maps" app="MAPS.ME"/>
+</div>
 
 ## Engineering
 
