@@ -1,21 +1,22 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import { useEffect, useState } from 'react';
-import Prism from 'prismjs';
-import 'prismjs/themes/prism.css';
-import { IconClipboard } from '@tabler/icons-react';
+import { useEffect, useState } from 'react'
+import Prism from 'prismjs'
+import 'prismjs/themes/prism.css'
+import { IconClipboard } from '@tabler/icons-react'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Code = ({ children }: { children: any }) => {
-  useEffect(() => Prism.highlightAll(), []);
+  useEffect(() => Prism.highlightAll(), [])
 
-  const [isCopied, setIsCopied] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+  const [isCopied, setIsCopied] = useState(false)
+  const [isHovered, setIsHovered] = useState(false)
 
   const copyToClipboard = (code: string) => {
     navigator?.clipboard?.writeText(code).then(() => {
-      setIsCopied(true);
-      setTimeout(() => setIsCopied(false), 500);
-    });
-  };
+      setIsCopied(true)
+      setTimeout(() => setIsCopied(false), 500)
+    })
+  }
 
   return (
     <>
@@ -31,7 +32,7 @@ const Code = ({ children }: { children: any }) => {
           <button
             className="absolute right-0 m-3 rounded-md bg-grey-300 p-2 font-bold leading-none"
             onClick={() => {
-              copyToClipboard(children?.props.children);
+              copyToClipboard(children?.props.children)
             }}
           >
             {isCopied ? 'Copied' : <IconClipboard color="#4e4d49" size={18} />}
@@ -42,7 +43,7 @@ const Code = ({ children }: { children: any }) => {
         </pre>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Code;
+export default Code

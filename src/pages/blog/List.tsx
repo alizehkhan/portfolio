@@ -1,33 +1,33 @@
-import { useEffect, useState } from 'react';
-import { IconX } from '@tabler/icons-react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useEffect, useState } from 'react'
+import { IconX } from '@tabler/icons-react'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 
-import PostCard from '../../components/PostCard';
-import { POSTS, labels } from '../../content/posts';
-import { Label } from '../../utils/types';
-import useNavigateSearch from '../../utils/useNavigateSearch';
-import Container from '../../components/Container';
+import { Label } from '../../utils/types'
+import PostCard from '../../components/PostCard'
+import { POSTS, labels } from '../../content/posts'
+import useNavigateSearch from '../../utils/useNavigateSearch'
+import Container from '../../components/Container'
 
 const List = () => {
-  const [selectedLabel, setSelectedLabel] = useState<Label | null>(null);
-  const navigateSearch = useNavigateSearch();
-  const [searchParams] = useSearchParams();
-  const navigate = useNavigate();
+  const [selectedLabel, setSelectedLabel] = useState<Label | null>(null)
+  const navigateSearch = useNavigateSearch()
+  const [searchParams] = useSearchParams()
+  const navigate = useNavigate()
 
   const filteredPosts = selectedLabel
     ? POSTS.filter((post) => post.labels?.includes(selectedLabel))
-    : POSTS;
+    : POSTS
 
   const sortedPosts = filteredPosts.sort((a, b) => {
-    const dateA = a.date || new Date(0);
-    const dateB = b.date || new Date(0);
+    const dateA = a.date || new Date(0)
+    const dateB = b.date || new Date(0)
 
-    return dateB.getTime() - dateA.getTime();
-  });
+    return dateB.getTime() - dateA.getTime()
+  })
 
   useEffect(() => {
-    setSelectedLabel(searchParams.get('filter') as Label);
-  }, [searchParams, setSelectedLabel]);
+    setSelectedLabel(searchParams.get('filter') as Label)
+  }, [searchParams, setSelectedLabel])
 
   return (
     <Container>
@@ -37,8 +37,8 @@ const List = () => {
             <li key={index}>
               <button
                 onClick={() => {
-                  setSelectedLabel(searchParams.get('filter') as Label);
-                  navigateSearch('/blog', { filter: label });
+                  setSelectedLabel(searchParams.get('filter') as Label)
+                  navigateSearch('/blog', { filter: label })
                 }}
                 className={`inline-block rounded-full px-3 py-1 text-lg ${
                   selectedLabel === label
@@ -54,8 +54,8 @@ const List = () => {
             <li>
               <button
                 onClick={() => {
-                  setSelectedLabel(null);
-                  navigate('/blog');
+                  setSelectedLabel(null)
+                  navigate('/blog')
                 }}
                 className="flex items-center gap-1 text-lg"
               >
@@ -78,7 +78,7 @@ const List = () => {
         />
       ))}
     </Container>
-  );
-};
+  )
+}
 
-export default List;
+export default List

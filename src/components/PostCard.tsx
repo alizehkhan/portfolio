@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom';
-import { useMediaQuery } from 'react-responsive';
-import { format } from 'date-fns';
+import { Link } from 'react-router-dom'
+import { useMediaQuery } from 'react-responsive'
+import { format } from 'date-fns'
 
-import { Post } from '../utils/types';
-import { showDate } from '../utils/utils';
+import { Post } from '../utils/types'
+import { showDate } from '../utils/utils'
 
 const PostCard = ({ link, image, title, description, labels, date }: Post) => {
-  const isTabletOrDesktop = useMediaQuery({ query: '(min-width: 880px)' });
+  const isTabletOrDesktop = useMediaQuery({ query: '(min-width: 880px)' })
 
   return (
     <>
@@ -35,8 +35,11 @@ const PostCard = ({ link, image, title, description, labels, date }: Post) => {
             <p className="mt-2 text-lg opacity-90">{description}</p>
             {labels && (
               <div className="mt-2 flex gap-1">
-                {labels.map((label) => (
-                  <span className="inline-block rounded-full bg-grey-200 px-3 py-1 text-sm">
+                {labels.map((label, i) => (
+                  <span
+                    key={i}
+                    className="inline-block rounded-full bg-grey-200 px-3 py-1 text-sm"
+                  >
                     {`#${label}`}
                   </span>
                 ))}
@@ -47,7 +50,7 @@ const PostCard = ({ link, image, title, description, labels, date }: Post) => {
       </article>
       <hr className="max-w-3xl text-grey-300" />
     </>
-  );
-};
+  )
+}
 
-export default PostCard;
+export default PostCard

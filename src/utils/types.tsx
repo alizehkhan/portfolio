@@ -1,4 +1,4 @@
-import { To } from 'react-router-dom';
+import type { To } from 'react-router-dom'
 
 export type CategoryKebabCase =
   | 'on-the-trail'
@@ -7,54 +7,56 @@ export type CategoryKebabCase =
   | 'clothing'
   | 'personal-care'
   | 'valuables'
-  | undefined;
+  | undefined
 
-export type GearById = Record<number, GearItem>;
+export type GearById = Record<number, GearItem>
 
 export type GearItem = {
-  Brand: string;
-  Category: string;
-  Name: string;
-  Notes: string;
-  Order: number;
-  Photo: Array<Record<string, any>>;
-  Price: number;
-  Product: string;
-  Weight: number;
-  id: string;
-};
+  Brand: string
+  Category: string
+  Name: string
+  Notes: string
+  Order: number
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  Photo: Array<Record<string, any>>
+  Price: number
+  Product: string
+  Weight: number
+  id: string
+}
 
 export type FoodItem = {
-  Brand: string;
-  Category: string;
-  Name: string;
-  Photo?: Array<Record<string, any>>;
-  Notes: string;
-  Weight: number;
-  Calories: number;
-  Order: number;
-  id: string;
-};
+  Brand: string
+  Category: string
+  Name: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  Photo?: Array<Record<string, any>>
+  Notes: string
+  Weight: number
+  Calories: number
+  Order: number
+  id: string
+}
 
 export type Post = {
-  title: string;
-  description: string;
-  link: To;
-  image: string;
-  labels?: Label[];
-  date?: Date;
-};
+  title: string
+  description: string
+  link: To
+  image: string
+  labels?: Label[]
+  date?: Date
+}
 
 export type Label =
   | 'minimalism'
   | 'frontend'
   | 'design-systems'
   | 'hiking'
-  | 'accessibility';
+  | 'accessibility'
 
 export type Project = {
-  title: string;
-  description: string;
-  link: To;
-  image: string;
-};
+  title: string
+  description: string
+  link: To
+  image: string
+}

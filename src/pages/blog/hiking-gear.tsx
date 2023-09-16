@@ -1,23 +1,23 @@
-import { useEffect, useRef, useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
-import { Route, Routes } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import { useEffect, useRef, useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
+import { Route, Routes } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 
-import HikingFilters from '../../components/HikingFilters';
-import HikingMobileFilters from '../../components/HikingMobileFilters';
-import HikingGrid from '../../components/HikingGrid';
-import HikingStats from '../../components/HikingStats';
-import { HikingGearContext } from '../../utils/HikingGearContext';
-import { CategoryKebabCase } from '../../utils/types';
-import { URL } from '../../utils/constants';
+import HikingFilters from '../../components/HikingFilters'
+import HikingMobileFilters from '../../components/HikingMobileFilters'
+import HikingGrid from '../../components/HikingGrid'
+import HikingStats from '../../components/HikingStats'
+import { HikingGearContext } from '../../utils/HikingGearContext'
+import { CategoryKebabCase } from '../../utils/types'
+import { URL } from '../../utils/constants'
 
 const HikingGear = () => {
-  const [gearById, setGearById] = useState({});
-  const [openedIndex, setOpenedIndex] = useState<number>(0);
+  const [gearById, setGearById] = useState({})
+  const [openedIndex, setOpenedIndex] = useState<number>(0)
   const [selectedFilter, setSelectedFilter] = useState<
     CategoryKebabCase | undefined
-  >(undefined);
-  const [isLoading, setIsLoading] = useState(true);
+  >(undefined)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const getGear = async () => {
@@ -28,42 +28,43 @@ const HikingGear = () => {
             Authorization: `Bearer ${import.meta.env.VITE_AIRTABLE_TOKEN}`,
           },
         }
-      );
-      const { records } = await res.json();
+      )
+      const { records } = await res.json()
 
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const normalisedData = records.reduce((accumulator: any, gear: any) => {
-        accumulator[gear.id] = { ...gear.fields, id: gear.id };
-        return accumulator;
-      }, {});
+        accumulator[gear.id] = { ...gear.fields, id: gear.id }
+        return accumulator
+      }, {})
 
-      setGearById(normalisedData);
-      setIsLoading(false);
-    };
+      setGearById(normalisedData)
+      setIsLoading(false)
+    }
 
-    getGear();
-  }, []);
+    getGear()
+  }, [])
 
-  const filterBarRef = useRef(null);
-  const isTabletOrDesktop = useMediaQuery({ query: '(min-width: 1000px)' });
+  const filterBarRef = useRef(null)
+  const isTabletOrDesktop = useMediaQuery({ query: '(min-width: 1000px)' })
 
   const handleScroll = () => {
-    if (!filterBarRef.current) return;
+    if (!filterBarRef.current) return
 
-    const element = filterBarRef.current as HTMLElement;
+    const element = filterBarRef.current as HTMLElement
 
     element.style.boxShadow =
       element.getBoundingClientRect().top === 0
         ? '0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05)'
-        : 'none';
-  };
+        : 'none'
+  }
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll)
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
     <>
@@ -100,7 +101,7 @@ const HikingGear = () => {
         </Routes>
       </HikingGearContext.Provider>
     </>
-  );
-};
+  )
+}
 
-export default HikingGear;
+export default HikingGear

@@ -1,22 +1,38 @@
 {
-  "extends": ["react-app", "plugin:jsx-a11y/recommended"],
-  "plugins": ["jsx-a11y"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "import",
+    "jsx-a11y",
+    "unused-imports"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:import/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
   "rules": {
+    "unused-imports/no-unused-imports": "error",
     "import/order": [
       "error",
       {
-        "groups": ["external", "internal", "parent", "sibling", "index"],
         "newlines-between": "always",
         "alphabetize": {
           "caseInsensitive": true
         }
       }
-    ],
-    "import/no-anonymous-default-export": [
-      "error",
-      {
-        "allowObject": true
-      }
     ]
+  },
+  "settings": {
+    "react": { "version": "detect" },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
   }
 }

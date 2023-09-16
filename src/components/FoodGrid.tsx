@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
-import { URL } from '../utils/constants';
+import { URL } from '../utils/constants'
 
 const FoodGrid = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [food, setFood] = useState({});
+  const [isLoading, setIsLoading] = useState(true)
+  const [food, setFood] = useState({})
 
   useEffect(() => {
     const getFood = async () => {
@@ -12,26 +12,28 @@ const FoodGrid = () => {
         headers: {
           Authorization: `Bearer ${import.meta.env.VITE_AIRTABLE_TOKEN}`,
         },
-      });
-      const { records } = await res.json();
+      })
+      const { records } = await res.json()
 
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const normalisedData = records.reduce((accumulator: any, food: any) => {
-        accumulator[food.id] = { ...food.fields, id: food.id };
-        return accumulator;
-      }, {});
+        accumulator[food.id] = { ...food.fields, id: food.id }
+        return accumulator
+      }, {})
 
-      setFood(normalisedData);
-      setIsLoading(false);
-    };
+      setFood(normalisedData)
+      setIsLoading(false)
+    }
 
-    getFood();
-  }, []);
+    getFood()
+  }, [])
 
   return (
     <>
       <div className="container mt-12 grid auto-rows-[232px] grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
         {!isLoading
-          ? Object.values(food).map((foodItem: any, index) => (
+          ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            Object.values(food).map((foodItem: any, index) => (
               <button
                 className="flex flex-col items-center justify-between rounded-lg bg-white px-2 pb-4 pt-2 shadow-sm hover:scale-[1.02] hover:shadow-lg"
                 key={index}
@@ -56,7 +58,7 @@ const FoodGrid = () => {
             ))}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default FoodGrid;
+export default FoodGrid

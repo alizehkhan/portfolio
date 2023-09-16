@@ -4,59 +4,64 @@ import {
   IconScale,
   IconTag,
   IconX,
-} from '@tabler/icons-react';
-import { Dispatch, SetStateAction, useContext } from 'react';
-import { useCallback, useEffect } from 'react';
-import ReactMarkdown from 'react-markdown';
-import { useMediaQuery } from 'react-responsive';
+} from '@tabler/icons-react'
+import {
+  Dispatch,
+  SetStateAction,
+  useContext,
+  useCallback,
+  useEffect,
+} from 'react'
+import ReactMarkdown from 'react-markdown'
+import { useMediaQuery } from 'react-responsive'
 
-import { HikingGearContext } from '../utils/HikingGearContext';
-import { getKebabCase } from '../utils/utils';
-import { GearItem } from '../utils/types';
+import { HikingGearContext } from '../utils/HikingGearContext'
+import { getKebabCase } from '../utils/utils'
+import { GearItem } from '../utils/types'
 
 const HikingModal = ({
   hikingGear,
   setIsModalOpen,
 }: {
-  hikingGear: Array<GearItem>;
-  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
+  hikingGear: Array<GearItem>
+  setIsModalOpen: Dispatch<SetStateAction<boolean>>
 }) => {
-  const { openedIndex, setOpenedIndex } = useContext(HikingGearContext);
+  const { openedIndex, setOpenedIndex } = useContext(HikingGearContext)
 
-  const isTabletOrDesktop = useMediaQuery({ query: '(min-width: 720px)' });
+  const isTabletOrDesktop = useMediaQuery({ query: '(min-width: 720px)' })
 
-  const lastItemIndex = hikingGear.length - 1;
-  const gear = hikingGear[openedIndex];
+  const lastItemIndex = hikingGear.length - 1
+  const gear = hikingGear[openedIndex]
 
   const onLeftNavigation = useCallback(() => {
     if (openedIndex > 0) {
-      setOpenedIndex((openedIndex) => openedIndex - 1);
+      setOpenedIndex((openedIndex) => openedIndex - 1)
     }
-  }, [openedIndex, setOpenedIndex]);
+  }, [openedIndex, setOpenedIndex])
 
   const onRightNavigation = useCallback(() => {
     if (openedIndex < lastItemIndex) {
-      setOpenedIndex((openedIndex) => openedIndex + 1);
+      setOpenedIndex((openedIndex) => openedIndex + 1)
     }
-  }, [openedIndex, lastItemIndex, setOpenedIndex]);
+  }, [openedIndex, lastItemIndex, setOpenedIndex])
 
   useEffect(() => {
     const navigationListener = (event: KeyboardEvent) => {
       if (event.code === 'ArrowRight') {
-        onRightNavigation();
+        onRightNavigation()
       } else if (event.code === 'ArrowLeft') {
-        onLeftNavigation();
+        onLeftNavigation()
       }
-    };
+    }
 
-    window.addEventListener('keydown', navigationListener);
-    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', navigationListener)
+    document.body.style.overflow = 'hidden'
 
     return () => {
-      window.removeEventListener('keydown', navigationListener);
-      document.body.style.overflow = 'visible';
-    };
-  }, [onRightNavigation, onLeftNavigation]);
+      window.removeEventListener('keydown', navigationListener)
+      document.body.style.overflow = 'visible'
+    }
+  }, [onRightNavigation, onLeftNavigation])
 
   return (
     <>
@@ -148,7 +153,7 @@ const HikingModal = ({
         </button>
       )}
     </>
-  );
-};
+  )
+}
 
-export default HikingModal;
+export default HikingModal

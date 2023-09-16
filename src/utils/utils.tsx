@@ -6,12 +6,12 @@ import {
   differenceInDays,
   differenceInWeeks,
   differenceInMonths,
-} from 'date-fns';
+} from 'date-fns'
 
-import { CategoryKebabCase, GearById } from './types';
+import { CategoryKebabCase, GearById } from './types'
 
 export const getKebabCase = (word: string) =>
-  word.toLowerCase().replaceAll(' ', '-');
+  word.toLowerCase().replaceAll(' ', '-')
 
 export const getFilteredHikingGear = (
   gearById: GearById,
@@ -21,37 +21,38 @@ export const getFilteredHikingGear = (
     ? Object.values(gearById).filter(
         (gear) => getKebabCase(gear.Category) === filterSelected
       )
-    : Object.values(gearById);
-};
+    : Object.values(gearById)
+}
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const showDate = (date: any) => {
   if (isToday(date)) {
-    return 'Today';
+    return 'Today'
   }
 
   if (isYesterday(date)) {
-    return 'Yesterday';
+    return 'Yesterday'
   }
 
   if (differenceInWeeks(new Date(), date) < 2) {
-    return `${differenceInDays(new Date(), date)} days ago`;
+    return `${differenceInDays(new Date(), date)} days ago`
   }
 
   if (differenceInMonths(new Date(), date) < 1) {
-    return `${differenceInWeeks(new Date(), date)} weeks ago`;
+    return `${differenceInWeeks(new Date(), date)} weeks ago`
   }
 
   if (differenceInMonths(new Date(), date) < 2) {
-    return 'A month ago';
+    return 'A month ago'
   }
 
   if (differenceInMonths(new Date(), date) < 4) {
-    return `${differenceInMonths(new Date(), date)} months ago`;
+    return `${differenceInMonths(new Date(), date)} months ago`
   }
 
   if (isThisYear(date)) {
-    return format(date, 'MMM d');
+    return format(date, 'MMM d')
   }
 
-  return format(date, 'MMM d, yyyy');
-};
+  return format(date, 'MMM d, yyyy')
+}

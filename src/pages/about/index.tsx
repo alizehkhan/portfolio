@@ -1,7 +1,7 @@
-import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async'
+import { Link } from 'react-router-dom'
 
-import { ReactComponent as Venn } from '../../components/venn.svg';
+import { ReactComponent as Venn } from '../../components/venn.svg'
 
 const About = () => {
   return (
@@ -18,7 +18,7 @@ const About = () => {
         </div>
         <div className="mb-40 max-w-4xl lg:mb-80">
           <p className="mb-4 font-serif text-2xl leading-normal md:mb-6 lg:text-4xl">
-            🤙🏼 Hiya, I'm Alizeh,
+            🤙🏼 Hiya, I&apos;m Alizeh,
           </p>
           <p className="mb-5 font-serif text-4xl leading-normal lg:text-6xl lg:leading-snug">
             I design and build intuitive, inclusive and beautiful websites.
@@ -64,7 +64,7 @@ const About = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default About;
+export default About

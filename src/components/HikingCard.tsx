@@ -1,30 +1,30 @@
-import { motion } from 'framer-motion';
-import { useContext, useState } from 'react';
-import ReactModal from 'react-modal';
+import { useContext, useState } from 'react'
+import { motion } from 'framer-motion'
+import ReactModal from 'react-modal'
 
-import { GearItem } from '../utils/types.js';
-import { getKebabCase } from '../utils/utils.js';
-import { HikingGearContext } from '../utils/HikingGearContext.js';
+import { GearItem } from '../utils/types'
+import { getKebabCase } from '../utils/utils'
+import { HikingGearContext } from '../utils/HikingGearContext'
 
-import HikingModal from './HikingModal';
+import HikingModal from './HikingModal'
 
 const HikingCard = ({
   gearItem,
   filteredGearIndex,
   hikingGear,
 }: {
-  gearItem: GearItem;
-  filteredGearIndex: number;
-  hikingGear: Array<GearItem>;
+  gearItem: GearItem
+  filteredGearIndex: number
+  hikingGear: Array<GearItem>
 }) => {
-  const { setOpenedIndex } = useContext(HikingGearContext);
+  const { setOpenedIndex } = useContext(HikingGearContext)
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const openModal = () => {
-    setIsModalOpen(true);
-    setOpenedIndex(filteredGearIndex);
-  };
+    setIsModalOpen(true)
+    setOpenedIndex(filteredGearIndex)
+  }
 
   return (
     <>
@@ -61,7 +61,7 @@ const HikingCard = ({
         <HikingModal hikingGear={hikingGear} setIsModalOpen={setIsModalOpen} />
       </ReactModal>
     </>
-  );
-};
+  )
+}
 
-export default HikingCard;
+export default HikingCard

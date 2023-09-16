@@ -1,17 +1,17 @@
-import { Dispatch, SetStateAction, createContext } from 'react';
+import { Dispatch, SetStateAction, createContext } from 'react'
 
-import { CategoryKebabCase } from './types';
+import { CategoryKebabCase } from './types'
 
 type HikingGear = {
-  gearById: {};
-  setGearById: Dispatch<SetStateAction<{}>>;
-  selectedFilter: CategoryKebabCase | undefined;
-  setSelectedFilter: Dispatch<SetStateAction<CategoryKebabCase | undefined>>;
-  openedIndex: number;
-  setOpenedIndex: Dispatch<SetStateAction<number>>;
-  isLoading: boolean;
-  setIsLoading: Dispatch<SetStateAction<boolean>>;
-};
+  gearById: object
+  setGearById: Dispatch<SetStateAction<object>>
+  selectedFilter: CategoryKebabCase | undefined
+  setSelectedFilter: Dispatch<SetStateAction<CategoryKebabCase | undefined>>
+  openedIndex: number
+  setOpenedIndex: Dispatch<SetStateAction<number>>
+  isLoading: boolean
+  setIsLoading: Dispatch<SetStateAction<boolean>>
+}
 
 export const HikingGearContext = createContext<HikingGear>({
   gearById: {},
@@ -22,4 +22,4 @@ export const HikingGearContext = createContext<HikingGear>({
   setOpenedIndex: () => {},
   isLoading: true,
   setIsLoading: () => {},
-});
+})
