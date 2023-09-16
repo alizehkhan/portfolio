@@ -1,10 +1,10 @@
 import { Dispatch, SetStateAction, createContext } from 'react'
 
-import { CategoryKebabCase } from './types'
+import { CategoryKebabCase, GearItem } from './types'
 
 type HikingGear = {
-  gearById: object
-  setGearById: Dispatch<SetStateAction<object>>
+  gearById: Record<number, GearItem>
+  setGearById: Dispatch<SetStateAction<Record<number, GearItem>>>
   selectedFilter: CategoryKebabCase | undefined
   setSelectedFilter: Dispatch<SetStateAction<CategoryKebabCase | undefined>>
   openedIndex: number
