@@ -132,7 +132,7 @@ I add the recommended configuration provided by `eslint-plugin-import`.
 },
 ```
 
-ESLint needs to know which file extensions to consider when resolving imports in your code. Since I'm using TypeScript, I override the default config for `import/resolver`, adding `.ts` and `.tsx` to `extensions`.
+ESLint needs to know which file extensions to consider when resolving imports in our code. Since I'm using TypeScript, I override the default config for `import/resolver`, adding `.ts` and `.tsx` to `extensions`.
 
 ```json
 {
@@ -173,6 +173,17 @@ I specify both plugins in my `.eslintrc` so I can add the following individual r
     ]
   },
 }
+```
+
+## Scripts
+
+Lastly, I add the following script to my project's `package.json` so I can auto fix all lint errors.
+
+```json
+"scripts": {
+  // ...
+  "lint": "eslint . --fix"
+},
 ```
 
 </Container>
