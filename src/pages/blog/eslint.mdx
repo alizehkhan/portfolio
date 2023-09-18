@@ -1,0 +1,178 @@
+import Container from '../../components/Container'
+import Key from '../../components/Key'
+import { Helmet } from 'react-helmet-async';
+
+<Helmet>
+  <title>My ESLint config | Alizeh Khan</title>
+</Helmet>
+
+<Container>
+
+# My ESLint config
+
+_There isn't much customisation when it comes to my ESLint config. I try to stick to the recommended standard for an accessible TypeScript React app._
+
+_Here it is..._
+
+---
+
+## VS Code settings
+
+Install the **ESLint VS Code extension** to allow the following:
+
+1. Make the ESLint warning/error squiggly lines visible in your editor.
+
+2. Fix all auto-fixable ESLint problems on save. To do this, open the command palette, <Key>command</Key>+<Key>shift</Key>+<Key>P</Key>, search `Preferences: Open User Settings (JSON)` and add the following configuration to your `settings.json`:
+
+```json
+{
+  // ...
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
+```
+
+---
+
+## Plugins
+
+ESLint plugins provide additional rules, shareable configurations and parsers that are not included in the core ESLint package. These could be specific for a framework eg. `next.js`, a library eg. `react`, a language extension eg. `typescript`, accessibility etc.
+
+1. To use a configuration from a plugin add the configuration to the `extends` array in your `.eslintrc`. Often, you do this for a plugin’s recommended configuration. Popular frameworks such a `vite`, `next.js` and `remix` come with eslint preinstalled and their own eslint plugin pre-configured.
+2. To apply individual rules from a plugin or override rules from a plugin's configuration, you need to specify the plugin in the `plugins` array and add the rules you want to the `rules` object.
+
+### React
+
+For React specific rules, I install `eslint-plugin-react` and `eslint-plugin-react-hooks`:
+
+```shell
+yarn add -D eslint-plugin-react eslint-plugin-react-hooks
+```
+
+- I use each of their recommended configurations `plugin:react/recommended` and `plugin:react-hooks/recommended`.
+
+- By default `plugin:react/recommended` enforces the rule to `import React from 'react'` for files with JSX but from React V17 onwards, we no longer need to do this since the compiler inserts this import for us. We can therefore disable these rules by adding the [`plugin:react/jsx-runtime`](https://github.com/jsx-eslint/eslint-plugin-react/blob/c8917b0885094b5e4cc2a6f613f7fb6f16fe932e/index.js#L163-L17) configuration.
+
+- To avoid this `Warning: React version not specified in eslint-plugin-react settings`, I specify the React version in settings to `detect` which automatically picks the version I have installed.
+
+```json
+{
+  "extends": [
+    // ...
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended"
+  ],
+  "settings": {
+    // ...
+    "react": { "version": "detect" },
+  }
+}
+```
+
+### TypeScript
+
+For TypeScript I install the following packages:
+
+```shell
+yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
+```
+
+<div className='my-4'>
+- I add `@typescript-eslint/parser` to parse TypeScript code into ESLint-compatible nodes.
+- I add the recommended configuration from `@typescript-eslint/eslint-plugin`.
+</div>
+
+```json
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    // ...
+    "plugin:@typescript-eslint/recommended",
+  ],
+}
+```
+
+### Accessibility
+
+Up to 25% of WCAG issues can be caught whilst coding. I install [`eslint-plugin-jsx-a11y`](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y) which uses a subset of [`axe-core`](https://github.com/dequelabs/axe-core)'s rules.
+
+```shell
+yarn add -D eslint-plugin-jsx-a11y
+```
+
+I add their recommended configuration to my `.eslintrc`.
+
+```json
+{
+  "extends": [
+    // ...
+    "plugin:jsx-a11y/recommended"
+  ],
+}
+```
+
+### Imports
+
+I install [`eslint-plugin-import`](https://github.com/import-js/eslint-plugin-import) and [`eslint-plugin-unused-imports`](https://github.com/sweepline/eslint-plugin-unused-imports) for import specific rules:
+
+```shell
+yarn add -D eslint-plugin-import eslint-plugin-unused-imports
+```
+
+I add the recommended configuration provided by `eslint-plugin-import`.
+
+```json
+{
+  "extends": [
+    // ...
+    "plugin:import/recommended",
+  ]
+},
+```
+
+ESLint needs to know which file extensions to consider when resolving imports in your code. Since I'm using TypeScript, I override the default config for `import/resolver`, adding `.ts` and `.tsx` to `extensions`.
+
+```json
+{
+  "settings": {
+    // ...
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+},
+```
+
+I specify both plugins in my `.eslintrc` so I can add the following individual rules as errors so they auto fix on save.
+
+- Automatically remove unused imports
+- Add lines between import groups. By default the import groups are defined and ordered as `["builtin", "external", "parent", "sibling", "index"]`. Sort the imports within these groups by ascending order, ignoring case.
+
+```json
+{
+  "plugins": [
+    // ..
+    "import",
+    "unused-imports"
+  ],
+  "rules": {
+    "unused-imports/no-unused-imports": "error",
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
+  },
+}
+```
+
+</Container>
