@@ -35,7 +35,7 @@ such a dropdown list or radio group.
 
 ### 🔉 Screen reader user commands
 
-_Screen readers are software applications that render text and image content as speech or braille output._
+*Screen readers are software applications that render text and image content as speech or braille output.*
 
 <Key>command</Key> + <Key>F5</Key> to activate MacOS's built-in screen reader, Voiceover.
 
@@ -54,9 +54,9 @@ Assistive technologies use the browser's accessibility tree as the API to intera
 - **State** - describes the state of an interactive element e.g. `checked`, `disabled`, `expanded`, `readonly`;
 - **Name** - an element's accessible name which can be derived from its content, an attribute such as `alt`, `aria-label`, `aria-labelledby`, `title`, or an associated element eg. an input's `label`.
 
-Since `div` and `span` are the only HTML elements that have no semantic properties, they are omitted from the tree unless . These should be used only as  wrappers for styling or to build custom components with roles that cannot be replaced by a native HTML element.
+Since `div` and `span` are the only HTML elements that have no semantic properties, they are omitted from the tree. They should therefore either be used wrappers for styling or to build custom components with roles that cannot be replaced by a native HTML element.
 
-_To view a site's accessibility tree click on the `Accessibility` tab in Chrome's devtools, and check `Enable full-page accessibility tree`. You will then be able to toggle on and off between the DOM and the accessibility tree using the button that's appeared in the top right corner of the DOM._
+*To view a site's accessibility tree click on the `Accessibility` tab in Chrome's devtools, and check `Enable full-page accessibility tree`. You will then be able to toggle on and off between the DOM and the accessibility tree using the button that's appeared in the top right corner of the DOM.*
 
 ---
 
@@ -87,7 +87,7 @@ Use the accessibility tree to check:
 ### Images
 
 - Any decorative `svg` has an `aria-hidden=true` so they can be ignored by assistive technologies.
-- Any decorative `img` has an `alt=""`. To determine whether it's decorative, ask yourself: _If the image was removed, would the user still get all the information from the page?_
+- Any decorative `img` has an `alt=""`. To determine whether it's decorative, ask yourself: *If the image was removed, would the user still get all the information from the page?*
 - If an image is helpful in interacting with or understanding a page, the `alt` text needs to be appropriate. The content of this would depend on the context.
 - If there is text in an image, this text needs to be included in the `alt` text.
 
@@ -96,7 +96,7 @@ Use the accessibility tree to check:
 My go-to resources for building accessible forms are [Adam Silver](https://adamsilver.io)'s content and [GOV.UK's design system](https://design-system.service.gov.uk/) components and patterns. Here are a couple of things to check:
 
 - If a field is part of a group of related fields ie. each field does not make sense on its own, then it should grouped using `<fieldset>`.
-- There a visual indication (that doesn't solely rely on colour alone) to distinguish which fields are required and/or optional.
+- There a visual indication (that doesn't solely rely on colour) to distinguish which fields are required and/or optional.
 - When you leave a `required` field empty, then submit the form, an error message should show up.
 - Colour alone should not be used to indicate errors.
 - Error messages are informative enough to fill out the field correctly. Ideally the hint text is informative enough to mitigate the error in the first place.

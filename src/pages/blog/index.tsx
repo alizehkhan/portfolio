@@ -13,6 +13,7 @@ import PlanHike from './plan-hike.mdx'
 import TrailFood from './trail-food.mdx'
 import Minimalism from './minimalism.mdx'
 import Uses from './uses.mdx'
+import Eslint from './eslint.mdx'
 
 const Blog = () => {
   return (
@@ -52,6 +53,7 @@ const Blog = () => {
           element={<Minimalism components={components} />}
         />
         <Route path="uses/" element={<Uses components={components} />} />
+        <Route path="eslint/" element={<Eslint components={components} />} />
       </Routes>
     </>
   )

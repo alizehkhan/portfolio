@@ -81,6 +81,15 @@ export const POSTS: Post[] = [
     labels: ['minimalism', 'frontend'],
     date: new Date(2023, 7, 31),
   },
+  {
+    title: 'My ESLint config.',
+    description:
+      "There isn't much customisation when it comes to my ESLint config. I try to stick to the recommended standard for an accessible TypeScript React app.",
+    image: './illustrations/eslint.svg',
+    link: '/blog/eslint',
+    labels: ['frontend'],
+    date: new Date(2023, 8, 16),
+  },
 ]
 
 export const labels: Label[] = [
