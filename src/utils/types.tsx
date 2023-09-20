@@ -47,16 +47,18 @@ export type Post = {
   date?: Date
 }
 
+export type Project = {
+  title: string
+  description: string
+  live: To
+  source: To
+  image: string
+  topics: string[]
+}
+
 export type Label =
   | 'minimalism'
   | 'frontend'
   | 'design-systems'
   | 'hiking'
   | 'accessibility'
-
-export type Project = {
-  title: string
-  description: string
-  link: To
-  image: string
-}
