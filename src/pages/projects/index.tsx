@@ -31,7 +31,7 @@ const Projects = () => {
                   ))}
                 </div>
                 <Link
-                  to={project.live}
+                  to={project.source}
                   target="_blank"
                   className="mt-4 flex w-fit items-center gap-2 rounded-md px-2 py-1 text-xl"
                 >
