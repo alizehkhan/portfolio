@@ -28,7 +28,7 @@ export const PROJECTS: Project[] = [
     title: 'My portfolio',
     description: 'A home for my projects, public learnings and resume.',
     source: 'https://github.com/alizehkhan/portfolio',
-    live: 'https://alizehkhan.com',
+    live: 'https://alizehkhan.com/blog/hiking-gear',
     image: './assets/portfolio.png',
     topics: [
       'vite',
@@ -74,7 +74,7 @@ export const PROJECTS: Project[] = [
     description:
       'A single page website offering in-person and online communication workshops for corporations.',
     source: 'https://github.com/alizehkhan/communication-trainer',
-    live: 'https://haneenkhan@netlify.app',
+    live: 'https://haneenkhan.netlify.app',
     image: './assets/haneen.png',
     topics: ['vite', 'netlify', 'tailwind', 'react-player'],
   },

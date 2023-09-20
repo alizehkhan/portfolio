@@ -1,4 +1,4 @@
-import { IconBrandGithub } from '@tabler/icons-react'
+import { IconCode } from '@tabler/icons-react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 
@@ -18,9 +18,7 @@ const Projects = () => {
                 <img className="max-w-md" src={project.image} alt="" />
               </Link>
               <div>
-                <p className="font-serif text-3xl md:text-4xl">
-                  {project.title}
-                </p>
+                <p className="font-serif text-3xl">{project.title}</p>
                 <p className="my-4 text-lg opacity-80">{project.description}</p>
                 <div className="flex gap-1 flex-wrap">
                   {project.topics.map((topic, i) => (
@@ -37,7 +35,7 @@ const Projects = () => {
                   target="_blank"
                   className="mt-4 flex w-fit items-center gap-2 rounded-md px-2 py-1 text-xl"
                 >
-                  <IconBrandGithub size={20} />
+                  <IconCode size={20} />
                   Source code
                 </Link>
               </div>
