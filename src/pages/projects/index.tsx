@@ -14,14 +14,10 @@ const Projects = () => {
         {PROJECTS.map((project, index) => (
           <div key={index}>
             <article className="flex md:flex-row flex-col p-4 gap-6 items-center">
-              <Link to={project.live} target="_blank">
-                <img
-                  className="md:max-w-md max-w-full"
-                  src={project.image}
-                  alt=""
-                />
+              <Link to={project.live} target="_blank" className="flex-[1]">
+                <img className="max-w-full" src={project.image} alt="" />
               </Link>
-              <div>
+              <div className="flex-1">
                 <p className="font-serif text-3xl">{project.title}</p>
                 <p className="my-4 text-lg opacity-80">{project.description}</p>
                 <div className="flex gap-1 flex-wrap">

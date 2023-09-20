@@ -1,20 +1,20 @@
-import { IconExternalLink } from '@tabler/icons-react';
-import { useMediaQuery } from 'react-responsive';
-import { Link, NavLink } from 'react-router-dom';
+import { IconExternalLink } from '@tabler/icons-react'
+import { useMediaQuery } from 'react-responsive'
+import { Link, NavLink } from 'react-router-dom'
 
-import { LINKS } from '../content/links';
+import { LINKS } from '../content/links'
 
-import MobileHeader from './MobileHeader';
+import MobileHeader from './MobileHeader'
 
 const Header = () => {
-  const isTabletOrDesktop = useMediaQuery({ query: '(min-width: 880px)' });
+  const isTabletOrDesktop = useMediaQuery({ query: '(min-width: 880px)' })
 
   return isTabletOrDesktop ? (
     <header className="container my-8 flex items-center justify-between">
       <Link aria-label="Alizeh Khan" to="/">
         <img
           src="/assets/avatar.jpg"
-          className="h-14 shrink-0 rounded-full border-[3px] border-solid border-white shadow-md"
+          className="h-14 w-14 shrink-0 rounded-full border-[3px] border-solid border-white shadow-md object-contain"
           alt=""
         />
       </Link>
@@ -40,7 +40,7 @@ const Header = () => {
     </header>
   ) : (
     <MobileHeader />
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
