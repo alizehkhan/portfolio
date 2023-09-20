@@ -1,5 +1,5 @@
 export const LINKS = [
-  { to: '/', name: 'About' },
+  { to: '/', name: 'Home' },
   { to: '/projects', name: 'Projects' },
   { to: '/blog', name: 'Blog' },
-];
+]

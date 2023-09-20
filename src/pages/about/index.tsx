@@ -2,8 +2,8 @@ import { Helmet } from 'react-helmet-async'
 
 const About = () => {
   const TAGS = [
-    'typescript',
     'react',
+    'typescript',
     'css',
     'accessibility',
     'design systems',
@@ -22,7 +22,7 @@ const About = () => {
         <h1 className="font-serif mt-16 md:mt-24 text-6xl mb-6 md:text-9xl leading-normal lg:leading-snug">
           Hiya, I&apos;m Alizeh 🤙🏼
         </h1>
-        <div className="my-12 flex flex-wrap text-2xl md:text-4xl gap-4 font-mono">
+        <div className="md:my-12 my-8 flex flex-wrap text-xl md:text-4xl gap-2 md:gap-4 font-mono">
           {TAGS.map((tag, i) => (
             <span
               key={i}
@@ -32,9 +32,8 @@ const About = () => {
             </span>
           ))}
         </div>
-        <p className="opacity-80 text-2xl leading-normal lg:text-3xl lg:leading-snug">
-          I strive to design and build intuitive, inclusive and beautiful
-          websites.
+        <p className="opacity-80 text-xl leading-normal lg:text-3xl lg:leading-snug">
+          I strive to simplify and humanise the web.
         </p>
 
         {/* <Link
