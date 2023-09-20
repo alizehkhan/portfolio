@@ -10,12 +10,16 @@ const Projects = () => {
       <Helmet>
         <title>Projects | Alizeh Khan</title>
       </Helmet>
-      <div className="max-w-[1000px] mx-auto">
+      <div className="max-w-[1000px] w-[90%] mx-auto">
         {PROJECTS.map((project, index) => (
           <div key={index}>
-            <article className="flex md:flex-row flex-col p-6 gap-6 items-center">
-              <Link to={project.live} target="_blank" className="">
-                <img className="max-w-md" src={project.image} alt="" />
+            <article className="flex md:flex-row flex-col p-4 gap-6 items-center">
+              <Link to={project.live} target="_blank">
+                <img
+                  className="md:max-w-md max-w-full"
+                  src={project.image}
+                  alt=""
+                />
               </Link>
               <div>
                 <p className="font-serif text-3xl">{project.title}</p>
