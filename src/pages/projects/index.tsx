@@ -42,7 +42,7 @@ const Projects = () => {
                     Source code
                   </Link>
                   <Link
-                    to={project.source}
+                    to={project.live}
                     target="_blank"
                     className="mt-4 flex w-fit items-center gap-2 rounded-md px-2 py-1 text-xl hover:bg-grey-200"
                   >
