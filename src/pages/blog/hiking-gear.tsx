@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { useMediaQuery } from 'react-responsive'
 import { Route, Routes } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
 
 import HikingFilters from '../../components/HikingFilters'
-import HikingMobileFilters from '../../components/HikingMobileFilters'
 import HikingGrid from '../../components/HikingGrid'
+import HikingMobileFilters from '../../components/HikingMobileFilters'
 import HikingStats from '../../components/HikingStats'
+import { URL } from '../../utils/constants'
 import { HikingGearContext } from '../../utils/HikingGearContext'
 import { CategoryKebabCase } from '../../utils/types'
-import { URL } from '../../utils/constants'
 
 const HikingGear = () => {
   const [gearById, setGearById] = useState({})

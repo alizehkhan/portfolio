@@ -3,17 +3,17 @@ import { Route, Routes } from 'react-router-dom'
 
 import { components } from '../../components/MDXComponents'
 
-import EmailSetup from './email-setup.mdx'
-import FrontendSetup from './frontend-setup.mdx'
-import List from './List'
-import HikingGear from './hiking-gear'
 import AutomatedTesting from './automated-testing.mdx'
+import EmailSetup from './email-setup.mdx'
+import Eslint from './eslint.mdx'
+import FrontendSetup from './frontend-setup.mdx'
+import HikingGear from './hiking-gear'
+import List from './List'
 import ManualTesting from './manual-testing.mdx'
+import Minimalism from './minimalism.mdx'
 import PlanHike from './plan-hike.mdx'
 import TrailFood from './trail-food.mdx'
-import Minimalism from './minimalism.mdx'
 import Uses from './uses.mdx'
-import Eslint from './eslint.mdx'
 
 const Blog = () => {
   return (

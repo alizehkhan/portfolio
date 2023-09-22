@@ -1,4 +1,4 @@
-import { IconCode } from '@tabler/icons-react'
+import { IconArrowRight, IconCode } from '@tabler/icons-react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 
@@ -18,8 +18,10 @@ const Projects = () => {
                 <img className="max-w-full" src={project.image} alt="" />
               </Link>
               <div className="flex-1">
-                <p className="font-serif text-3xl">{project.title}</p>
-                <p className="my-4 text-lg opacity-80">{project.description}</p>
+                <p className="font-serif text-2xl">{project.title}</p>
+                <p className="mb-3 mt-2 text-lg opacity-80">
+                  {project.description}
+                </p>
                 <div className="flex gap-1 flex-wrap">
                   {project.topics.map((topic, i) => (
                     <code
@@ -30,14 +32,24 @@ const Projects = () => {
                     </code>
                   ))}
                 </div>
-                <Link
-                  to={project.source}
-                  target="_blank"
-                  className="mt-4 flex w-fit items-center gap-2 rounded-md px-2 py-1 text-xl"
-                >
-                  <IconCode size={20} />
-                  Source code
-                </Link>
+                <div className="flex gap-2">
+                  <Link
+                    to={project.source}
+                    target="_blank"
+                    className="mt-4 flex w-fit items-center gap-2 rounded-md px-2 py-1 text-xl hover:bg-grey-200"
+                  >
+                    <IconCode size={20} />
+                    Source code
+                  </Link>
+                  <Link
+                    to={project.source}
+                    target="_blank"
+                    className="mt-4 flex w-fit items-center gap-2 rounded-md px-2 py-1 text-xl hover:bg-grey-200"
+                  >
+                    Live site
+                    <IconArrowRight size={20} />
+                  </Link>
+                </div>
               </div>
             </article>
             <hr className="w-full text-grey-300" />

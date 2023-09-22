@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
-import { useMediaQuery } from 'react-responsive'
 import { format } from 'date-fns'
+import { useMediaQuery } from 'react-responsive'
+import { Link } from 'react-router-dom'
 
 import { Post } from '../utils/types'
 import { showDate } from '../utils/utils'

@@ -3,10 +3,10 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { CategoryKebabCase } from '../utils/types';
-import { getKebabCase } from '../utils/utils';
 import { capitalisedFilters } from '../content/hikingGearFilters';
 import { HikingGearContext } from '../utils/HikingGearContext';
+import { CategoryKebabCase } from '../utils/types';
+import { getKebabCase } from '../utils/utils';
 
 const HikingMobileFilters = () => {
   const { selectedFilter, setSelectedFilter } = useContext(HikingGearContext);

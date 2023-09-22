@@ -1,10 +1,10 @@
-import { useContext, useState } from 'react'
 import { motion } from 'framer-motion'
+import { useContext, useState } from 'react'
 import ReactModal from 'react-modal'
 
+import { HikingGearContext } from '../utils/HikingGearContext'
 import { GearItem } from '../utils/types'
 import { getKebabCase } from '../utils/utils'
-import { HikingGearContext } from '../utils/HikingGearContext'
 
 import HikingModal from './HikingModal'
 

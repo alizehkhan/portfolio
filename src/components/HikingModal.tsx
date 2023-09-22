@@ -16,8 +16,8 @@ import ReactMarkdown from 'react-markdown'
 import { useMediaQuery } from 'react-responsive'
 
 import { HikingGearContext } from '../utils/HikingGearContext'
-import { getKebabCase } from '../utils/utils'
 import { GearItem } from '../utils/types'
+import { getKebabCase } from '../utils/utils'
 
 const HikingModal = ({
   hikingGear,

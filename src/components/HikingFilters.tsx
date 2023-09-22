@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
-import { CategoryKebabCase } from '../utils/types';
-import { getKebabCase } from '../utils/utils';
 import { capitalisedFilters } from '../content/hikingGearFilters';
 import { HikingGearContext } from '../utils/HikingGearContext';
+import { CategoryKebabCase } from '../utils/types';
+import { getKebabCase } from '../utils/utils';
 
 const HikingFilters = () => {
   const { selectedFilter, setSelectedFilter } = useContext(HikingGearContext);

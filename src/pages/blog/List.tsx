@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react'
 import { IconX } from '@tabler/icons-react'
+import { useEffect, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 
-import { Label } from '../../utils/types'
+import Container from '../../components/Container'
 import PostCard from '../../components/PostCard'
 import { POSTS, labels } from '../../content/posts'
+import { Label } from '../../utils/types'
 import useNavigateSearch from '../../utils/useNavigateSearch'
-import Container from '../../components/Container'
 
 const List = () => {
   const [selectedLabel, setSelectedLabel] = useState<Label | null>(null)

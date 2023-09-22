@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import { useEffect, useState } from 'react'
-import Prism from 'prismjs'
-import 'prismjs/themes/prism.css'
 import { IconClipboard } from '@tabler/icons-react'
+import Prism from 'prismjs'
+import { useEffect, useState } from 'react'
+
+import 'prismjs/themes/prism.css'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Code = ({ children }: { children: any }) => {

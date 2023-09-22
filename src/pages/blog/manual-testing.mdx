@@ -54,7 +54,7 @@ Assistive technologies use the browser's accessibility tree as the API to intera
 - **State** - describes the state of an interactive element e.g. `checked`, `disabled`, `expanded`, `readonly`;
 - **Name** - an element's accessible name which can be derived from its content, an attribute such as `alt`, `aria-label`, `aria-labelledby`, `title`, or an associated element eg. an input's `label`.
 
-Since `div` and `span` are the only HTML elements that have no semantic properties, they are omitted from the tree. They should therefore either be used wrappers for styling or to build custom components with roles that cannot be replaced by a native HTML element.
+Since `div` and `span` are the only HTML elements that have no semantic properties, they are omitted from the tree unless semantic properties are manually added using `aria-` attributes. They should be used as wrappers for styling or to build custom components with roles that [cannot be replaced by a native HTML element](https://www.w3.org/WAI/ARIA/apg/practices/structural-roles/).
 
 *To view a site's accessibility tree click on the `Accessibility` tab in Chrome's devtools, and check `Enable full-page accessibility tree`. You will then be able to toggle on and off between the DOM and the accessibility tree using the button that's appeared in the top right corner of the DOM.*
 
