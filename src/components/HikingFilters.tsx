@@ -1,13 +1,13 @@
-import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 
-import { capitalisedFilters } from '../content/hikingGearFilters';
-import { HikingGearContext } from '../utils/HikingGearContext';
-import { CategoryKebabCase } from '../utils/types';
-import { getKebabCase } from '../utils/utils';
+import { capitalisedFilters } from '../content/hikingGearFilters'
+import { HikingGearContext } from '../utils/HikingGearContext'
+import { CategoryKebabCase } from '../utils/types'
+import { getKebabCase } from '../utils/utils'
 
 const HikingFilters = () => {
-  const { selectedFilter, setSelectedFilter } = useContext(HikingGearContext);
+  const { selectedFilter, setSelectedFilter } = useContext(HikingGearContext)
 
   return (
     <nav aria-label="Navigation for filtering hiking gear">
@@ -15,7 +15,7 @@ const HikingFilters = () => {
         <li>
           <Link
             to="/blog/hiking-gear"
-            className={`filter-show-all text- no-underline filter ${
+            className={`filter-show-all transition-all text- no-underline filter ${
               !selectedFilter ? 'active' : ''
             }`}
             onClick={() => setSelectedFilter(selectedFilter)}
@@ -27,7 +27,7 @@ const HikingFilters = () => {
           <li key={filter}>
             <Link
               to={getKebabCase(filter)}
-              className={`text-md no-underline filter filter-${getKebabCase(
+              className={`text-md transition-all no-underline filter filter-${getKebabCase(
                 filter
               )} ${selectedFilter === getKebabCase(filter) ? 'active' : ''}`}
               onClick={(event) => {
@@ -36,7 +36,7 @@ const HikingFilters = () => {
                     getKebabCase(
                       event.currentTarget.innerText
                     ) as CategoryKebabCase
-                  );
+                  )
               }}
             >
               {filter}
@@ -45,7 +45,7 @@ const HikingFilters = () => {
         ))}
       </ul>
     </nav>
-  );
-};
+  )
+}
 
-export default HikingFilters;
+export default HikingFilters

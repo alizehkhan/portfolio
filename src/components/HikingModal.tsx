@@ -77,7 +77,7 @@ const HikingModal = ({
         )
       ) : (
         <button
-          className="mb-3 ml-auto block rounded-full border-2 border-solid border-neutral-700 bg-transparent p-2 hover:bg-neutral-300"
+          className="mb-3 ml-auto block rounded-full transition-all border-2 border-solid border-neutral-700 bg-transparent p-2 hover:bg-neutral-300"
           aria-label="Close modal"
           onClick={() => setIsModalOpen(false)}
         >

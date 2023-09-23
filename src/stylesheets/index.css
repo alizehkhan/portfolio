@@ -178,3 +178,13 @@ q::before {
 q::after {
   content: close-quote;
 }
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--color-green-700);
+  border-radius: var(--border-radius-sm);
+  outline-offset: 4px;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}

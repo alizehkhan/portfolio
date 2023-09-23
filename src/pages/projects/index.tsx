@@ -32,11 +32,11 @@ const Projects = () => {
                     </code>
                   ))}
                 </div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 ">
                   <Link
                     to={project.source}
                     target="_blank"
-                    className="mt-4 flex w-fit items-center gap-2 rounded-md px-2 py-1 text-xl hover:bg-grey-200"
+                    className="mt-4 flex w-fit items-center gap-2 hover:scale-105 shadow-sm hover:shadow-md rounded-md px-2 py-1 text-xl transition-all"
                   >
                     <IconCode size={20} />
                     Source code
@@ -44,10 +44,10 @@ const Projects = () => {
                   <Link
                     to={project.live}
                     target="_blank"
-                    className="mt-4 flex w-fit items-center gap-2 rounded-md px-2 py-1 text-xl hover:bg-grey-200"
+                    className="mt-4 flex w-fit items-center shadow-sm hover:shadow-md transition-all bg-green-300 text-green-700 gap-2 rounded-md px-2 py-1 text-xl hover:scale-105"
                   >
                     Live site
-                    <IconArrowRight size={20} />
+                    <IconArrowRight size={20} color="#2e6b34" />
                   </Link>
                 </div>
               </div>

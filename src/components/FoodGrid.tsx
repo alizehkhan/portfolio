@@ -35,7 +35,7 @@ const FoodGrid = () => {
           ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
             Object.values(food).map((foodItem: any, index) => (
               <button
-                className="flex flex-col items-center justify-between rounded-lg bg-white px-2 pb-4 pt-2 shadow-sm hover:scale-[1.02] hover:shadow-lg"
+                className="flex flex-col items-center transition-all justify-between rounded-lg bg-white px-2 pb-4 pt-2 shadow-sm hover:scale-[1.02] hover:shadow-lg"
                 key={index}
               >
                 <p

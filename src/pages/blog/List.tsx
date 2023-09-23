@@ -40,10 +40,10 @@ const List = () => {
                   setSelectedLabel(searchParams.get('filter') as Label)
                   navigateSearch('/blog', { filter: label })
                 }}
-                className={`inline-block rounded-full px-3 py-1 text-lg ${
+                className={`inline-block transition-all rounded-full px-3 py-1 text-lg ${
                   selectedLabel === label
                     ? 'bg-neutral-700 text-white'
-                    : 'bg-grey-200 text-neutral-700 hover:bg-grey-300'
+                    : 'bg-grey-200 text-neutral-700 hover:scale-105 hover:shadow-md'
                 }`}
               >
                 {`#${label}`}
