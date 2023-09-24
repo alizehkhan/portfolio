@@ -33,7 +33,7 @@ const HikingCard = ({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="flex flex-col items-center justify-between rounded-lg bg-white px-2 transition-all pb-4 pt-2 shadow-sm hover:scale-[1.02] hover:shadow-lg"
+        className="flex flex-col items-center justify-between rounded-lg bg-white px-2 hover:transition-all pb-4 pt-2 shadow-sm hover:scale-[1.02] hover:shadow-lg"
         onClick={openModal}
       >
         <p

@@ -13,7 +13,7 @@ const PostCard = ({ link, image, title, description, labels, date }: Post) => {
       <article>
         <Link
           to={link}
-          className="flex min-h-[140px] max-w-3xl items-center transition-all p-4 hover:bg-grey-100"
+          className="flex min-h-[140px] max-w-3xl items-center transition-all p-4"
         >
           {isTabletOrDesktop && (
             <img
