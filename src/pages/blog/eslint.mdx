@@ -175,6 +175,26 @@ I specify both plugins in my `.eslintrc` so I can add the following individual r
 }
 ```
 
+### Unit tests
+
+To lint my unit tests I install the following packages:
+
+```shell
+yarn add -D eslint-plugin-testing-library eslint-plugin-jest-dom
+```
+
+And extend the following configurations in my `.eslintrc`.
+
+```json
+{
+  "extends": [
+    // ...
+    "plugin:jest-dom/recommended",
+    "plugin:testing-library/react"
+  ],
+}
+```
+
 ---
 
 ## Scripts
