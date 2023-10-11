@@ -78,4 +78,13 @@ export const PROJECTS: Project[] = [
     image: './assets/haneen.png',
     topics: ['vite', 'netlify', 'tailwind', 'react-player'],
   },
+  {
+    title: 'Sex & Intimacy Coach',
+    description:
+      'A static Next.js site with a blog for a Sex & Intimacy Coach.',
+    source: 'https://github.com/alizehkhan/sex-coach',
+    live: 'https://haneenkhan.vercel.app',
+    image: './assets/sex-coach.png',
+    topics: ['next.js', 'vercel', 'tailwind', 'mdx'],
+  },
 ]
