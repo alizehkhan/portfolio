@@ -6,16 +6,16 @@ import { HikingGearContext } from '../utils/HikingGearContext'
 import { GearItem } from '../utils/types'
 import { getKebabCase } from '../utils/utils'
 
-import HikingModal from './HikingModal'
+import { HikingModal } from './HikingModal'
 
-const HikingCard = ({
+export const HikingCard = ({
 	gearItem,
 	filteredGearIndex,
 	hikingGear,
 }: {
 	gearItem: GearItem
 	filteredGearIndex: number
-	hikingGear: Array<GearItem>
+	hikingGear: GearItem[]
 }) => {
 	const { setOpenedIndex } = useContext(HikingGearContext)
 
@@ -63,5 +63,3 @@ const HikingCard = ({
 		</>
 	)
 }
-
-export default HikingCard

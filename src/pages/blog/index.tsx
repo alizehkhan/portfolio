@@ -7,7 +7,7 @@ import AutomatedTesting from './automated-testing.mdx'
 import EmailSetup from './email-setup.mdx'
 import Eslint from './eslint.mdx'
 import FrontendSetup from './frontend-setup.mdx'
-import HikingGear from './hiking-gear'
+import { HikingGear } from './hiking-gear'
 import List from './List'
 import ManualTesting from './manual-testing.mdx'
 import Minimalism from './minimalism.mdx'
@@ -15,48 +15,46 @@ import PlanHike from './plan-hike.mdx'
 import TrailFood from './trail-food.mdx'
 import Uses from './uses.mdx'
 
-const Blog = () => {
-  return (
-    <>
-      <Helmet>
-        <title>Blog | Alizeh Khan</title>
-      </Helmet>
-      <Routes>
-        <Route index element={<List />} />
-        <Route path="hiking-gear/*" element={<HikingGear />} />
-        <Route
-          path="email-setup/"
-          element={<EmailSetup components={components} />}
-        />
-        <Route
-          path="frontend-setup/"
-          element={<FrontendSetup components={components} />}
-        />
-        <Route
-          path="automated-accessibility-testing/"
-          element={<AutomatedTesting components={components} />}
-        />
-        <Route
-          path="manual-accessibility-testing/"
-          element={<ManualTesting components={components} />}
-        />
-        <Route
-          path="plan-hike/"
-          element={<PlanHike components={components} />}
-        />
-        <Route
-          path="trail-food/"
-          element={<TrailFood components={components} />}
-        />
-        <Route
-          path="minimalism/"
-          element={<Minimalism components={components} />}
-        />
-        <Route path="uses/" element={<Uses components={components} />} />
-        <Route path="eslint/" element={<Eslint components={components} />} />
-      </Routes>
-    </>
-  )
+export const Blog = () => {
+	return (
+		<>
+			<Helmet>
+				<title>Blog | Alizeh Khan</title>
+			</Helmet>
+			<Routes>
+				<Route index element={<List />} />
+				<Route path="hiking-gear/*" element={<HikingGear />} />
+				<Route
+					path="email-setup/"
+					element={<EmailSetup components={components} />}
+				/>
+				<Route
+					path="frontend-setup/"
+					element={<FrontendSetup components={components} />}
+				/>
+				<Route
+					path="automated-accessibility-testing/"
+					element={<AutomatedTesting components={components} />}
+				/>
+				<Route
+					path="manual-accessibility-testing/"
+					element={<ManualTesting components={components} />}
+				/>
+				<Route
+					path="plan-hike/"
+					element={<PlanHike components={components} />}
+				/>
+				<Route
+					path="trail-food/"
+					element={<TrailFood components={components} />}
+				/>
+				<Route
+					path="minimalism/"
+					element={<Minimalism components={components} />}
+				/>
+				<Route path="uses/" element={<Uses components={components} />} />
+				<Route path="eslint/" element={<Eslint components={components} />} />
+			</Routes>
+		</>
+	)
 }
-
-export default Blog
