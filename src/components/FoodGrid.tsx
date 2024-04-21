@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react'
 
 import { URL } from '../utils/constants'
@@ -29,31 +30,31 @@ export const FoodGrid = () => {
 	}, [])
 
 	return (
-		<div className="container mt-12 grid auto-rows-[232px] grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
+		<div className="flex flex-col gap-4 mt-8">
 			{!isLoading
-				? // eslint-disable-next-line @typescript-eslint/no-explicit-any
-					Object.values(food).map((foodItem: any, index) => (
-						<button
-							className="flex flex-col items-center transition-all justify-between rounded-lg bg-white px-2 pb-4 pt-2 shadow-sm hover:scale-[1.02] hover:shadow-lg"
+				? Object.values(food).map((foodItem: any, index) => (
+						<div
+							className="flex flex-row gap-4 bg-white px-6 py-4 shadow-sm rounded-lg items-center"
 							key={index}
 						>
-							<p
-								className={`mr-auto inline-block w-fit rounded-full px-3 py-1 text-xs font-bold`}
-							>
-								{foodItem.Category}
-							</p>
-							<img
-								src={foodItem.Photo?.[0].url}
-								alt=""
-								className="mx-auto h-[132px]"
-							/>
-							<h2 className="text-md text-center font-serif font-bold">
-								{foodItem.Name}
-							</h2>
-						</button>
+							<div className="flex w-[200px] shrink-0 flex-col items-center justify-between">
+								<img
+									src={foodItem.Photo?.[0].url}
+									alt=""
+									className="mx-auto h-[132px]"
+								/>
+								<h2 className="text-md text-center font-serif font-bold">
+									{foodItem.Name}
+								</h2>
+							</div>
+							<p>{foodItem.Notes}</p>
+						</div>
 					))
-				: Array.from({ length: 12 }, (_, i) => (
-						<div key={i} className="loading-state" />
+				: Array.from({ length: 3 }, (_, i) => (
+						<div
+							key={i}
+							className="animate-pulse bg-neutral-300 w-full h-[140px] rounded-md"
+						/>
 					))}
 		</div>
 	)

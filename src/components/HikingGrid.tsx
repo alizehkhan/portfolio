@@ -42,7 +42,10 @@ export const HikingGrid = () => {
 						/>
 					))
 				: Array.from({ length: 12 }, (_, i) => (
-						<div key={i} className="loading-state" />
+						<div
+							key={i}
+							className="animate-pulse w-full bg-neutral-300 rounded-md"
+						/>
 					))}
 		</div>
 	)
