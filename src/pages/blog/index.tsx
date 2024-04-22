@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import { components } from '../../components/MDXComponents'
 
 import AutomatedTesting from './automated-testing.mdx'
+import Checkbox from './checkbox.mdx'
 import EmailSetup from './email-setup.mdx'
 import Eslint from './eslint.mdx'
 import FrontendSetup from './frontend-setup.mdx'
@@ -51,6 +52,10 @@ export const Blog = () => {
 				<Route
 					path="minimalism/"
 					element={<Minimalism components={components} />}
+				/>
+				<Route
+					path="checkbox/"
+					element={<Checkbox components={components} />}
 				/>
 				<Route path="uses/" element={<Uses components={components} />} />
 				<Route path="eslint/" element={<Eslint components={components} />} />
