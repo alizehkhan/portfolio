@@ -1,6 +1,8 @@
 import { Container } from "../../components/Container";
 import { Key } from "../../components/Key";
+import { Banner } from "../../components/Banner";
 import { Helmet } from 'react-helmet-async';
+import { codeToHtml } from 'shiki'
 
 <Helmet>
   <title>Accessible Checkbox | Alizeh Khan</title>
@@ -9,5 +11,67 @@ import { Helmet } from 'react-helmet-async';
 <Container>
 
 # Accessible Checkbox Component
+
+*I've been wanting to create a blog series for a while now on how to build common design system components in React that are accessible and follow best practice component API design. These are unstyled and focus on markup and any state that may be required.*
+
+*Let's get into it...*
+
+---
+
+## Checkbox
+
+1. Create a `Checkbox` component composed of an `<input>` with `type="checkbox"` and `<label>`.
+
+2. Use `forwardRef` and attach the ref to the `<input/>` element so users are able to reference the DOM node when using the component. Make it an optional param `ref?` and define the type for the ref as `Ref<HTMLInputElement>`
+
+3. Use the native `InputHTMLAttributes`, omitting the `type` attribute, since this should remain `"checkbox"`. This includes all the event handlers and aria attributes. Use React's `children` prop for the label's content.
+<Banner>Leverage existing and familiar APIs such CSS style attributes, HTML attributes and React's children prop where possible instead of custom prop names. This reduces cognitive load.</Banner>
+
+4. Destructure the props you have defined and to spread the `...restProps` as the first prop in the input element so that any we explicitly define can override the default values for these.
+
+5. To link our `<label>` and `<input>` we can use the `useId` hook from React and pass `id={id}` and `htmlFor={id}` to each of the elements.
+
+```tsx
+import {
+ useId,
+ type InputHTMLAttributes,
+ forwardRef,
+ Ref,
+} from 'react'
+import { CheckboxContext } from './CheckboxContext'
+
+interface CheckboxProps
+ extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
+}
+
+export const Checkbox = forwardRef(
+ (props: CheckboxProps, ref?: Ref<HTMLInputElement>) => {
+  const { children, name, value, checked, ...restProps } = props // [!code ++]
+
+  const id = useId()
+
+  return (
+   <div>
+    <input
+     {...restProps}
+     ref={ref}
+     type="checkbox"
+     id={id}
+     value={value}
+     name={name}
+     checked={checked}
+    />
+    <label htmlFor={id}>{children}</label>
+   </div>
+  )
+ }
+)
+```
+
+(Ok we're going to come back to this component and add more to it once we've built the CheckboxGroup component 👇.)
+
+## CheckboxGroup
+
+Now let's create a `CheckboxGroup` component that can be used as a wrapper around multiple `Checkbox` components to more easily control the state for a multi select checkbox question.
 
 </Container>

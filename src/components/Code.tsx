@@ -1,48 +1,34 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import { IconClipboard } from '@tabler/icons-react'
-import Prism from 'prismjs'
-import { useEffect, useState } from 'react'
 
-import 'prismjs/themes/prism.css'
+import {
+	transformerNotationDiff,
+	transformerNotationHighlight,
+} from '@shikijs/transformers'
+import { useState } from 'react'
+import { codeToHtml } from 'shiki'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const Code = ({ children }: { children: any }) => {
-	useEffect(() => Prism.highlightAll(), [])
+	const code: string = children?.props.children
+	const language: string = children?.props.className.match(/language-(.+)/)[1]
 
-	const [isCopied, setIsCopied] = useState(false)
-	const [isHovered, setIsHovered] = useState(false)
+	// const [isCopied, setIsCopied] = useState(false)
+	// const [isHovered, setIsHovered] = useState(false)
 
-	const copyToClipboard = (code: string) => {
-		navigator?.clipboard?.writeText(code).then(() => {
-			setIsCopied(true)
-			setTimeout(() => setIsCopied(false), 500)
-		})
-	}
+	const [html, setHtml] = useState('')
 
-	return (
-		<>
-			<p className="ml-auto mr-8 w-fit rounded-t-md bg-grey-200 px-3 py-1 font-sans text-sm font-bold uppercase text-neutral-700">
-				{children?.props.className.match(/language-(.+)/)[1]}
-			</p>
-			<div
-				className="relative"
-				onMouseEnter={() => setIsHovered(true)}
-				onMouseLeave={() => setIsHovered(false)}
-			>
-				{isHovered && (
-					<button
-						className="absolute right-0 m-3 rounded-md bg-grey-300 p-2 font-bold leading-none"
-						onClick={() => {
-							copyToClipboard(children?.props.children)
-						}}
-					>
-						{isCopied ? 'Copied' : <IconClipboard color="#4e4d49" size={18} />}
-					</button>
-				)}
-				<pre className="rounded-md">
-					<code className={children?.props.className}>{children}</code>
-				</pre>
-			</div>
-		</>
-	)
+	codeToHtml(code, {
+		lang: language,
+		theme: 'poimandres',
+		transformers: [transformerNotationDiff(), transformerNotationHighlight()],
+	}).then(setHtml)
+
+	// const copyToClipboard = (code: string) => {
+	// 	navigator?.clipboard?.writeText(code).then(() => {
+	// 		setIsCopied(true)
+	// 		setTimeout(() => setIsCopied(false), 500)
+	// 	})
+	// }
+
+	return <div className="mt-5" dangerouslySetInnerHTML={{ __html: html }}></div>
 }

@@ -49,7 +49,7 @@ export const components = {
 		<ul className="list-decimal pl-10">{children}</ul>
 	),
 	code: ({ children }: { children?: ReactNode }) => (
-		<code className=" rounded-md bg-grey-200 p-1 font-mono text-sm text-neutral-700">
+		<code className="rounded-md bg-grey-200 p-1 font-mono text-sm text-neutral-700">
 			{children}
 		</code>
 	),
