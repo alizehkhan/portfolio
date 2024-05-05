@@ -101,7 +101,7 @@ export const POSTS: Post[] = [
 		date: new Date(2024, 4, 1),
 	},
 	{
-		title: 'PRs are unfiltered feedback on your design system',
+		title: 'Every PR is unfiltered feedback on your design system',
 		description:
 			'If you work on a design system you have the beautiful opportunity of being able to see your users struggle to use your tool everyday.',
 		image: './illustrations/stalk-prs.svg',
