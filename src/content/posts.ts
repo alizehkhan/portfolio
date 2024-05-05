@@ -98,12 +98,22 @@ export const POSTS: Post[] = [
 		image: './illustrations/checkbox.svg',
 		link: '/blog/checkbox',
 		labels: ['frontend', 'accessibility'],
-		date: new Date(2024, 3, 21),
+		date: new Date(2024, 4, 1),
+	},
+	{
+		title: 'PRs are unfiltered feedback on your design system',
+		description:
+			'If you work on a design system you have the beautiful opportunity of being able to see your users struggle to use your tool everyday.',
+		image: './illustrations/stalk-prs.svg',
+		link: '/blog/stalk-prs',
+		labels: ['frontend', 'design-systems'],
+		date: new Date(2024, 4, 5),
 	},
 ]
 
 export const labels: Label[] = [
 	'frontend',
+	'design-systems',
 	'accessibility',
 	'hiking',
 	'minimalism',

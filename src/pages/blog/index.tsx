@@ -13,6 +13,7 @@ import List from './List'
 import ManualTesting from './manual-testing.mdx'
 import Minimalism from './minimalism.mdx'
 import PlanHike from './plan-hike.mdx'
+import StalkPrs from './stalk-prs.mdx'
 import TrailFood from './trail-food.mdx'
 import Uses from './uses.mdx'
 
@@ -56,6 +57,10 @@ export const Blog = () => {
 				<Route
 					path="checkbox/"
 					element={<Checkbox components={components} />}
+				/>
+				<Route
+					path="stalk-prs/"
+					element={<StalkPrs components={components} />}
 				/>
 				<Route path="uses/" element={<Uses components={components} />} />
 				<Route path="eslint/" element={<Eslint components={components} />} />
