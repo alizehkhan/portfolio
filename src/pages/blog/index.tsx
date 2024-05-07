@@ -5,8 +5,6 @@ import { components } from '../../components/MDXComponents'
 
 import AutomatedTesting from './automated-testing.mdx'
 import Checkbox from './checkbox.mdx'
-import Confluence from './confluence.mdx'
-import DeclutterUi from './declutter-ui.mdx'
 import EmailSetup from './email-setup.mdx'
 import Eslint from './eslint.mdx'
 import Feedback from './feedback.mdx'
@@ -63,14 +61,6 @@ export const Blog = () => {
 				<Route
 					path="design-system-feedback/"
 					element={<Feedback components={components} />}
-				/>
-				<Route
-					path="declutter-ui/"
-					element={<DeclutterUi components={components} />}
-				/>
-				<Route
-					path="confluence/"
-					element={<Confluence components={components} />}
 				/>
 				<Route path="uses/" element={<Uses components={components} />} />
 				<Route path="eslint/" element={<Eslint components={components} />} />
