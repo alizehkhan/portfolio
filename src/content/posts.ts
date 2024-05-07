@@ -92,7 +92,7 @@ export const POSTS: Post[] = [
 		date: new Date(2023, 8, 16),
 	},
 	{
-		title: 'Accessible Checkbox Component',
+		title: 'Accessible Checkbox',
 		description:
 			'A step by step guide to building an accessible React checkbox and checkbox group component that follows best practice component API design.',
 		image: './illustrations/checkbox.svg',
@@ -101,13 +101,13 @@ export const POSTS: Post[] = [
 		date: new Date(2024, 4, 1),
 	},
 	{
-		title: 'Every PR is unfiltered feedback on your design system',
+		title: 'How to get instant feedback on your design system',
 		description:
 			'If you work on a design system you have the beautiful opportunity of being able to see your users struggle to use your tool everyday.',
-		image: './illustrations/stalk-prs.svg',
-		link: '/blog/stalk-prs',
+		image: './illustrations/feedback.svg',
+		link: '/blog/design-system-feedback',
 		labels: ['frontend', 'design-systems'],
-		date: new Date(2024, 4, 5),
+		date: new Date(2024, 4, 4),
 	},
 ]
 

@@ -5,15 +5,17 @@ import { components } from '../../components/MDXComponents'
 
 import AutomatedTesting from './automated-testing.mdx'
 import Checkbox from './checkbox.mdx'
+import Confluence from './confluence.mdx'
+import DeclutterUi from './declutter-ui.mdx'
 import EmailSetup from './email-setup.mdx'
 import Eslint from './eslint.mdx'
+import Feedback from './feedback.mdx'
 import FrontendSetup from './frontend-setup.mdx'
 import { HikingGear } from './hiking-gear'
 import List from './List'
 import ManualTesting from './manual-testing.mdx'
 import Minimalism from './minimalism.mdx'
 import PlanHike from './plan-hike.mdx'
-import StalkPrs from './stalk-prs.mdx'
 import TrailFood from './trail-food.mdx'
 import Uses from './uses.mdx'
 
@@ -59,8 +61,16 @@ export const Blog = () => {
 					element={<Checkbox components={components} />}
 				/>
 				<Route
-					path="stalk-prs/"
-					element={<StalkPrs components={components} />}
+					path="design-system-feedback/"
+					element={<Feedback components={components} />}
+				/>
+				<Route
+					path="declutter-ui/"
+					element={<DeclutterUi components={components} />}
+				/>
+				<Route
+					path="confluence/"
+					element={<Confluence components={components} />}
 				/>
 				<Route path="uses/" element={<Uses components={components} />} />
 				<Route path="eslint/" element={<Eslint components={components} />} />
