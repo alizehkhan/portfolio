@@ -16,8 +16,8 @@ export const Home = () => {
 					products that priortise content, inclusivity and simplicity.
 				</p>
 				<img
-					src="/assets/alizeh.jpeg"
-					className="max-w-[700px] mt-8 object-cover mb-10 rounded-lg"
+					src="/assets/alizeh.jpg"
+					className="mt-8 mb-10 max-w-[700px] w-full rounded-lg"
 					alt="A selfie of Alizeh in her hiking gear in the Alps"
 				/>
 				<div className="max-w-[50ch]"></div>

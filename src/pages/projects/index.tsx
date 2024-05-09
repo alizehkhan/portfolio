@@ -16,15 +16,17 @@ export const Projects = () => {
 			</h1>
 			{PROJECTS.map((project, index) => (
 				<div key={index} className="max-w-[900px]">
-					<article className="flex md:flex-row flex-col p-4 gap-8 items-center">
+					<article className="flex md:flex-row flex-col py-4 gap-8 items-center">
 						<Link to={project.live} target="_blank">
-							<img className="max-w-[400px]" src={project.image} alt="" />
+							<img
+								className="max-w-[400px] w-full"
+								src={project.image}
+								alt=""
+							/>
 						</Link>
 						<div className="flex-1">
-							<h2 className="font-serif font-bold md:text-3xl text-2xl">
-								{project.title}
-							</h2>
-							<p className="mb-3 mt-2 text-xl opacity-80">
+							<h2 className="font-serif text-2xl">{project.title}</h2>
+							<p className="mb-3 mt-2 text-lg opacity-80">
 								{project.description}
 							</p>
 
