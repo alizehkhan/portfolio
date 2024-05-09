@@ -12,8 +12,8 @@ export const Home = () => {
 					Hey 🤙🏼
 				</h1>
 				<p className="text-2xl max-w-[700px]">
-					I'm Alizeh. I'm a Design Engineer nerdy about design systems,
-					accessibility and form UX.
+					I'm Alizeh. I'm a Frontend Engineer and Designer who appreciates
+					products that priortise content, inclusivity and simplicity.
 				</p>
 				<img
 					src="/assets/alizeh.jpeg"
