@@ -32,15 +32,6 @@ export const MobileNav = ({
 						</NavLink>
 					</li>
 				))}
-				<li>
-					<NavLink
-						to="/Alizeh Khan.pdf"
-						target="_blank"
-						onClick={() => setIsMobileNavOpen(false)}
-					>
-						Resume
-					</NavLink>
-				</li>
 			</ul>
 		</nav>
 	)

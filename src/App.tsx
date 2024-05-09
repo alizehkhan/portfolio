@@ -1,9 +1,11 @@
 import { HelmetProvider } from 'react-helmet-async'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
+import { Footer } from './components/Footer'
 import { Header } from './components/Header'
-import { About } from './pages/about'
 import { Blog } from './pages/blog'
+import { Contact } from './pages/contact'
+import { Home } from './pages/home'
 import { Projects } from './pages/projects'
 import { ScrollToTop } from './utils/ScrollToTop'
 
@@ -15,13 +17,15 @@ const App = () => {
 			<BrowserRouter>
 				<ScrollToTop />
 				<Header />
-				<main className="mb-16">
+				<main className="my-16 container mx-auto">
 					<Routes>
-						<Route path="/" element={<About />} />
-						<Route path="/projects/*" element={<Projects />} />
+						<Route path="/" element={<Home />} />
+						<Route path="/projects" element={<Projects />} />
 						<Route path="/blog/*" element={<Blog />} />
+						<Route path="/contact" element={<Contact />} />
 					</Routes>
 				</main>
+				<Footer />
 			</BrowserRouter>
 		</HelmetProvider>
 	)

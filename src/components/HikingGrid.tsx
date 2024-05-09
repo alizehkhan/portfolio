@@ -25,7 +25,7 @@ export const HikingGrid = () => {
 		redirect('/blog/hiking-gear')
 
 	return (
-		<div className="container mt-1 grid auto-rows-[232px] grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
+		<div className="mt-1 grid auto-rows-[232px] grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
 			{!isLoading
 				? getFilteredHikingGear(
 						gearById,

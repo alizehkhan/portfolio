@@ -2,7 +2,6 @@ import { IconX } from '@tabler/icons-react'
 import { useEffect, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 
-import { Container } from '../../components/Container'
 import { PostCard } from '../../components/PostCard'
 import { POSTS, labels } from '../../content/posts'
 import { Label } from '../../utils/types'
@@ -30,9 +29,10 @@ const List = () => {
 	}, [searchParams, setSelectedLabel])
 
 	return (
-		<Container>
+		<>
+			<h1 className="md:text-7xl font-bold font-serif mb-16">Blog</h1>
 			<nav>
-				<ul className="my-4 flex flex-wrap items-center gap-3">
+				<ul className="my-4 mb-8 flex flex-wrap items-center gap-3">
 					{labels.map((label, index) => (
 						<li key={index}>
 							<button
@@ -77,7 +77,7 @@ const List = () => {
 					labels={post.labels}
 				/>
 			))}
-		</Container>
+		</>
 	)
 }
 
