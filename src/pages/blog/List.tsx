@@ -30,7 +30,7 @@ const List = () => {
 
 	return (
 		<>
-			<h1 className="md:text-7xl font-bold font-serif mb-16">Blog</h1>
+			<h1 className="md:text-7xl text-5xl font-bold font-serif mb-16">Blog</h1>
 			<nav>
 				<ul className="my-4 mb-8 flex flex-wrap items-center gap-3">
 					{labels.map((label, index) => (

@@ -8,7 +8,7 @@ export const Home = () => {
 			</Helmet>
 
 			<div className="text-2xl leading-normal">
-				<h1 className="font-serif font-bold text-7xl mb-4 leading-normal lg:leading-snug">
+				<h1 className="font-serif text-5xl font-bold md:text-7xl mb-4 leading-normal lg:leading-snug">
 					Hey 🤙🏼
 				</h1>
 				<p className="text-2xl max-w-[700px]">

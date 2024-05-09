@@ -4,17 +4,17 @@ import { Code } from './Code'
 
 export const components = {
 	h1: ({ children }: { children?: ReactNode }) => (
-		<h1 className="mb-10 font-serif text-5xl max-w-[850px] md:leading-[1.2] text-neutral-700 md:text-7xl font-bold">
+		<h1 className="mb-10 font-serif text-5xl max-w-[850px] leading-[1.2] md:leading-[1.2] text-neutral-700 md:text-7xl font-bold">
 			{children}
 		</h1>
 	),
 	h2: ({ children }: { children?: ReactNode }) => (
-		<h2 className="mt-12 font-serif text-4xl leading-[1.2] font-bold text-neutral-700">
+		<h2 className="mt-12 font-serif md:text-4xl text-2xl leading-[1.2] font-bold text-neutral-700">
 			{children}
 		</h2>
 	),
 	h3: ({ children }: { children?: ReactNode }) => (
-		<h3 className="mt-8 font-serif text-xl font-bold text-neutral-700">
+		<h3 className="mt-8 font-serif md:text-xl text-lg font-bold text-neutral-700">
 			{children}
 		</h3>
 	),

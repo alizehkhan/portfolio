@@ -11,7 +11,9 @@ export const Projects = () => {
 				<title>Projects | Alizeh Khan</title>
 			</Helmet>
 
-			<h1 className="md:text-7xl font-serif mb-16 font-bold">Projects</h1>
+			<h1 className="md:text-7xl text-5xl font-serif mb-16 font-bold">
+				Projects
+			</h1>
 			{PROJECTS.map((project, index) => (
 				<div key={index} className="max-w-[900px]">
 					<article className="flex md:flex-row flex-col p-4 gap-8 items-center">
@@ -19,7 +21,9 @@ export const Projects = () => {
 							<img className="max-w-[400px]" src={project.image} alt="" />
 						</Link>
 						<div className="flex-1">
-							<p className="font-serif font-bold text-3xl">{project.title}</p>
+							<h2 className="font-serif font-bold md:text-3xl text-2xl">
+								{project.title}
+							</h2>
 							<p className="mb-3 mt-2 text-xl opacity-80">
 								{project.description}
 							</p>
