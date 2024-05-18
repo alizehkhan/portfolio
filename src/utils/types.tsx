@@ -58,6 +58,6 @@ export type Project = {
 export type Label =
 	| 'minimalism'
 	| 'frontend'
-	| 'design-systems'
+	| 'design'
 	| 'hiking'
 	| 'accessibility'

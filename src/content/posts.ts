@@ -106,7 +106,7 @@ export const POSTS: Post[] = [
 			'Free, unfiltered, instant, quantitative and qualitative feedback without surveys or workshops...',
 		image: './illustrations/feedback.svg',
 		link: '/blog/design-system-feedback',
-		labels: ['frontend', 'design-systems'],
+		labels: ['frontend', 'design'],
 		date: new Date(2024, 4, 8),
 	},
 	{
@@ -115,14 +115,14 @@ export const POSTS: Post[] = [
 			'What happens when designers are focused on reducing “clutter” and making things look “minimalist”?',
 		image: './illustrations/designer.svg',
 		link: '/blog/declutter-ui',
-		labels: [],
+		labels: ['design'],
 		date: new Date(2024, 4, 18),
 	},
 ]
 
 export const labels: Label[] = [
 	'frontend',
-	'design-systems',
+	'design',
 	'accessibility',
 	'hiking',
 	'minimalism',
