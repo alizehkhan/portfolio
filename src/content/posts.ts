@@ -103,11 +103,20 @@ export const POSTS: Post[] = [
 	{
 		title: 'How to get instant feedback on your design system',
 		description:
-			'If you work on a design system you have the beautiful opportunity of being able to see your users struggle to use your tool everyday.',
+			'Free, unfiltered, instant, quantitative and qualitative feedback without surveys or workshops...',
 		image: './illustrations/feedback.svg',
 		link: '/blog/design-system-feedback',
 		labels: ['frontend', 'design-systems'],
-		date: new Date(2024, 4, 4),
+		date: new Date(2024, 4, 8),
+	},
+	{
+		title: '“It will clutter up the UI”',
+		description:
+			'What happens when designers are focused on reducing “clutter” and making things look “minimalist”?',
+		image: './illustrations/designer.svg',
+		link: '/blog/declutter-ui',
+		labels: [],
+		date: new Date(2024, 4, 18),
 	},
 ]
 

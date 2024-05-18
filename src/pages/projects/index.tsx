@@ -11,7 +11,7 @@ export const Projects = () => {
 				<title>Projects | Alizeh Khan</title>
 			</Helmet>
 
-			<h1 className="md:text-7xl text-5xl font-serif mb-16 font-bold">
+			<h1 className="md:text-7xl text-5xl font-serif mb-14 font-bold">
 				Projects
 			</h1>
 			{PROJECTS.map((project, index) => (
