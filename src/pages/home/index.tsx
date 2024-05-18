@@ -7,20 +7,20 @@ export const Home = () => {
 				<title>Alizeh Khan | Design Engineer</title>
 			</Helmet>
 
-			<div className="text-2xl leading-normal">
-				<h1 className="font-serif text-5xl font-bold md:text-7xl mb-4 leading-normal lg:leading-snug">
+			<div className="text-2xl">
+				<h1 className="font-serif text-5xl font-bold md:text-7xl mb-6">
 					Hey 🤙🏼
 				</h1>
-				<p className="text-2xl max-w-[700px]">
-					I'm Alizeh. I'm a Frontend Engineer and Designer who appreciates
-					products that priortise content, inclusivity and simplicity.
+				<p className="text-2xl max-w-[700px] leading-normal">
+					I'm Alizeh. I'm a Frontend Engineer and Designer. I build and advocate
+					for web experiences that prioritise content, inclusivity and
+					simplicity.
 				</p>
 				<img
 					src="/assets/alizeh.jpg"
 					className="mt-8 mb-10 max-w-[700px] w-full rounded-lg"
 					alt="A selfie of Alizeh in her hiking gear in the Alps"
 				/>
-				<div className="max-w-[50ch]"></div>
 			</div>
 		</>
 	)
