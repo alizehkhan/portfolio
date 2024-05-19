@@ -42,20 +42,20 @@ type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'>
 
 export const Checkbox = forwardRef(
  (props: CheckboxProps, ref?: Ref<HTMLInputElement>) => {
-  const { children, name, value, checked, ...restProps } = props
+  const { children, className, name, value, checked, ...restProps } = props
 
   const id = useId()
 
   return (
-   <div>
+   <label htmlFor={id} className={className}>
     <input
      {...restProps}
      ref={ref}
      type="checkbox"
      id={id}
     />
-    <label htmlFor={id}>{children}</label>
-   </div>
+    {children}
+   </label>
   )
  }
 )

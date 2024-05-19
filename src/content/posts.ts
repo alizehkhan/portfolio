@@ -79,7 +79,7 @@ export const POSTS: Post[] = [
 			"I enjoy reading other people's lists so I thought I'd share my own. I will try to keep this up to date.",
 		image: './illustrations/uses.svg',
 		link: '/blog/uses',
-		labels: ['minimalism', 'frontend'],
+		labels: ['minimalism', 'frontend', 'design'],
 		date: new Date(2023, 7, 31),
 	},
 	{
@@ -110,7 +110,7 @@ export const POSTS: Post[] = [
 		date: new Date(2024, 4, 8),
 	},
 	{
-		title: '“It will clutter up the UI”',
+		title: '“It clutters up the UI”',
 		description:
 			'What happens when designers are focused on reducing “clutter” and making things look “minimalist”?',
 		image: './illustrations/designer.svg',
