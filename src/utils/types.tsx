@@ -17,6 +17,7 @@ export type GearItem = {
 	Name: string
 	Notes: string
 	Order: number
+	Condition: 'New' | 'Needs replacing' | 'Good'
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	Photo: Array<Record<string, any>>
 	Price: number

@@ -8,7 +8,7 @@ export const POSTS: Post[] = [
 		link: '/blog/hiking-gear',
 		image: './illustrations/tent.svg',
 		labels: ['hiking'],
-		date: new Date(2023, 6, 1),
+		date: new Date(2024, 5, 2),
 	},
 	{
 		title: 'Trail food',

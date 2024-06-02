@@ -15,7 +15,7 @@ export const HikingFilters = () => {
 				<li>
 					<Link
 						to="/blog/hiking-gear"
-						className={`filter-show-all text-lg transition-all text- no-underline filter ${
+						className={`filter-show-all transition-all text- no-underline filter ${
 							!selectedFilter ? 'active' : ''
 						}`}
 						onClick={() => setSelectedFilter(selectedFilter)}
@@ -27,7 +27,7 @@ export const HikingFilters = () => {
 					<li key={filter}>
 						<Link
 							to={getKebabCase(filter)}
-							className={`text-lg transition-all no-underline filter filter-${getKebabCase(
+							className={`transition-all no-underline filter filter-${getKebabCase(
 								filter
 							)} ${selectedFilter === getKebabCase(filter) ? 'active' : ''}`}
 							onClick={event => {

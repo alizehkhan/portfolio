@@ -140,7 +140,14 @@ export const HikingModal = ({
 				</div>
 			</div>
 			<div className="modal-right">
-				<h2 className="my-4 font-serif text-3xl font-bold">{gear.Name}</h2>
+				<h2 className="my-4 font-serif text-3xl font-bold flex items-center gap-2">
+					{gear.Name}
+					{gear.Condition === 'New' && (
+						<span className="text-sm font-sans rounded-full px-3 py-1 bg-yellow-300 shadow-sm">
+							✨NEW
+						</span>
+					)}
+				</h2>
 				<ReactMarkdown>{gear.Notes}</ReactMarkdown>
 			</div>
 			{isTabletOrDesktop && !(openedIndex === lastItemIndex) && (

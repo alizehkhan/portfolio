@@ -36,13 +36,20 @@ export const HikingCard = ({
 				className="flex flex-col items-center justify-between rounded-lg bg-white px-2 hover:transition-all pb-4 pt-2 shadow-sm hover:scale-[1.02] hover:shadow-lg"
 				onClick={openModal}
 			>
-				<p
-					className={`mr-auto inline-block w-fit rounded-full px-3 py-1 text-xs font-bold ${getKebabCase(
-						gearItem.Category
-					)}`}
-				>
-					{gearItem.Category}
-				</p>
+				<div className="flex justify-between w-full">
+					<p
+						className={`rounded-full px-3 py-1 text-xs font-bold ${getKebabCase(
+							gearItem.Category
+						)}`}
+					>
+						{gearItem.Category}
+					</p>
+					{gearItem.Condition === 'New' && (
+						<p className="font-bold px-3 py-1 text-xs shadow-sm bg-yellow-300 rounded-full">
+							✨ NEW
+						</p>
+					)}
+				</div>
 				<img
 					src={gearItem.Photo?.[0].url}
 					alt=""
