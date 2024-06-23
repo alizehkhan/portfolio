@@ -4,7 +4,7 @@ export const POSTS: Post[] = [
 	{
 		title: 'My hiking gear',
 		description:
-			'An evergreen and filterable blog of my solo long-distance hiking gear.',
+			'Guidance and list of my solo long-distance hiking gear which I religiously keep up to date. Everything from tent to toilet paper.',
 		link: '/blog/hiking-gear',
 		image: './illustrations/tent.svg',
 		labels: ['hiking'],
@@ -13,7 +13,7 @@ export const POSTS: Post[] = [
 	{
 		title: 'Trail food',
 		description:
-			'Here is a breakdown of the food I tend to eat on trail and what I think about when resupplying on a long distance hike.',
+			'A breakdown of the food I tend to eat on trail and what I think about when resupplying on a long distance hike.',
 		link: '/blog/trail-food',
 		image: './illustrations/food.svg',
 		labels: ['hiking'],

@@ -19,7 +19,7 @@ import { codeToHtml } from 'shiki'
 
 ## Checkbox
 
-1. Create a `Checkbox` component composed of an `<input>` with `type="checkbox"` and `<label>`.
+1. Create a `Checkbox` component composed of an `<input>` with `type="checkbox"` and `<label>`. Wrap the input with the label so that any children form part of the click area, making the component more flexible.
 
 2. Use `forwardRef` and attach the ref to the `<input/>` element so users can reference the DOM node if they need to when using the component. Make it an optional param `ref?` and define the type for the ref as `Ref<HTMLInputElement>`
 
