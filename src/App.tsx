@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/no-unresolved
+import { Analytics } from '@vercel/analytics/react'
 import { HelmetProvider } from 'react-helmet-async'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
@@ -26,6 +28,7 @@ const App = () => {
 					</Routes>
 				</main>
 				<Footer />
+				<Analytics />
 			</BrowserRouter>
 		</HelmetProvider>
 	)
