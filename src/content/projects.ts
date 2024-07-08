@@ -29,7 +29,7 @@ export const PROJECTS: Project[] = [
 		description:
 			'A single page website offering in-person and online communication workshops for corporations.',
 		source: 'https://github.com/alizehkhan/communication-trainer',
-		live: 'https://haneenkhan.netlify.app',
+		live: 'https://haneenkhan.vercel.app',
 		image: './assets/haneen.png',
 	},
 ]
