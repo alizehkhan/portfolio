@@ -9,6 +9,7 @@
 		"preview": "vite preview",
 		"prepare": "husky install",
 		"lint": "eslint . --fix",
+		"format": "prettier . --fix",
 		"preinstall": "npx only-allow pnpm"
 	},
 	"dependencies": {
@@ -58,6 +59,9 @@
 		"vite-plugin-eslint": "^1.8.1"
 	},
 	"lint-staged": {
-		"*.tsx": "eslint"
+		"*.tsx": [
+			"eslint --fix",
+			"prettier --write"
+		]
 	}
 }

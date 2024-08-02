@@ -6,11 +6,11 @@ import { Helmet } from 'react-helmet-async';
   <title>My ESLint config | Alizeh Khan</title>
 </Helmet>
 
-# My ESLint config
+# My linting and formatting config
 
 <Container>
 
-_There isn't much customisation when it comes to my ESLint config. I try to stick to the recommended standard for an accessible TypeScript React app._
+_There isn't much customisation when it comes to my ESLint and Prettier config. I try to stick to the recommended standard for an accessible TypeScript React app._
 
 _Here it is..._
 
@@ -28,8 +28,10 @@ Install the **ESLint VS Code extension** to allow the following:
 {
   // ...
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  }
+		"source.fixAll": "explicit",
+		"source.organizeImports": "always",
+		"source.removeUnusedImports": "explicit"
+	},
 }
 ```
 
@@ -47,7 +49,7 @@ ESLint plugins provide additional rules, shareable configurations and parsers th
 For React specific rules, I install `eslint-plugin-react` and `eslint-plugin-react-hooks`:
 
 ```shell
-yarn add -D eslint-plugin-react eslint-plugin-react-hooks
+pnpm add --save-dev eslint-plugin-react eslint-plugin-react-hooks
 ```
 
 - I use each of their recommended configurations `plugin:react/recommended` and `plugin:react-hooks/recommended`.
@@ -76,7 +78,7 @@ yarn add -D eslint-plugin-react eslint-plugin-react-hooks
 For TypeScript I install the following packages:
 
 ```shell
-yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
+pnpm add --save-dev @typescript-eslint/parser @typescript-eslint/eslint-plugin
 ```
 
 <div className='my-4'>
@@ -99,7 +101,7 @@ yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
 Up to 25% of WCAG issues can be caught whilst coding. I install [`eslint-plugin-jsx-a11y`](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y) which uses a subset of [`axe-core`](https://github.com/dequelabs/axe-core)'s rules.
 
 ```shell
-yarn add -D eslint-plugin-jsx-a11y
+pnpm add --save-dev eslint-plugin-jsx-a11y
 ```
 
 I add their recommended configuration to my `.eslintrc`.
@@ -118,7 +120,7 @@ I add their recommended configuration to my `.eslintrc`.
 I install [`eslint-plugin-import`](https://github.com/import-js/eslint-plugin-import) and [`eslint-plugin-unused-imports`](https://github.com/sweepline/eslint-plugin-unused-imports) for import specific rules:
 
 ```shell
-yarn add -D eslint-plugin-import eslint-plugin-unused-imports
+pnpm add --save-dev eslint-plugin-import eslint-plugin-unused-imports
 ```
 
 I add the recommended configuration provided by `eslint-plugin-import`.
@@ -180,7 +182,7 @@ I specify both plugins in my `.eslintrc` so I can add the following individual r
 To lint my unit tests I install the following packages:
 
 ```shell
-yarn add -D eslint-plugin-testing-library eslint-plugin-jest-dom
+pnpm add --save-dev eslint-plugin-testing-library eslint-plugin-jest-dom
 ```
 
 And extend the following configurations in my `.eslintrc`.
@@ -199,12 +201,13 @@ And extend the following configurations in my `.eslintrc`.
 
 ## Scripts
 
-Lastly, I add the following script to my project's `package.json` so I can reveal and fix any auto fixable lint errors in my project at once.
+I add the following scripts to my project's `package.json` so I can format and fix any auto fixable lint errors in my project at once.
 
 ```json
 "scripts": {
   // ...
-  "lint": "eslint . --fix"
+  "lint": "eslint . --fix",
+  "format": "prettier . --write"
 },
 ```
 

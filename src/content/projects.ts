@@ -2,16 +2,16 @@ import { Project } from '../utils/types'
 
 export const PROJECTS: Project[] = [
 	{
-		title: 'Co-founder of Wandern',
+		title: 'Co-founder of Altamiga',
 		description:
-			'MVP of a trail centric booking platform for hikers that will allow them to easily line up their accommodation for popular multi-day hikes in Europe.',
-		source: 'https://github.com/wanderntrails/frontend',
-		live: 'https://wanderntrails.com',
-		image: './assets/wandern.png',
+			'Altamiga will be the first trail centric booking platform for hikers that will allow them to easily line up their accommodation for popular multi-day hikes in Europe. We are building a Property Management System exclusive for mountain huts owners to manage their bookings.',
+		source: 'https://github.com/altamiga/frontend',
+		live: 'https://altamiga.com',
+		image: './assets/altamiga.png',
 	},
 	{
 		title: 'My portfolio',
-		description: 'A home for my projects, public learnings and resume.',
+		description: ' A home for my projects, thoughts and learnings.',
 		source: 'https://github.com/alizehkhan/portfolio',
 		live: 'https://alizehkhan.com/blog/hiking-gear',
 		image: './assets/portfolio.png',
