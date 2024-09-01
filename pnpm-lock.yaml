@@ -121,8 +121,8 @@ importers:
         specifier: ^0.6.5
         version: 0.6.5(prettier@3.3.3)
       shiki:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^1.16.0
+        version: 1.16.0
       tailwindcss:
         specifier: ^3.4.4
         version: 3.4.4
@@ -490,14 +490,17 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@shikijs/core@1.10.0':
-    resolution: {integrity: sha512-BZcr6FCmPfP6TXaekvujZcnkFmJHZ/Yglu97r/9VjzVndQA56/F4WjUKtJRQUnK59Wi7p/UTAOekMfCJv7jnYg==}
+  '@shikijs/core@1.16.0':
+    resolution: {integrity: sha512-7Uy6nAWNdYY8GKVIgsdC1+JK1kMvA7gy3fl0gz0BGbsTrT1ve8VFUz+x3SkW9yWq0XhqjkunITFG6sCCWXbTOA==}
 
   '@shikijs/core@1.9.0':
     resolution: {integrity: sha512-cbSoY8P/jgGByG8UOl3jnP/CWg/Qk+1q+eAKWtcrU3pNoILF8wTsLB0jT44qUBV8Ce1SvA9uqcM9Xf+u3fJFBw==}
 
   '@shikijs/transformers@1.9.0':
     resolution: {integrity: sha512-wo8dNbZtFtVhKtw8BnXIT/FDTGMwEdWcQSIRa78ou14JGkMYxSCBN942W5+IRUifP5BwVUWgkXBYX/M3FUFkeg==}
+
+  '@shikijs/vscode-textmate@9.1.1':
+    resolution: {integrity: sha512-K/Xw/+uLXHtEp9bwTRbcwSB05du8J0k+O/n8nU7Z+J84BS9C+x6dWRUh3q2Pn8F19p+wPV1GU1xWSSimHlk9nA==}
 
   '@swc/core-darwin-arm64@1.6.5':
     resolution: {integrity: sha512-RGQhMdni2v1/ANQ/2K+F+QYdzaucekYBewZcX1ogqJ8G5sbPaBdYdDN1qQ4kHLCIkPtGP6qC7c71qPEqL2RidQ==}
@@ -2490,8 +2493,8 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  shiki@1.10.0:
-    resolution: {integrity: sha512-YD2sXQ+TMD/F9BimV9Jn0wj35pqOvywvOG/3PB6hGHyGKlM7TJ9tyJ02jOb2kF8F0HfJwKNYrh3sW7jEcuRlXA==}
+  shiki@1.16.0:
+    resolution: {integrity: sha512-GZGG99Ft3wwuO2cAHExfPEtL5p+iQSDqGPhXako6kjW/dYyFikZi+6eKggZ8554wQatpADkwA+lUOlfl76KBng==}
 
   shiki@1.9.0:
     resolution: {integrity: sha512-i6//Lqgn7+7nZA0qVjoYH0085YdNk4MC+tJV4bo+HgjgRMJ0JmkLZzFAuvVioJqLkcGDK5GAMpghZEZkCnwxpQ==}
@@ -3173,13 +3176,18 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.18.0':
     optional: true
 
-  '@shikijs/core@1.10.0': {}
+  '@shikijs/core@1.16.0':
+    dependencies:
+      '@shikijs/vscode-textmate': 9.1.1
+      '@types/hast': 3.0.4
 
   '@shikijs/core@1.9.0': {}
 
   '@shikijs/transformers@1.9.0':
     dependencies:
       shiki: 1.9.0
+
+  '@shikijs/vscode-textmate@9.1.1': {}
 
   '@swc/core-darwin-arm64@1.6.5':
     optional: true
@@ -5611,9 +5619,11 @@ snapshots:
 
   shebang-regex@3.0.0: {}
 
-  shiki@1.10.0:
+  shiki@1.16.0:
     dependencies:
-      '@shikijs/core': 1.10.0
+      '@shikijs/core': 1.16.0
+      '@shikijs/vscode-textmate': 9.1.1
+      '@types/hast': 3.0.4
 
   shiki@1.9.0:
     dependencies:
