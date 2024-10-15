@@ -25,21 +25,23 @@ Instead approach it with **curiosity**.
 
 Get excited when you see someone misuse your product 😁. There is an opportunity to learn here. It gets especially juicy 🧃 when you see a recurring pattern of misuse. Why do a lot of engineers hack our modal component or build their own? Maybe the component’s API is not flexible enough. Why are they using our global tokens and not our alias tokens? Do we even want our global tokens exposed to users? Is there an education piece missing around tokens?
 
-## "They'll let us know when they struggle"
+## Be proactive not reactive
 
-They won't. Or very few will. This could be for a number of reasons:
+A common pitfall is relying on users to raise issues and using this to dictate your design system priorities. In the same way you wouldn't prioritise your backlog based on feature requests from one user's experience.
 
-- The process to contribute to the design system appears an arduous, political or highly gate kept process.
+There are a lot issues that may never get raised by engineers. This could be for a number of reasons:
+
+- They don't see their misuse as an issue or struggle unless they are blocked by it i.e. they are unable to hack around it or find it's too much effort to build their own version of the component.
+- The process to contribute to the design system appears an arduous, political or highly gate kept process that they don't want to get involved in.
 - They have little capacity or incentive to get involved in design system work since their performance is measured on reaching their team's sprint goal.
-- They don't even see their misuse as an issue or struggle unless they are blocked by it i.e. they are unable to hack around it to achieve what they need or find it's too difficult to build their own version of the component.
 
 ## Your users are engineers not design system engineers
 
 I've seen a lot of effort (and faith 🤲🏼) put into design system feedback surveys only to get back maybe a handful of responses. I've seen lots of time and energy wasted on hosting workshops to gather ideas from engineers, product managers and designers on how to improve the design system. It’s like asking customers to design their own car, **they are not the experts and it’s not their responsibility**. Their PRs already give you plenty of quantitative and qualitative insight into the areas that need your attention.
 
-## "It's in the documentation though"
+## "It's in the documentation!"
 
-If you spot your users are asking a lot of questions or making a lot of mistakes that could have been avoided by using the documentation, then...
+If you notice a lot of users are asking questions or making mistakes that could have been avoided if they read the documentation, then...
 
 ### Your documentation might be shit 💩
 
@@ -47,7 +49,7 @@ Yes, documentation needs content designing too. Just because the information is 
 
 ### Your components' APIs and token naming might be shit 💩
 
-Remember, good design is first intuitive then discoverable. Meaning, you want to name and design your components' APIs and tokens as intuitively as possible so your engineers rarely even need to leave their IDEs to refer to the documentation. Don't band aid bad component API design with redirection to the documentation (or even more documentation!), prioritise the API.
+Remember, good design is first intuitive then discoverable. Meaning, you want to name and design your components' APIs and tokens as intuitively as possible so your engineers rarely even need to leave their IDEs to refer to the documentation. Don't band aid bad component API design with redirection to the documentation (or adding more documentation!), prioritise the API.
 
 Some best practices on component API design include:
 

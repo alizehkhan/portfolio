@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async"
-import { Link } from "react-router-dom"
 
 export const Home = () => {
 	return (
@@ -36,18 +35,6 @@ export const Home = () => {
 					className="my-8 w-full rounded-lg"
 					alt="A selfie of Alizeh in her hiking gear in the Alps"
 				/>
-				<p className="mt-20 font-serif text-3xl font-bold leading-snug">
-					🚧 Currently building Altamiga, the first trail-centric booking
-					platform
-				</p>
-				<p className="mt-4">
-					Plan and book all your mountain hut stays for popular multi-day hikes
-					in Europe. We are currently looking for angel investors to help us
-					grow.
-				</p>
-				<Link to="https://altamiga.com">
-					<img src="/assets/altamiga.png" className="mt-4" alt="" />
-				</Link>
 			</div>
 		</>
 	)
