@@ -4,7 +4,7 @@ export const PROJECTS: Project[] = [
 	{
 		title: 'Co-founder of Altamiga',
 		description:
-			'Altamiga will be the first trail centric booking platform for hikers that will allow them to easily line up their accommodation for popular multi-day hikes in Europe. We are building a Property Management System exclusive for mountain huts owners to manage their bookings.',
+			'Building the first trail centric booking platform that will allow hikers to easily line up their accommodation for popular multi-day hikes in Europe. We are building a Property Management System exclusive for mountain huts owners to manage their bookings.',
 		source: 'https://github.com/altamiga/frontend',
 		live: 'https://altamiga.com',
 		image: './assets/altamiga.png',

@@ -7,7 +7,7 @@
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"preview": "vite preview",
-		"prepare": "husky install",
+		"prepare": "husky",
 		"lint": "eslint . --fix",
 		"format": "prettier . --fix",
 		"preinstall": "npx only-allow pnpm"
@@ -69,6 +69,8 @@
 			"prettier-plugin-tailwindcss"
 		],
 		"semi": false,
-		"useTabs": true
+		"useTabs": true,
+		"singleQuote": true
+
 	}
 }
