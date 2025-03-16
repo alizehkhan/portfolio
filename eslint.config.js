@@ -1,5 +1,12 @@
-import alizeh from "@alizehkhan/eslint-config"
+import alizeh from '@alizehkhan/eslint-config'
 
 export default [
-...alizeh,
+	...alizeh,
+	{
+		settings: {
+			react: {
+				version: 'detect',
+			},
+		},
+	},
 ]
