@@ -84,7 +84,7 @@ export const HikingModal = ({
 					<IconX color="#3f3f46" size={24} />
 				</button>
 			)}
-			<div className="mr-8 w-[300px]">
+			<div className="mr-8 w-[300px] shrink-0">
 				<div className="mb-4 rounded-lg bg-white p-3 shadow-xs">
 					<p
 						className={`mr-auto inline-block w-fit rounded-full px-3 py-1 text-xs font-bold ${
@@ -139,7 +139,7 @@ export const HikingModal = ({
 					)}
 				</div>
 			</div>
-			<div className="grow overflow-auto border border-neutral-300 pl-8 leading-1.5">
+			<div className="grow overflow-auto">
 				<h2 className="my-4 flex items-center gap-2 font-serif text-3xl font-bold">
 					{gear.Name}
 					{gear.Condition === 'New' && (
@@ -148,7 +148,9 @@ export const HikingModal = ({
 						</span>
 					)}
 				</h2>
-				<ReactMarkdown>{gear.Notes}</ReactMarkdown>
+				<ReactMarkdown className="[&_a]:underline [&_p]:mb-4">
+					{gear.Notes}
+				</ReactMarkdown>
 			</div>
 			{isTabletOrDesktop && !(openedIndex === lastItemIndex) && (
 				<button

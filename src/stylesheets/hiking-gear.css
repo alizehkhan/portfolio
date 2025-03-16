@@ -79,14 +79,6 @@
 	box-shadow: 4px 4px 56px;
 }
 
-.modal-right p {
-	@apply mb-4;
-}
-
-.modal-right a {
-	@apply underline;
-}
-
 @media screen and (max-width: 720px) {
 	.modal {
 		@apply block h-screen w-screen overflow-auto;
