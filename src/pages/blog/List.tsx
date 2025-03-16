@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 
 import { PostCard } from '../../components/PostCard'
-import { POSTS, labels } from '../../content/posts'
+import { labels, POSTS } from '../../content/posts'
 import { Label } from '../../utils/types'
 import { useNavigateSearch } from '../../utils/useNavigateSearch'
 
@@ -14,7 +14,7 @@ const List = () => {
 	const navigate = useNavigate()
 
 	const filteredPosts = selectedLabel
-		? POSTS.filter(post => post.labels?.includes(selectedLabel))
+		? POSTS.filter((post) => post.labels?.includes(selectedLabel))
 		: POSTS
 
 	const sortedPosts = filteredPosts.sort((a, b) => {
@@ -30,7 +30,7 @@ const List = () => {
 
 	return (
 		<>
-			<h1 className="md:text-7xl text-5xl font-bold font-serif mb-16">Blog</h1>
+			<h1 className="mb-16 font-serif text-5xl font-bold md:text-7xl">Blog</h1>
 			<nav>
 				<ul className="my-4 mb-8 flex flex-wrap items-center gap-3">
 					{labels.map((label, index) => (
@@ -40,7 +40,7 @@ const List = () => {
 									setSelectedLabel(searchParams.get('filter') as Label)
 									navigateSearch('/blog', { filter: label })
 								}}
-								className={`inline-block transition-all rounded-full px-3 py-1 text-lg ${
+								className={`inline-block rounded-full px-3 py-1 text-lg transition-all ${
 									selectedLabel === label
 										? 'bg-neutral-700 text-white'
 										: 'bg-grey-200 text-neutral-700 hover:scale-105 hover:shadow-md'

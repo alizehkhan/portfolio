@@ -2,7 +2,6 @@ import { useMediaQuery } from 'react-responsive'
 import { Link, NavLink } from 'react-router-dom'
 
 import { LINKS } from '../content/links'
-
 import MobileHeader from './MobileHeader'
 
 export const Header = () => {
@@ -10,7 +9,7 @@ export const Header = () => {
 
 	return isTabletOrDesktop ? (
 		<header className="container my-8 flex items-center justify-between">
-			<Link className="font-serif font-bold text-2xl hover:no-underline" to="/">
+			<Link className="font-serif text-2xl font-bold hover:no-underline" to="/">
 				Alizeh Khan
 			</Link>
 			<nav>

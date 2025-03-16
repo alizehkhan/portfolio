@@ -10,7 +10,7 @@ const MobileHeader = () => {
 	const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>): void => {
 		if (isMobileNavOpen && event.key === 'Tab') {
 			const focusableEls = MobileNavRef.current?.querySelectorAll(
-				'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+				'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
 			)
 
 			const firstFocusableEl = focusableEls?.[0] as HTMLElement | undefined
@@ -33,7 +33,6 @@ const MobileHeader = () => {
 	}
 
 	return (
-		// eslint-disable-next-line jsx-a11y/no-static-element-interactions
 		<header
 			className={`container ${
 				isMobileNavOpen ? 'h-screen w-screen bg-neutral-100' : ''

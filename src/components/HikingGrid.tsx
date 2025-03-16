@@ -5,7 +5,6 @@ import { filters } from '../content/hikingGearFilters'
 import { HikingGearContext } from '../utils/HikingGearContext'
 import { CategoryKebabCase } from '../utils/types'
 import { getFilteredHikingGear } from '../utils/utils'
-
 import { HikingCard } from './HikingCard'
 
 export const HikingGrid = () => {
@@ -29,7 +28,7 @@ export const HikingGrid = () => {
 			{!isLoading
 				? getFilteredHikingGear(
 						gearById,
-						selectedFilter as CategoryKebabCase
+						selectedFilter as CategoryKebabCase,
 					).map((gearItem, index) => (
 						<HikingCard
 							key={gearItem.id}
@@ -37,14 +36,14 @@ export const HikingGrid = () => {
 							gearItem={gearItem}
 							hikingGear={getFilteredHikingGear(
 								gearById,
-								selectedFilter as CategoryKebabCase
+								selectedFilter as CategoryKebabCase,
 							)}
 						/>
 					))
 				: Array.from({ length: 12 }, (_, i) => (
 						<div
 							key={i}
-							className="animate-pulse w-full bg-neutral-300 rounded-md"
+							className="w-full animate-pulse rounded-md bg-neutral-300"
 						/>
 					))}
 		</div>

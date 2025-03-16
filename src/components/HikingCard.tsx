@@ -5,7 +5,6 @@ import ReactModal from 'react-modal'
 import { HikingGearContext } from '../utils/HikingGearContext'
 import { GearItem } from '../utils/types'
 import { getKebabCase } from '../utils/utils'
-
 import { HikingModal } from './HikingModal'
 
 export const HikingCard = ({
@@ -33,19 +32,19 @@ export const HikingCard = ({
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				exit={{ opacity: 0 }}
-				className="flex flex-col items-center justify-between rounded-lg bg-white px-2 hover:transition-all pb-4 pt-2 shadow-sm hover:scale-[1.02] hover:shadow-lg"
+				className="flex flex-col items-center justify-between rounded-lg bg-white px-2 pb-4 pt-2 shadow-sm hover:scale-[1.02] hover:shadow-lg hover:transition-all"
 				onClick={openModal}
 			>
-				<div className="flex justify-between w-full">
+				<div className="flex w-full justify-between">
 					<p
 						className={`rounded-full px-3 py-1 text-xs font-bold ${getKebabCase(
-							gearItem.Category
+							gearItem.Category,
 						)}`}
 					>
 						{gearItem.Category}
 					</p>
 					{gearItem.Condition === 'New' && (
-						<p className="font-bold px-3 py-1 text-xs shadow-sm bg-yellow-300 rounded-full">
+						<p className="rounded-full bg-yellow-300 px-3 py-1 text-xs font-bold shadow-sm">
 							✨ NEW
 						</p>
 					)}
