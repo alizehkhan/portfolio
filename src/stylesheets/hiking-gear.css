@@ -63,7 +63,7 @@
 }
 
 .overlay {
-	@apply z-2 fixed left-0 top-0 flex h-full w-full items-center justify-between;
+	@apply fixed top-0 left-0 z-2 flex h-full w-full items-center justify-between;
 	backdrop-filter: blur(8px);
 	background: rgba(0, 0, 0, 0.5);
 }
@@ -77,14 +77,6 @@
 .modal {
 	@apply relative m-auto flex h-[500px] w-[880px] rounded-md bg-neutral-100 px-12 py-8 shadow-neutral-700 outline-0;
 	box-shadow: 4px 4px 56px;
-}
-
-.modal-left {
-	@apply mr-8 w-[300px];
-}
-
-.modal-right {
-	@apply leading-1.5 grow overflow-auto border border-neutral-300 pl-8;
 }
 
 .modal-right p {

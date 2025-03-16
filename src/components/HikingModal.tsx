@@ -84,7 +84,7 @@ export const HikingModal = ({
 					<IconX color="#3f3f46" size={24} />
 				</button>
 			)}
-			<div className="modal-left">
+			<div className="mr-8 w-[300px]">
 				<div className="mb-4 rounded-lg bg-white p-3 shadow-xs">
 					<p
 						className={`mr-auto inline-block w-fit rounded-full px-3 py-1 text-xs font-bold ${
@@ -139,7 +139,7 @@ export const HikingModal = ({
 					)}
 				</div>
 			</div>
-			<div className="modal-right">
+			<div className="grow overflow-auto border border-neutral-300 pl-8 leading-1.5">
 				<h2 className="my-4 flex items-center gap-2 font-serif text-3xl font-bold">
 					{gear.Name}
 					{gear.Condition === 'New' && (
