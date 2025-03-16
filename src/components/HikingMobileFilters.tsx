@@ -34,7 +34,7 @@ export const HikingMobileFilters = () => {
 	}
 
 	return (
-		<div className="fixed bottom-4 right-4 z-[2] flex flex-col-reverse items-end text-right">
+		<div className="fixed right-4 bottom-4 z-2 flex flex-col-reverse items-end text-right">
 			<button
 				className="mt-3 cursor-pointer rounded-full bg-neutral-700 p-4 shadow-lg"
 				aria-label={
@@ -72,18 +72,18 @@ export const HikingMobileFilters = () => {
 									Show all
 								</Link>
 							</motion.li>
-							{capitalisedFilters.map(filter => (
+							{capitalisedFilters.map((filter) => (
 								<motion.li key={filter} variants={item}>
 									<Link
 										to={getKebabCase(filter)}
 										className={`mx-1 inline-block rounded-full bg-neutral-100 px-4 py-2 text-lg font-bold no-underline shadow-lg filter-${getKebabCase(
-											filter
+											filter,
 										)} ${selectedFilter === getKebabCase(filter) && 'active'}`}
-										onClick={event => {
+										onClick={(event) => {
 											setSelectedFilter(
 												getKebabCase(
-													event.currentTarget.innerText
-												) as CategoryKebabCase
+													event.currentTarget.innerText,
+												) as CategoryKebabCase,
 											)
 										}}
 									>

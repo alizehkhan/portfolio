@@ -8,20 +8,20 @@ export const Home = () => {
 			</Helmet>
 
 			<div className="max-w-[640px] text-2xl">
-				<h1 className="mb-6 font-serif text-4xl font-bold leading-tight">
+				<h1 className="mb-6 font-serif text-4xl leading-tight font-bold">
 					👋🏼 I'm Alizeh
 				</h1>
-				<p className="font-serif text-6xl font-bold leading-tight">
+				<p className="font-serif text-6xl leading-tight font-bold">
 					Frontend Engineer
 				</p>
-				<p className="font-serif text-6xl font-bold leading-tight">
+				<p className="font-serif text-6xl leading-tight font-bold">
 					Product Designer
 				</p>
 				<div className="my-6 inline-flex gap-1">
 					{['react', 'typescript', 'css', 'html'].map((tag) => (
 						<span
 							key={tag}
-							className="w-fit rounded border-2 border-neutral-300 bg-white px-1 font-mono text-lg text-red-700"
+							className="w-fit rounded-sm border-2 border-neutral-300 bg-white px-1 font-mono text-lg text-red-700"
 						>
 							{tag}
 						</span>

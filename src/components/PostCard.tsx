@@ -20,7 +20,7 @@ export const PostCard = ({
 			<article>
 				<Link
 					to={link}
-					className="flex min-h-[140px] max-w-3xl items-center transition-all p-4"
+					className="flex min-h-[140px] max-w-3xl items-center p-4 transition-all"
 				>
 					{isTabletOrDesktop && (
 						<img
@@ -45,7 +45,7 @@ export const PostCard = ({
 								{labels.map((label, i) => (
 									<span
 										key={i}
-										className="inline-block rounded-full bg-grey-200 px-3 py-1 text-sm"
+										className="bg-grey-200 inline-block rounded-full px-3 py-1 text-sm"
 									>
 										{`#${label}`}
 									</span>
@@ -55,7 +55,6 @@ export const PostCard = ({
 					</div>
 				</Link>
 			</article>
-			<hr className="max-w-3xl text-grey-300" />
 		</>
 	)
 }

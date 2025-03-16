@@ -16,7 +16,6 @@ export const FoodGrid = () => {
 			})
 			const { records } = await res.json()
 
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			const normalisedData = records.reduce((accumulator: any, food: any) => {
 				accumulator[food.id] = { ...food.fields, id: food.id }
 				return accumulator
@@ -30,11 +29,11 @@ export const FoodGrid = () => {
 	}, [])
 
 	return (
-		<div className="flex flex-col gap-4 mt-8">
+		<div className="mt-8 flex flex-col gap-4">
 			{!isLoading
 				? Object.values(food).map((foodItem: any, index) => (
 						<div
-							className="flex flex-row gap-4 bg-white px-6 py-4 shadow-sm rounded-lg items-center"
+							className="flex flex-row items-center gap-4 rounded-lg bg-white px-6 py-4 shadow-xs"
 							key={index}
 						>
 							<div className="flex w-[200px] shrink-0 flex-col items-center justify-between">
@@ -53,7 +52,7 @@ export const FoodGrid = () => {
 				: Array.from({ length: 3 }, (_, i) => (
 						<div
 							key={i}
-							className="animate-pulse bg-neutral-300 w-full h-[140px] rounded-md"
+							className="h-[140px] w-full animate-pulse rounded-md bg-neutral-300"
 						/>
 					))}
 		</div>

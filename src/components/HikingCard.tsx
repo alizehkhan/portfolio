@@ -32,7 +32,7 @@ export const HikingCard = ({
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				exit={{ opacity: 0 }}
-				className="flex flex-col items-center justify-between rounded-lg bg-white px-2 pb-4 pt-2 shadow-sm hover:scale-[1.02] hover:shadow-lg hover:transition-all"
+				className="flex flex-col items-center justify-between rounded-lg bg-white px-2 pt-2 pb-4 shadow-xs hover:scale-[1.02] hover:shadow-lg hover:transition-all"
 				onClick={openModal}
 			>
 				<div className="flex w-full justify-between">
@@ -44,7 +44,7 @@ export const HikingCard = ({
 						{gearItem.Category}
 					</p>
 					{gearItem.Condition === 'New' && (
-						<p className="rounded-full bg-yellow-300 px-3 py-1 text-xs font-bold shadow-sm">
+						<p className="rounded-full bg-yellow-300 px-3 py-1 text-xs font-bold shadow-xs">
 							✨ NEW
 						</p>
 					)}

@@ -11,30 +11,30 @@ export const Projects = () => {
 				<title>Projects | Alizeh Khan</title>
 			</Helmet>
 
-			<h1 className="md:text-7xl text-5xl font-serif mb-14 font-bold">
+			<h1 className="mb-14 font-serif text-5xl font-bold md:text-7xl">
 				Projects
 			</h1>
 			{PROJECTS.map((project, index) => (
 				<div key={index} className="max-w-[900px]">
-					<article className="flex md:flex-row flex-col py-4 gap-8 items-center">
+					<article className="flex flex-col items-center gap-8 py-4 md:flex-row">
 						<Link to={project.live} target="_blank">
 							<img
-								className="max-w-[400px] w-full"
+								className="w-full max-w-[400px]"
 								src={project.image}
 								alt=""
 							/>
 						</Link>
 						<div className="flex-1">
 							<h2 className="font-serif text-2xl">{project.title}</h2>
-							<p className="mb-3 mt-2 text-lg opacity-80">
+							<p className="mt-2 mb-3 text-lg opacity-80">
 								{project.description}
 							</p>
 
-							<div className="flex gap-2 ">
+							<div className="flex gap-2">
 								<Link
 									to={project.source}
 									target="_blank"
-									className="mt-4 flex w-fit items-center gap-2 hover:scale-105 shadow-sm hover:shadow-md rounded-md px-2 py-1 text-xl transition-all"
+									className="mt-4 flex w-fit items-center gap-2 rounded-md px-2 py-1 text-xl shadow-xs transition-all hover:scale-105 hover:shadow-md"
 								>
 									<IconCode size={20} />
 									Source code
@@ -42,7 +42,7 @@ export const Projects = () => {
 								<Link
 									to={project.live}
 									target="_blank"
-									className="mt-4 flex w-fit items-center shadow-sm hover:shadow-md transition-all bg-green-300 text-green-700 gap-2 rounded-md px-2 py-1 text-xl hover:scale-105"
+									className="mt-4 flex w-fit items-center gap-2 rounded-md bg-green-300 px-2 py-1 text-xl text-green-700 shadow-xs transition-all hover:scale-105 hover:shadow-md"
 								>
 									Live site
 									<IconArrowRight size={20} color="#2e6b34" />
@@ -50,7 +50,7 @@ export const Projects = () => {
 							</div>
 						</div>
 					</article>
-					<hr className="w-full text-grey-300" />
+					<hr className="text-grey-300 w-full" />
 				</div>
 			))}
 		</>

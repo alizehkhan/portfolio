@@ -27,7 +27,7 @@ export const HikingGear = () => {
 					headers: {
 						Authorization: `Bearer ${import.meta.env.VITE_AIRTABLE_TOKEN}`,
 					},
-				}
+				},
 			)
 			const { records } = await res.json()
 
@@ -83,12 +83,12 @@ export const HikingGear = () => {
 					setIsLoading,
 				}}
 			>
-				<h1 className="font-serif text-5xl font-bold leading-tight text-neutral-700 md:text-7xl md:leading-tight">
+				<h1 className="font-serif text-5xl leading-tight font-bold text-neutral-700 md:text-7xl md:leading-tight">
 					My Hiking Gear
 				</h1>
 				{!isTabletOrDesktop && <HikingMobileFilters />}
 
-				<div className="sticky top-0 z-[1] bg-neutral-100" ref={filterBarRef}>
+				<div className="sticky top-0 z-1 bg-neutral-100" ref={filterBarRef}>
 					<div className="flex justify-center py-8 md:justify-between">
 						{isTabletOrDesktop && <HikingFilters />}
 						<HikingStats />

@@ -1,23 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url(tokens.css);
-@import url(hiking-gear.css);
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap')
+layer(base);
+@import url(hiking-gear.css) layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
+@theme {
+	--font-*: initial;
+	--font-sans: Source Sans Pro, sans-serif;
+	--font-serif: Merriweather, serif;
+	--font-mono: Menlo, Monaco, Andale Mono, Ubuntu Mono, monospace;
+
+	--color-*: initial;
+	--color-transparent: transparent;
+	--color-white: #ffffff;
+	--color-neutral-100: #f4f2ed;
+	--color-neutral-300: #dcd6cb;
+	--color-neutral-500: #928b80;
+	--color-neutral-700: #4e4d49;
+	--color-neutral-800: #403f3c;
+	--color-grey-100: #eceae5;
+	--color-grey-200: #e4e3de;
+	--color-grey-300: #d6d5d0;
+	--color-yellow-300: #fdf6e2;
+	--color-yellow-700: #854714;
+	--color-red-300: #fcefe8;
+	--color-red-700: #811823;
+	--color-blue-300: #e2f4fe;
+	--color-blue-700: #1b437e;
+	--color-green-300: #ecf9e6;
+	--color-green-700: #2e6b34;
+
+	--shadow-key: inset 0 -2px 0 0 #dcd6cb, inset 0 0 1px 1px #fff,
+		0 1px 2px 1px rgba(78, 77, 73, 0.4);
 }
 
-* {
-	color: var(--color-neutral-700);
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentColor);
+		@apply text-neutral-700;
+	}
 }
 
 body {
-	background: var(--color-neutral-100);
+	@apply bg-neutral-100;
 	-webkit-font-smoothing: antialiased;
 	font-synthesis: none;
 }
@@ -27,8 +64,7 @@ picture,
 video,
 canvas,
 svg {
-	display: block;
-	max-width: 100%;
+	@apply block max-w-full;
 }
 
 input,
@@ -40,8 +76,7 @@ h1,
 h2,
 h3,
 h4 {
-	overflow-wrap: break-word;
-	font-family: var(--font-family-serif);
+	@apply break-words font-serif;
 }
 
 /* ------------------------ */
@@ -91,29 +126,23 @@ header a {
 
 header a:hover,
 header .active {
-	text-decoration: underline;
-	text-underline-offset: 4px;
+	@apply underline underline-offset-4;
 }
 
 .hidden {
-	display: none;
+	@apply hidden;
 }
 
 /* ----------------------- */
 
 blockquote {
-	position: relative;
+	@apply relative;
 }
 
 @media screen and (min-width: 720px) {
 	q::before {
+		@apply absolute -left-[140px] top-[80px] font-serif text-[240px] font-bold text-neutral-700;
 		content: open-quote;
-		font-size: 240px;
-		font-weight: bold;
-		font-family: 'Merriweather', serif;
-		left: -140px;
-		top: 80px;
-		position: absolute;
 		color: #dcd6cb;
 	}
 }
@@ -128,9 +157,7 @@ q::after {
 
 button:focus-visible,
 a:focus-visible {
-	outline: 3px solid var(--color-green-700);
-	border-radius: var(--border-radius-sm);
-	outline-offset: 4px;
+	@apply rounded-sm outline-[3px] outline-offset-4 outline-green-700;
 	transition-property: all;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-duration: 150ms;

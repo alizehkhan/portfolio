@@ -35,13 +35,13 @@ export const HikingModal = ({
 
 	const onLeftNavigation = useCallback(() => {
 		if (openedIndex > 0) {
-			setOpenedIndex(openedIndex => openedIndex - 1)
+			setOpenedIndex((openedIndex) => openedIndex - 1)
 		}
 	}, [openedIndex, setOpenedIndex])
 
 	const onRightNavigation = useCallback(() => {
 		if (openedIndex < lastItemIndex) {
-			setOpenedIndex(openedIndex => openedIndex + 1)
+			setOpenedIndex((openedIndex) => openedIndex + 1)
 		}
 	}, [openedIndex, lastItemIndex, setOpenedIndex])
 
@@ -68,7 +68,7 @@ export const HikingModal = ({
 			{isTabletOrDesktop ? (
 				!(openedIndex === 0) && (
 					<button
-						className="previous-button absolute -left-6 top-[calc(50%-24px)] rounded-full bg-neutral-700 p-3 shadow-lg"
+						className="previous-button absolute top-[calc(50%-24px)] -left-6 rounded-full bg-neutral-700 p-3 shadow-lg"
 						aria-label="Previous gear item"
 						onClick={() => onLeftNavigation()}
 					>
@@ -77,7 +77,7 @@ export const HikingModal = ({
 				)
 			) : (
 				<button
-					className="mb-3 ml-auto block rounded-full transition-all border-2 border-solid border-neutral-700 bg-transparent p-2 hover:bg-neutral-300"
+					className="mb-3 ml-auto block rounded-full border-2 border-solid border-neutral-700 bg-transparent p-2 transition-all hover:bg-neutral-300"
 					aria-label="Close modal"
 					onClick={() => setIsModalOpen(false)}
 				>
@@ -85,7 +85,7 @@ export const HikingModal = ({
 				</button>
 			)}
 			<div className="modal-left">
-				<div className="mb-4 rounded-lg bg-white p-3 shadow-sm">
+				<div className="mb-4 rounded-lg bg-white p-3 shadow-xs">
 					<p
 						className={`mr-auto inline-block w-fit rounded-full px-3 py-1 text-xs font-bold ${
 							gear ? getKebabCase(gear.Category) : ''
@@ -140,10 +140,10 @@ export const HikingModal = ({
 				</div>
 			</div>
 			<div className="modal-right">
-				<h2 className="my-4 font-serif text-3xl font-bold flex items-center gap-2">
+				<h2 className="my-4 flex items-center gap-2 font-serif text-3xl font-bold">
 					{gear.Name}
 					{gear.Condition === 'New' && (
-						<span className="text-sm font-sans rounded-full px-3 py-1 bg-yellow-300 shadow-sm">
+						<span className="rounded-full bg-yellow-300 px-3 py-1 font-sans text-sm shadow-xs">
 							✨NEW
 						</span>
 					)}
@@ -152,7 +152,7 @@ export const HikingModal = ({
 			</div>
 			{isTabletOrDesktop && !(openedIndex === lastItemIndex) && (
 				<button
-					className="next-button absolute -right-6 top-[calc(50%-24px)] rounded-full bg-neutral-700 p-3 shadow-lg"
+					className="next-button absolute top-[calc(50%-24px)] -right-6 rounded-full bg-neutral-700 p-3 shadow-lg"
 					aria-label="Next gear item"
 					onClick={() => onRightNavigation()}
 				>

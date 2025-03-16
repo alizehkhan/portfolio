@@ -66,17 +66,19 @@ const List = () => {
 					)}
 				</ul>
 			</nav>
-			{sortedPosts.map((post, index) => (
-				<PostCard
-					key={index}
-					date={post.date}
-					title={post.title}
-					description={post.description}
-					image={post.image}
-					link={post.link}
-					labels={post.labels}
-				/>
-			))}
+			<div className="w-fit divide-y divide-neutral-300">
+				{sortedPosts.map((post, index) => (
+					<PostCard
+						key={index}
+						date={post.date}
+						title={post.title}
+						description={post.description}
+						image={post.image}
+						link={post.link}
+						labels={post.labels}
+					/>
+				))}
+			</div>
 		</>
 	)
 }
