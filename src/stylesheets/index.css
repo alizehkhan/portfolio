@@ -59,19 +59,6 @@ body {
 	font-synthesis: none;
 }
 
-img,
-picture,
-video,
-canvas,
-svg {
-	@apply block max-w-full;
-}
-
-input,
-button {
-	font: inherit;
-}
-
 h1,
 h2,
 h3,

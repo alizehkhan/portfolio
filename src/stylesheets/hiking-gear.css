@@ -28,10 +28,6 @@
 	}
 }
 
-.filter {
-	@apply mx-1 my-0 inline-block rounded-full px-3 py-1 text-sm font-bold;
-}
-
 .filter-on-the-trail:hover,
 .filter-on-the-trail.active,
 .filter-valuables:hover,

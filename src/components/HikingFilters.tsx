@@ -15,7 +15,7 @@ export const HikingFilters = () => {
 				<li>
 					<Link
 						to="/blog/hiking-gear"
-						className={`filter-show-all transition-all text- no-underline filter ${
+						className={`filter-show-all mx-1 my-0 inline-block rounded-full px-3 py-1 text-sm font-bold no-underline transition-all ${
 							!selectedFilter ? 'active' : ''
 						}`}
 						onClick={() => setSelectedFilter(selectedFilter)}
@@ -23,19 +23,19 @@ export const HikingFilters = () => {
 						Show all
 					</Link>
 				</li>
-				{capitalisedFilters.map(filter => (
+				{capitalisedFilters.map((filter) => (
 					<li key={filter}>
 						<Link
 							to={getKebabCase(filter)}
-							className={`transition-all no-underline filter filter-${getKebabCase(
-								filter
+							className={`mx-1 my-0 inline-block rounded-full px-3 py-1 text-sm font-bold no-underline transition-all filter-${getKebabCase(
+								filter,
 							)} ${selectedFilter === getKebabCase(filter) ? 'active' : ''}`}
-							onClick={event => {
+							onClick={(event) => {
 								if (capitalisedFilters.includes(event.currentTarget.innerText))
 									setSelectedFilter(
 										getKebabCase(
-											event.currentTarget.innerText
-										) as CategoryKebabCase
+											event.currentTarget.innerText,
+										) as CategoryKebabCase,
 									)
 							}}
 						>
