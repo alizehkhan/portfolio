@@ -32,7 +32,7 @@
 	"devDependencies": {
 		"@alizehkhan/eslint-config": "^0.0.1",
 		"@eslint/js": "^9.22.0",
-		"@shikijs/transformers": "^1.9.0",
+		"@shikijs/transformers": "^3.3.0",
 		"@tailwindcss/postcss": "^4.0.14",
 		"@tanstack/eslint-plugin-query": "^5.68.0",
 		"@types/mdx": "^2.0.13",
