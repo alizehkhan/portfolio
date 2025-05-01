@@ -5,7 +5,6 @@ export const PROJECTS: Project[] = [
 		title: 'Co-founder of Altamiga',
 		description:
 			'Building the first trail centric booking platform that will allow hikers to easily line up their accommodation for popular multi-day hikes in Europe. We are building a Property Management System exclusive for mountain huts owners to manage their bookings.',
-		source: 'https://github.com/altamiga/frontend',
 		live: 'https://altamiga.com',
 		image: './assets/altamiga.png',
 	},
@@ -29,7 +28,7 @@ export const PROJECTS: Project[] = [
 		description:
 			'A single page website offering in-person and online communication workshops for corporations.',
 		source: 'https://github.com/alizehkhan/communication-trainer',
-		live: 'https://haneenkhan.vercel.app',
+		live: 'https://relatingatwork.com',
 		image: './assets/haneen.png',
 	},
 ]

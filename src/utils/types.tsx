@@ -52,7 +52,7 @@ export type Project = {
 	title: string
 	description: string
 	live: To
-	source: To
+	source?: To
 	image: string
 }
 

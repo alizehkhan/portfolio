@@ -31,14 +31,16 @@ export const Projects = () => {
 							</p>
 
 							<div className="flex gap-2">
-								<Link
-									to={project.source}
-									target="_blank"
-									className="mt-4 flex w-fit items-center gap-2 rounded-md px-2 py-1 text-xl shadow-xs transition-all hover:scale-105 hover:shadow-md"
-								>
-									<IconCode size={20} />
-									Source code
-								</Link>
+								{project.source && (
+									<Link
+										to={project.source}
+										target="_blank"
+										className="mt-4 flex w-fit items-center gap-2 rounded-md px-2 py-1 text-xl shadow-xs transition-all hover:scale-105 hover:shadow-md"
+									>
+										<IconCode size={20} />
+										Source code
+									</Link>
+								)}
 								<Link
 									to={project.live}
 									target="_blank"
