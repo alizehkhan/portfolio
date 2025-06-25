@@ -32,34 +32,29 @@
 .filter-on-the-trail.active,
 .filter-valuables:hover,
 .filter-valuables.active {
-	@apply bg-green-300 text-green-700 shadow-green-700;
-	box-shadow: 0 0 0 2px;
+	@apply bg-green-300 text-green-700 outline-2 outline-green-700;
 }
 
 .filter-clothing:hover,
 .filter-clothing.active {
-	@apply bg-red-300 text-red-700 shadow-red-700;
-	box-shadow: 0 0 0 2px;
+	@apply bg-red-300 text-red-700 outline-2 outline-red-700;
 }
 
 .filter-cook:hover,
 .filter-cook.active {
-	@apply bg-yellow-300 text-yellow-700 shadow-yellow-700;
-	box-shadow: 0 0 0 2px;
+	@apply bg-yellow-300 text-yellow-700 outline-2 outline-yellow-700;
 }
 
 .filter-sleep:hover,
 .filter-sleep.active,
 .filter-personal-care:hover,
 .filter-personal-care.active {
-	@apply bg-blue-300 text-blue-700 shadow-blue-700;
-	box-shadow: 0 0 0 2px;
+	@apply bg-blue-300 text-blue-700 outline-2 outline-blue-700;
 }
 
 .filter-show-all:hover,
 .filter-show-all.active {
-	@apply bg-neutral-300 text-neutral-700 shadow-neutral-700;
-	box-shadow: 0 0 0 2px;
+	@apply bg-neutral-300 text-neutral-700 outline-2 outline-neutral-700;
 }
 
 .overlay {
@@ -75,14 +70,12 @@
 }
 
 .modal {
-	@apply relative m-auto flex h-[500px] w-[880px] rounded-md bg-neutral-100 px-12 py-8 shadow-neutral-700 outline-0;
-	box-shadow: 4px 4px 56px;
+	@apply relative m-auto flex h-[500px] w-[880px] rounded-md bg-neutral-100 px-12 py-8 shadow-[4px_4px_56px] shadow-neutral-700 outline-0;
 }
 
 @media screen and (max-width: 720px) {
 	.modal {
-		@apply block h-screen w-screen overflow-auto;
-		border-radius: 32px 32px 0 0;
+		@apply block h-screen w-screen overflow-auto rounded-t-4xl;
 		padding: var(--spacing-xl) var(--spacing-xl) 56px var(--spacing-xl);
 		transform: translateY(40px);
 	}

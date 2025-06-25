@@ -61,7 +61,7 @@ export const HikingCard = ({
 				isOpen={isModalOpen}
 				onRequestClose={() => setIsModalOpen(false)}
 				shouldCloseOnOverlayClick
-				className="modal"
+				className="modal p-4 md:p-8"
 				overlayClassName="overlay"
 			>
 				<HikingModal hikingGear={hikingGear} setIsModalOpen={setIsModalOpen} />

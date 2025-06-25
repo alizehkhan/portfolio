@@ -76,7 +76,7 @@ export const HikingMobileFilters = () => {
 								<motion.li key={filter} variants={item}>
 									<Link
 										to={getKebabCase(filter)}
-										className={`mx-1 inline-block rounded-full bg-neutral-100 px-4 py-2 text-lg font-bold no-underline shadow-lg filter-${getKebabCase(
+										className={`mx-1 inline-block rounded-full px-4 py-2 text-lg font-bold no-underline shadow-lg filter-${getKebabCase(
 											filter,
 										)} ${selectedFilter === getKebabCase(filter) && 'active'}`}
 										onClick={(event) => {
