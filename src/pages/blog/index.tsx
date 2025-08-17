@@ -9,22 +9,18 @@ import EmailSetup from './email-setup.mdx'
 import Eslint from './eslint.mdx'
 import Feedback from './feedback.mdx'
 import FrontendSetup from './frontend-setup.mdx'
-import { HikingGear } from './hiking-gear'
 import List from './List'
 import ManualTesting from './manual-testing.mdx'
 import Minimalism from './minimalism.mdx'
 import PlanHike from './plan-hike.mdx'
-import TrailFood from './trail-food.mdx'
 import Uses from './uses.mdx'
 
 const routes = [
-	{ path: 'hiking-gear/*', component: HikingGear },
 	{ path: 'email-setup/', component: EmailSetup },
 	{ path: 'frontend-setup/', component: FrontendSetup },
 	{ path: 'automated-accessibility-testing/', component: AutomatedTesting },
 	{ path: 'manual-accessibility-testing/', component: ManualTesting },
 	{ path: 'plan-hike/', component: PlanHike },
-	{ path: 'trail-food/', component: TrailFood },
 	{ path: 'minimalism/', component: Minimalism },
 	{ path: 'checkbox/', component: Checkbox },
 	{ path: 'design-system-feedback/', component: Feedback },

@@ -8,21 +8,8 @@ import {
 	isYesterday,
 } from 'date-fns'
 
-import { CategoryKebabCase, GearById } from './types'
-
 export const getKebabCase = (word: string) =>
 	word.toLowerCase().replaceAll(' ', '-')
-
-export const getFilteredHikingGear = (
-	gearById: GearById,
-	filterSelected?: CategoryKebabCase,
-) => {
-	return filterSelected
-		? Object.values(gearById).filter(
-				(gear) => getKebabCase(gear.Category) === filterSelected,
-			)
-		: Object.values(gearById)
-}
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const showDate = (date: any) => {

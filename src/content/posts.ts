@@ -2,24 +2,6 @@ import { Label, Post } from '../utils/types'
 
 export const POSTS: Post[] = [
 	{
-		title: 'My hiking gear',
-		description:
-			'Guidance and list of my solo long-distance hiking gear which I religiously keep up to date. Everything from tent to toilet paper.',
-		link: '/blog/hiking-gear',
-		image: './illustrations/tent.svg',
-		labels: ['hiking'],
-		date: new Date(2024, 5, 2),
-	},
-	{
-		title: 'Trail food',
-		description:
-			'A breakdown of the food I tend to eat on trail and what I think about when resupplying on a long distance hike.',
-		link: '/blog/trail-food',
-		image: './illustrations/food.svg',
-		labels: ['hiking'],
-		date: new Date(2024, 2, 2),
-	},
-	{
 		title: 'How I plan a hike',
 		description:
 			'Planning a long distance hike can appear intimidating but its a very structured process! Here is the checklist I follow when planning a hike.',
