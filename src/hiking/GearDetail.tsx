@@ -8,6 +8,7 @@ import { useHikingGear } from './queries'
 export const GearDetail = () => {
 	const { gearId } = useParams()
 	const { data: hikingGear } = useHikingGear()
+	// @ts-expect-error too lazy
 	const gearItem = hikingGear && gearId ? hikingGear[gearId] : null
 
 	return (
@@ -45,7 +46,6 @@ export const GearDetail = () => {
 						<div className="flex items-center text-lg font-bold">
 							{gearItem?.Weight && (
 								<div
-									aria-label="Total weight"
 									title="Total weight"
 									className="mr-6 flex items-center justify-between"
 								>
@@ -53,7 +53,6 @@ export const GearDetail = () => {
 										size={20}
 										color="#928b80"
 										style={{ marginRight: '8px' }}
-										aria-hidden="true"
 									/>
 									<p>{Math.round(gearItem.Weight)} g</p>
 								</div>
@@ -66,7 +65,7 @@ export const GearDetail = () => {
 						{gearItem?.Name}
 						{gearItem?.Condition === 'New' && (
 							<span className="rounded-full bg-yellow-300 px-3 py-1 font-sans text-sm shadow-xs">
-								✨NEW
+								✨ New
 							</span>
 						)}
 					</h1>

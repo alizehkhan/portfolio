@@ -21,6 +21,15 @@ function groupByCategory(items: GearItem[]) {
 export const GearList = () => {
 	const { data: hikingGear, isLoading } = useHikingGear()
 
+	function getTotalWeight(items: GearItem[]) {
+		return items.reduce((total, item) => {
+			if (item.Weight && item.Quantity) {
+				return total + item.Weight * item.Quantity
+			}
+			return total
+		}, 0)
+	}
+
 	return (
 		<div>
 			<Routes>
@@ -37,10 +46,16 @@ export const GearList = () => {
 									Gear
 								</Link>
 							</div>
-							<h1 className="font-serif text-4xl leading-tight font-bold text-neutral-700 md:text-6xl md:leading-tight">
+							<h1 className="font-serif text-4xl leading-tight font-bold text-neutral-700 md:text-7xl md:leading-tight">
 								My hiking gear
 							</h1>
 							<div className="mt-6 space-y-6">
+								<p className="flex items-center gap-2 font-serif">
+									Base weight:
+									<p className="text-2xl font-bold">
+										{getTotalWeight(Object.values(hikingGear ?? {}))}g
+									</p>
+								</p>
 								{!isLoading
 									? Object.entries(
 											groupByCategory(Object.values(hikingGear ?? {})),
@@ -51,14 +66,19 @@ export const GearList = () => {
 											>
 												<h2 className="text-xl font-bold">{category}</h2>
 
-												<div className="divide-grey-200 space-y-2 divide-y rounded-lg p-4">
+												<div className="flex gap-1 text-neutral-700/80">
+													Total weight:
+													<p className="font-bold">{getTotalWeight(items)}g</p>
+												</div>
+
+												<div className="divide-grey-200 divide-y rounded-lg p-4">
 													{items.map((gearItem) => (
 														<Link
 															key={gearItem.id}
-															className="grid w-full grid-cols-[100px_240px_1fr_auto_60px] items-center gap-4"
+															className="grid w-full grid-cols-[100px_240px_1fr_auto_60px] items-center gap-4 py-1.5"
 															to={gearItem.id}
 														>
-															<div className="mb-2 w-fit rounded bg-white px-2 py-1">
+															<div className="w-fit rounded bg-white px-2 py-1">
 																<img
 																	src={gearItem.Photo?.[0].url}
 																	alt=""
