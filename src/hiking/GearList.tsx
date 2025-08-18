@@ -1,4 +1,4 @@
-import { IconChevronRight } from '@tabler/icons-react'
+import { IconChevronRight, IconX } from '@tabler/icons-react'
 import { Link, Route, Routes } from 'react-router-dom'
 
 import { GearItem } from '../utils/types'
@@ -18,7 +18,7 @@ function groupByCategory(items: GearItem[]) {
 	)
 }
 
-export const Gear = () => {
+export const GearList = () => {
 	const { data: hikingGear, isLoading } = useHikingGear()
 
 	return (
@@ -55,7 +55,7 @@ export const Gear = () => {
 													{items.map((gearItem) => (
 														<Link
 															key={gearItem.id}
-															className="grid w-full grid-cols-[100px_240px_1fr_80px] gap-4"
+															className="grid w-full grid-cols-[100px_240px_1fr_auto_60px] items-center gap-4"
 															to={gearItem.id}
 														>
 															<div className="mb-2 w-fit rounded bg-white px-2 py-1">
@@ -66,11 +66,11 @@ export const Gear = () => {
 																/>
 															</div>
 
-															<p className="flex items-center gap-1 text-lg font-bold">
+															<p className="flex items-center gap-2 text-lg font-bold">
 																{gearItem.Name}
 																{gearItem.Condition === 'New' && (
-																	<p className="h-fit w-fit rounded-full bg-yellow-300 px-2 py-1 text-xs font-bold shadow-xs">
-																		✨ NEW
+																	<p className="h-fit w-fit rounded-full bg-yellow-300 px-2 py-1 text-sm font-bold shadow-xs">
+																		✨ New
 																	</p>
 																)}
 															</p>
@@ -82,7 +82,22 @@ export const Gear = () => {
 															</div>
 
 															<p className="text-lg font-bold">
-																{gearItem.Weight && `${gearItem.Weight}g`}
+																{gearItem.Weight ? (
+																	`${gearItem.Weight}g`
+																) : (
+																	<p className="h-fit w-fit rounded-full bg-blue-300 px-2 py-1 text-sm font-bold shadow-xs">
+																		👕 Worn
+																	</p>
+																)}
+															</p>
+
+															<p className="text-lg font-bold">
+																{gearItem.Quantity > 1 && (
+																	<div className="flex w-fit items-center rounded-full bg-neutral-100 px-2 py-1">
+																		<IconX size={14} />
+																		{gearItem.Quantity}
+																	</div>
+																)}
 															</p>
 														</Link>
 													))}

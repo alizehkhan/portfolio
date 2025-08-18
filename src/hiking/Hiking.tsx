@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async'
 import { Link, Route, Routes } from 'react-router-dom'
 
 import { Food } from './Food'
-import { Gear } from './Gear'
+import { GearList } from './GearList'
 
 interface ArticleProps {
 	title: string
@@ -59,7 +59,7 @@ export const Hiking = () => {
 						</>
 					}
 				/>
-				<Route path="/gear/*" element={<Gear />} />
+				<Route path="/gear/*" element={<GearList />} />
 				<Route path="/food" element={<Food />} />
 			</Routes>
 		</>

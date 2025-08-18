@@ -16,11 +16,10 @@ export type GearItem = {
 	Category: string
 	Name: string
 	Notes: string
-	Order: number
 	Condition: 'New' | 'Needs replacing' | 'Good'
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	Photo: Array<Record<string, any>>
-	Price: number
+	Quantity: number
 	Product: string
 	Weight: number
 	id: string
