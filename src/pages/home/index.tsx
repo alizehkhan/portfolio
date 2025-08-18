@@ -34,6 +34,7 @@ export const Home = () => {
 						accessibility and form UX.
 					</p>
 				</div>
+
 				<img
 					src="/assets/alizeh.jpg"
 					className="my-8 w-full rounded-lg"

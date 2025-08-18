@@ -53,7 +53,12 @@ export const GearList = () => {
 								<p className="flex items-center gap-2 font-serif">
 									Base weight:
 									<p className="text-2xl font-bold">
-										{getTotalWeight(Object.values(hikingGear ?? {}))}g
+										{new Intl.NumberFormat('en-GB', {
+											minimumFractionDigits: 2,
+											maximumFractionDigits: 2,
+										}).format(
+											getTotalWeight(Object.values(hikingGear ?? {})) / 1000,
+										) + ' kg'}
 									</p>
 								</p>
 								{!isLoading
@@ -66,16 +71,21 @@ export const GearList = () => {
 											>
 												<h2 className="text-xl font-bold">{category}</h2>
 
-												<div className="flex gap-1 text-neutral-700/80">
+												<div className="my-2 flex gap-1 text-neutral-700/80">
 													Total weight:
-													<p className="font-bold">{getTotalWeight(items)}g</p>
+													<p className="font-serif font-bold">
+														{new Intl.NumberFormat('en-GB').format(
+															getTotalWeight(items),
+														)}
+														g
+													</p>
 												</div>
 
 												<div className="divide-grey-200 divide-y rounded-lg p-4">
 													{items.map((gearItem) => (
 														<Link
 															key={gearItem.id}
-															className="grid w-full grid-cols-[100px_240px_1fr_auto_60px] items-center gap-4 py-1.5"
+															className="block w-full grid-cols-[100px_240px_1fr_auto_60px] items-center gap-4 py-1.5 md:grid"
 															to={gearItem.id}
 														>
 															<div className="w-fit rounded bg-white px-2 py-1">
@@ -103,7 +113,9 @@ export const GearList = () => {
 
 															<p className="text-lg font-bold">
 																{gearItem.Weight ? (
-																	`${gearItem.Weight}g`
+																	`${new Intl.NumberFormat('en-GB').format(
+																		gearItem.Weight,
+																	)} g`
 																) : (
 																	<p className="h-fit w-fit rounded-full bg-blue-300 px-2 py-1 text-sm font-bold shadow-xs">
 																		👕 Worn

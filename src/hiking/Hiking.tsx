@@ -16,7 +16,7 @@ const Article = (props: ArticleProps) => {
 
 	return (
 		<article>
-			<Link to={path} className="flex w-[580px] max-w-2xl items-center gap-4">
+			<Link to={path} className="flex max-w-2xl items-center gap-4 py-4">
 				<img className="h-20 w-32 shrink-0 object-contain" src={image} alt="" />
 				<div>
 					<p className="mt-4 font-serif text-2xl">{title}</p>
@@ -39,10 +39,10 @@ export const Hiking = () => {
 					path="/"
 					element={
 						<>
-							<h1 className="mb-8 font-serif text-5xl leading-tight font-bold text-neutral-700 md:text-7xl md:leading-tight">
+							<h1 className="mb-4 font-serif text-5xl leading-tight font-bold text-neutral-700 md:text-7xl md:leading-tight">
 								Hiking
 							</h1>
-							<div className="space-y-6">
+							<div className="w-[580px] divide-y divide-neutral-300">
 								<Article
 									path="gear"
 									title="My hiking gear"

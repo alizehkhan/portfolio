@@ -8,8 +8,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { Hiking } from './hiking/Hiking'
+import { Altamiga } from './pages/altamiga/Altamiga'
 import { Blog } from './pages/blog'
-import { Contact } from './pages/contact'
 import { Home } from './pages/home'
 import { ScrollToTop } from './utils/ScrollToTop'
 
@@ -27,7 +27,7 @@ const App = () => {
 							<Route path="/" element={<Home />} />
 							<Route path="/blog/*" element={<Blog />} />
 							<Route path="/hiking/*" element={<Hiking />} />
-							<Route path="/contact" element={<Contact />} />
+							<Route path="/altamiga" element={<Altamiga />} />
 						</Routes>
 					</main>
 					<Footer />

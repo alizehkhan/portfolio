@@ -26,8 +26,8 @@ export const GearDetail = () => {
 					{gearItem?.Name}
 				</Link>
 			</div>
-			<div className="mt-8 flex gap-4">
-				<div className="mr-8 w-[300px] shrink-0">
+			<div className="mt-8 flex flex-col gap-4 md:flex-row">
+				<div className="mr-8 shrink-0">
 					<div className="mb-4 rounded-lg border border-neutral-300 bg-white p-3 shadow-xs">
 						<p
 							className={`mr-auto inline-block w-fit rounded-full px-3 py-1 text-xs font-bold ${
@@ -69,7 +69,7 @@ export const GearDetail = () => {
 							</span>
 						)}
 					</h1>
-					<ReactMarkdown className="w-[70ch] text-lg [&_a]:underline [&_p]:mb-4">
+					<ReactMarkdown className="max-w-[70ch] text-lg [&_a]:underline [&_p]:mb-4">
 						{gearItem?.Notes}
 					</ReactMarkdown>
 				</div>
