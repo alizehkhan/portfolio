@@ -69,7 +69,7 @@ export const GearDetail = () => {
 							</span>
 						)}
 					</h1>
-					<ReactMarkdown className="max-w-[70ch] text-lg [&_a]:underline [&_p]:mb-4">
+					<ReactMarkdown className="max-w-[70ch] text-lg [&_a]:underline [&_li]:ml-8 [&_li]:list-disc [&_p]:mb-4 [&_ul]:mb-4">
 						{gearItem?.Notes}
 					</ReactMarkdown>
 				</div>

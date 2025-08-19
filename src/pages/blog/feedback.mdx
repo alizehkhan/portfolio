@@ -1,11 +1,11 @@
-import { Container } from "../../components/Container";
-import { Helmet } from 'react-helmet-async';
+import { Container } from '../../components/Container'
+import { Helmet } from 'react-helmet-async'
 
 <Helmet>
-  <title>How to get instant feedback on your design system | Alizeh Khan</title>
+	<title>How to get raw feedback on your design system | Alizeh Khan</title>
 </Helmet>
 
-# How to get instant feedback on your design system
+# How to get raw feedback on your design system
 
 <Container>
 
@@ -19,25 +19,27 @@ Get nosy 👃🏼 and all up in that codebase.
 
 But don’t stalk to police 🚓 or shame those who use the design system incorrectly.
 
-Instead approach it with **curiosity**.
+Instead approach it with curiosity.
 
-*That’s your unfiltered feedback right there!*
+That’s your unfiltered feedback right there!
 
-Get excited when you see someone misuse your product 😁. There is an opportunity to learn here. It gets especially juicy 🧃 when you see a recurring pattern of misuse. Why do a lot of engineers hack our modal component or build their own? Maybe the component’s API is not flexible enough. Why are they using our global tokens and not our alias tokens? Do we even want our global tokens exposed to users? Is there an education piece missing around tokens?
+Get excited when you see someone misuse your product 😁. There is an opportunity to learn here. It gets especially juicy 🧃 when you see a recurring pattern of misuse. Why do a lot of engineers hack our modal component or build their own? Maybe the component’s API is not flexible enough. Why are they using our global tokens and not our alias tokens? Is the naming of our alias tokens difficult to understand? Do we even want our global tokens exposed to users?
 
-## Be proactive not reactive
+## Be proactive not reactive 🚒
 
-A common pitfall is relying on users to raise issues and using this to dictate your design system priorities. In the same way you wouldn't prioritise your backlog based on feature requests from one user's experience.
+A common pitfall is allowing user-reported issues to dictate your design system priorities. Just as you wouldn’t reshuffle your product backlog every time a customer requests a feature or reports a bug, your design system roadmap should be guided by strategic goals, not reactive feedback.
 
-There are a lot issues that may never get raised by engineers. This could be for a number of reasons:
+This is because many issues with your design system may never be raised by users.
 
-- They don't see their misuse as an issue or struggle unless they are blocked by it i.e. they are unable to hack around it or find it's too much effort to build their own version of the component.
-- The process to contribute to the design system appears an arduous, political or highly gate kept process that they don't want to get involved in.
-- They have little capacity or incentive to get involved in design system work since their performance is measured on reaching their team's sprint goal.
+Engineers might not see their struggles as problems unless they’re completely blocked. For instance, if they can’t find a workaround or it takes too much effort to build their own version of a component, only then might they speak up.
+
+Engineers often have little time or incentive to contribute. Their performance is usually measured by how well and quickly they deliver on sprint goals, not contributing to the design system.
+
+The absence of feedback could reveal a lot about the culture surrounding your design system. The contribution process may be seen as slow, overly political, or tightly controlled, making people hesitant to get involved.
 
 ## Your users are engineers not design system engineers
 
-I've seen a lot of effort (and faith 🤲🏼) put into design system feedback surveys only to get back maybe a handful of responses. I've seen lots of time and energy wasted on hosting workshops to gather ideas from engineers, product managers and designers on how to improve the design system. It’s like asking customers to design their own car, **they are not the experts and it’s not their responsibility**. Their PRs already give you plenty of quantitative and qualitative insight into the areas that need your attention.
+I've seen a lot of effort (and faith 🤲🏼) put into design system feedback surveys only to get back maybe a handful of responses. I've seen lots of time and energy wasted on hosting workshops to gather ideas from engineers, product managers and designers on how to improve the design system. It’s like asking customers to design their own car, they are not the experts and it’s not their responsibility. Their PRs already give you plenty of quantitative and qualitative insight into the areas that need your attention.
 
 ## "It's in the documentation!"
 
@@ -49,7 +51,7 @@ Yes, documentation needs content designing too. Just because the information is 
 
 ### Your components' APIs and token naming might be shit 💩
 
-Remember, good design is first intuitive then discoverable. Meaning, you want to name and design your components' APIs and tokens as intuitively as possible so your engineers rarely even need to leave their IDEs to refer to the documentation. Don't band aid bad component API design with redirection to the documentation (or adding more documentation!), prioritise the API.
+Remember, good design is first intuitive then discoverable. Meaning, you want to name and design your components' APIs and tokens as intuitively as possible so your engineers rarely need to leave their IDE to check the documentation. Don't band aid bad component API design by simply pointing to docs (or worse, writing more!). Prioritise the API.
 
 Some best practices on component API design include:
 
@@ -59,6 +61,12 @@ Some best practices on component API design include:
 
 ## Designers make mistakes too
 
-If you're an engineer who finds themselves needing to build a slightly different version of a design system component or needing to use a custom value instead of a token to match the designs you were given... push back on the designer. Question them. Why does the design system version of this component not cut it here? Why can't we use the 12px spacing token here instead of a custom 10px here? There might be a good reason for it, there might not be.
+If you’re an engineer who finds yourself needing to tweak a design system component or use a custom value instead of a token to match the designs you received, push back on your designer.
+
+Why doesn’t the design system version work in this case?
+
+Why are we using a custom 10px spacing instead of the standard 12px token?
+
+There might be a good reason for the deviation—or there might not be.
 
 </Container>

@@ -17,15 +17,15 @@ export const Food = () => {
 					Food
 				</Link>
 			</div>
-			<h1 className="font-serif text-4xl leading-tight font-bold text-neutral-700 md:text-6xl md:leading-tight">
+			<h1 className="font-serif text-4xl leading-tight font-bold text-neutral-700 md:text-7xl md:leading-tight">
 				My trail food
 			</h1>
-			<div className="grid grid-cols-2 gap-4">
+			<div className="mt-6 grid grid-cols-2 gap-4">
 				{!isLoading
 					? // eslint-disable-next-line @typescript-eslint/no-explicit-any
 						Object.values(food).map((foodItem: any, index) => (
 							<div
-								className="rounded-lg bg-white px-6 py-4 shadow-xs"
+								className="rounded-lg border border-neutral-300 bg-white px-6 py-4"
 								key={index}
 							>
 								<img

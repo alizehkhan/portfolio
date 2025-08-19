@@ -1,6 +1,8 @@
 import { Helmet } from 'react-helmet-async'
 import { Link, Route, Routes } from 'react-router-dom'
 
+import { components } from '../components/MDXComponents'
+import Plan from '../pages/blog/plan-hike.mdx'
 import { Food } from './Food'
 import { GearList } from './GearList'
 
@@ -16,7 +18,10 @@ const Article = (props: ArticleProps) => {
 
 	return (
 		<article>
-			<Link to={path} className="flex max-w-2xl items-center gap-4 py-4">
+			<Link
+				to={path}
+				className="flex max-w-2xl flex-col gap-4 py-5 md:flex-row md:items-center"
+			>
 				<img className="h-20 w-32 shrink-0 object-contain" src={image} alt="" />
 				<div>
 					<p className="mt-4 font-serif text-2xl">{title}</p>
@@ -42,7 +47,7 @@ export const Hiking = () => {
 							<h1 className="mb-4 font-serif text-5xl leading-tight font-bold text-neutral-700 md:text-7xl md:leading-tight">
 								Hiking
 							</h1>
-							<div className="w-[580px] divide-y divide-neutral-300">
+							<div className="max-w-[580px] divide-y divide-neutral-300">
 								<Article
 									path="gear"
 									title="My hiking gear"
@@ -55,12 +60,19 @@ export const Hiking = () => {
 									description="A breakdown of the food I tend to eat on trail and what I think about when resupplying on a long distance hike."
 									image="./illustrations/food.svg"
 								/>
+								<Article
+									path="plan"
+									title="How I plan a hike"
+									description="Planning a long distance hike can appear intimidating but its a very structured process! Here is the checklist I follow when planning a hike."
+									image="./illustrations/plan-hike.svg"
+								/>
 							</div>
 						</>
 					}
 				/>
 				<Route path="/gear/*" element={<GearList />} />
 				<Route path="/food" element={<Food />} />
+				<Route path="/plan" element={<Plan components={components} />} />
 			</Routes>
 		</>
 	)

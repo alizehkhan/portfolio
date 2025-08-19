@@ -8,13 +8,13 @@ export const Home = () => {
 			</Helmet>
 
 			<div className="max-w-[640px] text-2xl">
-				<h1 className="mb-6 font-serif text-4xl leading-tight font-bold">
+				<h1 className="mb-6 font-serif text-2xl leading-tight font-bold md:text-4xl">
 					👋🏼 I'm Alizeh
 				</h1>
-				<p className="font-serif text-6xl leading-tight font-bold">
+				<p className="font-serif text-4xl leading-tight font-bold md:text-6xl">
 					Frontend Engineer
 				</p>
-				<p className="font-serif text-6xl leading-tight font-bold">
+				<p className="font-serif text-4xl leading-tight font-bold md:text-6xl">
 					Product Designer
 				</p>
 				<div className="my-6 inline-flex gap-1">

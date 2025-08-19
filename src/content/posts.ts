@@ -2,15 +2,6 @@ import { Label, Post } from '../utils/types'
 
 export const POSTS: Post[] = [
 	{
-		title: 'How I plan a hike',
-		description:
-			'Planning a long distance hike can appear intimidating but its a very structured process! Here is the checklist I follow when planning a hike.',
-		link: '/blog/plan-hike',
-		image: './illustrations/plan-hike.svg',
-		labels: ['hiking'],
-		date: new Date(2023, 6, 20),
-	},
-	{
 		title: "Beginner's frontend setup guide for MacOS",
 		description:
 			'Learn about the basic tools and config files to set up your device for frontend development and how to build your own dotfiles repository.',
@@ -106,6 +97,5 @@ export const labels: Label[] = [
 	'frontend',
 	'design',
 	'accessibility',
-	'hiking',
 	'minimalism',
 ]
