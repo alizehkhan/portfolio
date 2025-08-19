@@ -12,7 +12,6 @@ export const Altamiga = () => {
 					Altamiga
 				</h1>
 
-				<img src="/assets/altamiga.svg" alt="" />
 				<p className="text-neutral-700/80">
 					Building the future of hut-to-hut hiking
 				</p>

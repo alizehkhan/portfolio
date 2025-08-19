@@ -20,7 +20,7 @@ export const Food = () => {
 			<h1 className="font-serif text-4xl leading-tight font-bold text-neutral-700 md:text-7xl md:leading-tight">
 				My trail food
 			</h1>
-			<div className="mt-6 grid grid-cols-2 gap-4">
+			<div className="mt-6 block grid-cols-3 gap-4 space-y-4 md:grid md:space-y-0">
 				{!isLoading
 					? // eslint-disable-next-line @typescript-eslint/no-explicit-any
 						Object.values(food).map((foodItem: any, index) => (
