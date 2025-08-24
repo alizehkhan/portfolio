@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 
-import { LINKS } from '../content/links'
+import { LINKS } from '../layout/links'
 
 export const MobileNav = ({
 	isMobileNavOpen,

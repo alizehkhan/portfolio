@@ -2,9 +2,9 @@ import { Helmet } from 'react-helmet-async'
 import { Link, Route, Routes } from 'react-router-dom'
 
 import { components } from '../components/MDXComponents'
-import Plan from '../pages/blog/plan-hike.mdx'
 import { Food } from './Food'
 import { GearList } from './GearList'
+import Planning from './planning.mdx'
 
 interface ArticleProps {
 	title: string
@@ -50,19 +50,19 @@ export const Hiking = () => {
 							<div className="max-w-[580px] divide-y divide-neutral-300">
 								<Article
 									path="gear"
-									title="My hiking gear"
+									title="Gear"
 									description="Guidance and list of my solo long-distance hiking gear which I religiously keep up to date."
 									image="./illustrations/tent.svg"
 								/>
 								<Article
 									path="food"
-									title="My trail food"
+									title="Food"
 									description="A breakdown of the food I tend to eat on trail and what I think about when resupplying on a long distance hike."
 									image="./illustrations/food.svg"
 								/>
 								<Article
-									path="plan"
-									title="How I plan a hike"
+									path="planning"
+									title="Planning"
 									description="Planning a long distance hike can appear intimidating but its a very structured process! Here is the checklist I follow when planning a hike."
 									image="./illustrations/plan-hike.svg"
 								/>
@@ -72,7 +72,10 @@ export const Hiking = () => {
 				/>
 				<Route path="/gear/*" element={<GearList />} />
 				<Route path="/food" element={<Food />} />
-				<Route path="/plan" element={<Plan components={components} />} />
+				<Route
+					path="/planning"
+					element={<Planning components={components} />}
+				/>
 			</Routes>
 		</>
 	)

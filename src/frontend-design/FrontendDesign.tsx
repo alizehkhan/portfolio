@@ -1,39 +1,31 @@
 import { Helmet } from 'react-helmet-async'
 import { Route, Routes } from 'react-router-dom'
 
-import { components } from '../../components/MDXComponents'
+import { components } from '../components/MDXComponents'
 import AutomatedTesting from './automated-testing.mdx'
 import Checkbox from './checkbox.mdx'
 import DeclutterUi from './declutter-ui.mdx'
-import EmailSetup from './email-setup.mdx'
 import Eslint from './eslint.mdx'
 import Feedback from './feedback.mdx'
 import FrontendSetup from './frontend-setup.mdx'
 import List from './List'
 import ManualTesting from './manual-testing.mdx'
-import Minimalism from './minimalism.mdx'
-import PlanHike from './plan-hike.mdx'
-import Uses from './uses.mdx'
 
 const routes = [
-	{ path: 'email-setup/', component: EmailSetup },
 	{ path: 'frontend-setup/', component: FrontendSetup },
 	{ path: 'automated-accessibility-testing/', component: AutomatedTesting },
 	{ path: 'manual-accessibility-testing/', component: ManualTesting },
-	{ path: 'plan-hike/', component: PlanHike },
-	{ path: 'minimalism/', component: Minimalism },
 	{ path: 'checkbox/', component: Checkbox },
 	{ path: 'design-system-feedback/', component: Feedback },
 	{ path: 'declutter-ui/', component: DeclutterUi },
-	{ path: 'uses/', component: Uses },
 	{ path: 'linting-formatting/', component: Eslint },
 ]
 
-export const Blog = () => {
+export const FrontendDesign = () => {
 	return (
 		<>
 			<Helmet>
-				<title>Blog | Alizeh Khan</title>
+				<title>Frontend & Design | Alizeh Khan</title>
 			</Helmet>
 			<Routes>
 				{routes.map(({ path, component: Component }) => (

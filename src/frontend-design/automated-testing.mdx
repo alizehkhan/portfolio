@@ -1,21 +1,21 @@
-import { Container } from "../../components/Container";
-import { Key } from "../../components/Key";
-import { Helmet } from 'react-helmet-async';
+import { Container } from '../components/Container'
+import { Key } from '../components/Key'
+import { Helmet } from 'react-helmet-async'
 
 <Helmet>
-  <title>Automated accessibility testing | Alizeh Khan</title>
+	<title>Automated accessibility testing | Alizeh Khan</title>
 </Helmet>
 
 # Automated accessibility testing
 
 <Container>
 
-*We can leverage tooling and automated tests during our development workflow to help us:*
+_We can leverage tooling and automated tests during our development workflow to help us:_
 
-- *uncover "low-hanging fruit" type accessibility issues,*
-- *develop accessible components more efficiently,*
-- *improve test coverage, and*
-- *avoid introducing technical debt.*
+- _uncover "low-hanging fruit" type accessibility issues,_
+- _develop accessible components more efficiently,_
+- _improve test coverage, and_
+- _avoid introducing technical debt._
 
 ---
 
@@ -37,8 +37,8 @@ Linters are an easy way to catch some low-hanging fruit and a great first step t
 
 ```json
 {
-  "plugins": ["jsx-a11y"],
-  "extends": ["plugin:jsx-a11y/recommended"]
+	"plugins": ["jsx-a11y"],
+	"extends": ["plugin:jsx-a11y/recommended"]
 }
 ```
 
@@ -74,25 +74,25 @@ pnpm add --save-dev axe-core cypress-axe
 Add the axe commands to `cypress/support/e2e.js` file so they are available to use on the `cy` object.
 
 ```javascript
-import "cypress-axe";
+import 'cypress-axe'
 ```
 
 Now testing can be as simple as: visiting the page, injecting axe and checking the page's accessibility.
 
 ```javascript
-describe("Home page", () => {
-  it("should be accessible", () => {
-    cy.visit("/");
-    cy.injectAxe();
-    cy.checkA11y();
-  });
-});
+describe('Home page', () => {
+	it('should be accessible', () => {
+		cy.visit('/')
+		cy.injectAxe()
+		cy.checkA11y()
+	})
+})
 ```
 
 We can `injectAxe` `beforeEach` test case and `checkA11y` after opening a modal, tooltip, dropdown etc.
 
 ---
 
-*⚠️ Please note, automated testing alone does not guarantee what you build is accessible. Some things cannot be automated and require a human to review. This includes how our interface works with assistive technologies such as screen readers and more nuanced things like the quality of image alt text. I've popped the [manual testing](/blog/manual-accessibility-testing) rituals I've managed to incorporate into my workflow so far in another post but it's by no means an exhaustive list.*
+_⚠️ Please note, automated testing alone does not guarantee what you build is accessible. Some things cannot be automated and require a human to review. This includes how our interface works with assistive technologies such as screen readers and more nuanced things like the quality of image alt text. I've popped the [manual testing](/blog/manual-accessibility-testing) rituals I've managed to incorporate into my workflow so far in another post but it's by no means an exhaustive list._
 
 </Container>

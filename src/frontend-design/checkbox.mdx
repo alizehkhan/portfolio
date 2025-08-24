@@ -1,0 +1,113 @@
+import { Container } from '../components/Container'
+import { Banner } from '../components/Banner'
+import { Helmet } from 'react-helmet-async'
+import { codeToHtml } from 'shiki'
+
+<Helmet>
+	<title>Accessible Checkbox | Alizeh Khan</title>
+</Helmet>
+
+# Accessible Checkbox
+
+<Container>
+
+_I've been wanting to create a blog series for a while now on how to build common design system components in React that are accessible and follow best practice component API design. I've kept these unstyled to focus on markup and any state that may be required._
+
+_Let's get into it..._
+
+---
+
+## Checkbox
+
+1. Create a `Checkbox` component composed of an `<input>` with `type="checkbox"` and `<label>`. Wrap the input with the label so that any children form part of the click area, making the component more flexible.
+
+2. Use `forwardRef` and attach the ref to the `<input/>` element so users can reference the DOM node if they need to when using the component. Make it an optional param `ref?` and define the type for the ref as `Ref<HTMLInputElement>`
+
+3. Use the native `InputHTMLAttributes`, omitting the `type` attribute, since this should remain `"checkbox"`. This includes all the event handlers and aria attributes. Use React's `children` prop for the label's content.
+
+   <Banner>
+   	Leverage existing and familiar APIs such HTML attributes and React's
+   	children prop where possible instead of custom prop names. This reduces
+   	cognitive load for the user.
+   </Banner>
+
+4. Destructure the props you have defined and to spread the `...restProps` as the first prop in the input element so that any we explicitly define can override the default values for these.
+
+5. To link our `<label>` and `<input>` we can use the `useId` hook from React and pass `id={id}` and `htmlFor={id}` to each of the elements.
+
+```tsx
+import { useId, type InputHTMLAttributes, forwardRef, Ref } from 'react'
+
+type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'>
+
+export const Checkbox = forwardRef(
+	(props: CheckboxProps, ref?: Ref<HTMLInputElement>) => {
+		const { children, className, name, value, checked, ...restProps } = props
+
+		const id = useId()
+
+		return (
+			<label htmlFor={id} className={className}>
+				<input {...restProps} ref={ref} type="checkbox" id={id} />
+				{children}
+			</label>
+		)
+	},
+)
+```
+
+(Ok so let's leave that to marinate 🥩, we're going to come back to this component and add more to it once we've built the `CheckboxGroup` component 👇.)
+
+## CheckboxGroup
+
+Now let's create a `CheckboxGroup` component that can be used as a wrapper around multiple `Checkbox` components to more easily control the state for a multi select checkbox question.
+
+1. Create a `CheckboxGroup` component that will wrap our checkboxes in a `<fieldset>` with a `<legend>` for the title.
+
+   <Banner>
+   	Building complex components in a composable way as opposed to monolothic
+   	with several props will allow users to drop a level below the higher
+   	abstraction.
+   </Banner>
+
+2. Below the `title` and above the checkboxes we will add `<p>` elements for `hint` and `error` texts to render when needed.
+   <Banner>
+   	Avoid placing hints and error messages below the input because browser's
+   	auto-complete features and on-screen keyboards can obscure them. It's also
+   	an anti-pattern because the texts would be announced by screen readers
+   	after the input.
+   </Banner>
+   So that the screen reader knows these elements provide more information for
+   the `fieldset` we list the `id`s of these elements in an `aria-describedby`
+   attached to the `fieldset`.
+
+```tsx
+import type { ReactNode } from 'react'
+
+interface CheckboxGroupProps {
+	title: string
+	name: string
+	children: ReactNode
+	error?: string
+	hint?: string
+}
+
+export const CheckboxGroup = (props: CheckboxGroupProps) => {
+	const { title, error, hint, name, children } = props
+
+	return (
+		<fieldset aria-describedby={`${name}-hint ${name}-error`}>
+			<legend>{title}</legend>
+			{hint && <p id={`${name}-hint`}>{hint}</p>}
+			{error && <p id={`${name}-error`}>{error}</p>}
+			<div>{children}</div>
+		</fieldset>
+	)
+}
+```
+
+## Checkbox Context
+
+Ok, we have the markup for the CheckboxGroup down but we some state.
+
+</Container>

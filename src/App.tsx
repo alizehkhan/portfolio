@@ -5,12 +5,13 @@ import { Analytics } from '@vercel/analytics/react'
 import { HelmetProvider } from 'react-helmet-async'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import { Footer } from './components/Footer'
+import { Altamiga } from './altamiga/Altamiga'
 import { Header } from './components/Header'
+import { FrontendDesign } from './frontend-design/FrontendDesign'
 import { Hiking } from './hiking/Hiking'
-import { Altamiga } from './pages/altamiga/Altamiga'
-import { Blog } from './pages/blog'
-import { Home } from './pages/home'
+import { Footer } from './layout/Footer'
+import { Home } from './layout/Home'
+import { Minimalism } from './minimalism/Minimalism'
 import { ScrollToTop } from './utils/ScrollToTop'
 
 const queryClient = new QueryClient()
@@ -25,7 +26,8 @@ const App = () => {
 					<main className="container mx-auto my-16">
 						<Routes>
 							<Route path="/" element={<Home />} />
-							<Route path="/blog/*" element={<Blog />} />
+							<Route path="/frontend-design/*" element={<FrontendDesign />} />
+							<Route path="/minimalism/*" element={<Minimalism />} />
 							<Route path="/hiking/*" element={<Hiking />} />
 							<Route path="/altamiga" element={<Altamiga />} />
 						</Routes>

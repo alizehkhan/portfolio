@@ -13,7 +13,7 @@ export const Altamiga = () => {
 				</h1>
 
 				<p className="text-neutral-700/80">
-					Building the future of hut-to-hut hiking
+					Building the future of hut-to-hut bookings
 				</p>
 
 				<h2 className="mt-12 text-2xl font-bold md:text-4xl">

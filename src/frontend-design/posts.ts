@@ -29,33 +29,6 @@ export const POSTS: Post[] = [
 		date: new Date(2023, 8, 3),
 	},
 	{
-		title: 'My ruthlessly simple email setup',
-		description:
-			'If you are into high maintenance productivity systems like bullet journalling, look away! Here is my dead simple approach to managing emails.',
-		image: './illustrations/email.svg',
-		link: '/blog/email-setup',
-		labels: ['minimalism'],
-		date: new Date(2023, 1, 16),
-	},
-	{
-		title: 'Minimalism helped me unlearn',
-		description:
-			'A lot of people think minimalism is focused on the number of things you own and picture it in its most extreme form. Lets debunk some myths.',
-		image: './illustrations/minimalism.svg',
-		link: '/blog/minimalism',
-		labels: ['minimalism'],
-		date: new Date(2023, 6, 24),
-	},
-	{
-		title: 'My list of apps, extensions, configs etc.',
-		description:
-			"I enjoy reading other people's lists so I thought I'd share my own. I will try to keep this up to date.",
-		image: './illustrations/uses.svg',
-		link: '/blog/uses',
-		labels: ['minimalism', 'frontend', 'design'],
-		date: new Date(2023, 7, 31),
-	},
-	{
 		title: 'My linting and formatting config',
 		description:
 			"There isn't much customisation when it comes to my ESLint and Prettier config. I try to stick to the recommended standard for an accessible TypeScript React app.",
@@ -93,9 +66,4 @@ export const POSTS: Post[] = [
 	},
 ]
 
-export const labels: Label[] = [
-	'frontend',
-	'design',
-	'accessibility',
-	'minimalism',
-]
+export const labels: Label[] = ['frontend', 'design', 'accessibility']

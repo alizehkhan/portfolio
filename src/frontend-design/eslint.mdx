@@ -1,9 +1,9 @@
-import { Container } from '../../components/Container'
-import { Key } from '../../components/Key'
-import { Helmet } from 'react-helmet-async';
+import { Container } from '../components/Container'
+import { Key } from '../components/Key'
+import { Helmet } from 'react-helmet-async'
 
 <Helmet>
-  <title>My Linting & Formatting | Alizeh Khan</title>
+	<title>My Linting & Formatting | Alizeh Khan</title>
 </Helmet>
 
 # My linting and formatting config
@@ -26,12 +26,12 @@ Install the **ESLint VS Code extension** to allow the following:
 
 ```json
 {
-  // ...
-  "editor.codeActionsOnSave": {
+	// ...
+	"editor.codeActionsOnSave": {
 		"source.fixAll": "explicit",
 		"source.organizeImports": "always",
 		"source.removeUnusedImports": "explicit"
-	},
+	}
 }
 ```
 
@@ -60,16 +60,16 @@ pnpm add --save-dev eslint-plugin-react eslint-plugin-react-hooks
 
 ```json
 {
-  "extends": [
-    // ...
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:react-hooks/recommended"
-  ],
-  "settings": {
-    // ...
-    "react": { "version": "detect" },
-  }
+	"extends": [
+		// ...
+		"plugin:react/recommended",
+		"plugin:react/jsx-runtime",
+		"plugin:react-hooks/recommended"
+	],
+	"settings": {
+		// ...
+		"react": { "version": "detect" }
+	}
 }
 ```
 
@@ -81,18 +81,19 @@ For TypeScript I install the following packages:
 pnpm add --save-dev @typescript-eslint/parser @typescript-eslint/eslint-plugin
 ```
 
-<div className='my-4'>
-- I add `@typescript-eslint/parser` to parse TypeScript code into ESLint-compatible nodes.
-- I add the recommended configuration from `@typescript-eslint/eslint-plugin`.
+<div className="my-4">
+	- I add `@typescript-eslint/parser` to parse TypeScript code into
+	ESLint-compatible nodes. - I add the recommended configuration from
+	`@typescript-eslint/eslint-plugin`.
 </div>
 
 ```json
 {
-  "parser": "@typescript-eslint/parser",
-  "extends": [
-    // ...
-    "plugin:@typescript-eslint/recommended",
-  ],
+	"parser": "@typescript-eslint/parser",
+	"extends": [
+		// ...
+		"plugin:@typescript-eslint/recommended"
+	]
 }
 ```
 
@@ -108,10 +109,10 @@ I add their recommended configuration to my `.eslintrc`.
 
 ```json
 {
-  "extends": [
-    // ...
-    "plugin:jsx-a11y/recommended"
-  ],
+	"extends": [
+		// ...
+		"plugin:jsx-a11y/recommended"
+	]
 }
 ```
 
@@ -156,24 +157,24 @@ I specify both plugins in my `.eslintrc` so I can add the following individual r
 
 ```json
 {
-  "plugins": [
-    // ..
-    "import",
-    "unused-imports"
-  ],
-  "rules": {
-    "unused-imports/no-unused-imports": "error",
-    "import/order": [
-      "error",
-      {
-        "newlines-between": "always",
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
-        }
-      }
-    ]
-  },
+	"plugins": [
+		// ..
+		"import",
+		"unused-imports"
+	],
+	"rules": {
+		"unused-imports/no-unused-imports": "error",
+		"import/order": [
+			"error",
+			{
+				"newlines-between": "always",
+				"alphabetize": {
+					"order": "asc",
+					"caseInsensitive": true
+				}
+			}
+		]
+	}
 }
 ```
 
@@ -189,11 +190,11 @@ And extend the following configurations in my `.eslintrc`.
 
 ```json
 {
-  "extends": [
-    // ...
-    "plugin:jest-dom/recommended",
-    "plugin:testing-library/react"
-  ],
+	"extends": [
+		// ...
+		"plugin:jest-dom/recommended",
+		"plugin:testing-library/react"
+	]
 }
 ```
 

@@ -41,7 +41,7 @@ const MobileHeader = () => {
 			ref={MobileNavRef}
 		>
 			<button
-				className="ml-auto mt-3 flex items-center gap-1 bg-transparent p-3"
+				className="mt-3 ml-auto flex items-center gap-1 bg-transparent p-3"
 				aria-expanded={isMobileNavOpen}
 				aria-controls="primary-menu"
 				onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}

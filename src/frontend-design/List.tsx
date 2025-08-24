@@ -2,10 +2,10 @@ import { IconX } from '@tabler/icons-react'
 import { useEffect, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 
-import { PostCard } from '../../components/PostCard'
-import { labels, POSTS } from '../../content/posts'
-import { Label } from '../../utils/types'
-import { useNavigateSearch } from '../../utils/useNavigateSearch'
+import { PostCard } from '../components/PostCard'
+import { Label } from '../utils/types'
+import { useNavigateSearch } from '../utils/useNavigateSearch'
+import { labels, POSTS } from './posts'
 
 const List = () => {
 	const [selectedLabel, setSelectedLabel] = useState<Label | null>(null)
@@ -30,7 +30,9 @@ const List = () => {
 
 	return (
 		<>
-			<h1 className="mb-16 font-serif text-5xl font-bold md:text-7xl">Blog</h1>
+			<h1 className="mb-16 font-serif text-5xl font-bold md:text-7xl">
+				Frontend & Design
+			</h1>
 			<nav>
 				<ul className="my-4 mb-8 flex flex-wrap items-center gap-3">
 					{labels.map((label, index) => (
