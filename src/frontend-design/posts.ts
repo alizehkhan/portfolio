@@ -52,7 +52,7 @@ export const POSTS: Post[] = [
 			'Free, unfiltered, instant, quantitative and qualitative feedback without surveys or workshops...',
 		image: './illustrations/feedback.svg',
 		link: '/frontend-design/design-system-feedback',
-		labels: ['frontend', 'design'],
+		labels: ['frontend', 'design', 'design-systems'],
 		date: new Date(2024, 4, 8),
 	},
 	{
@@ -66,4 +66,9 @@ export const POSTS: Post[] = [
 	},
 ]
 
-export const labels: Label[] = ['frontend', 'design', 'accessibility']
+export const labels: Label[] = [
+	'frontend',
+	'design',
+	'accessibility',
+	'design-systems',
+]

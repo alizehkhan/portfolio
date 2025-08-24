@@ -55,9 +55,4 @@ export type Project = {
 	image: string
 }
 
-export type Label =
-	| 'minimalism'
-	| 'frontend'
-	| 'design'
-	| 'hiking'
-	| 'accessibility'
+export type Label = 'design-systems' | 'frontend' | 'design' | 'accessibility'
