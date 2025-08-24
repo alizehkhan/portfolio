@@ -40,7 +40,7 @@ const List = () => {
 							<button
 								onClick={() => {
 									setSelectedLabel(searchParams.get('filter') as Label)
-									navigateSearch('/blog', { filter: label })
+									navigateSearch('/frontend-design', { filter: label })
 								}}
 								className={`inline-block rounded-full px-3 py-1 text-lg transition-all ${
 									selectedLabel === label
@@ -57,7 +57,7 @@ const List = () => {
 							<button
 								onClick={() => {
 									setSelectedLabel(null)
-									navigate('/blog')
+									navigate('/frontend-design')
 								}}
 								className="flex items-center gap-1 text-lg"
 							>

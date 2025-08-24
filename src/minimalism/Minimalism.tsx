@@ -19,9 +19,6 @@ export const Minimalism = () => {
 		description:
 			"I enjoy reading other people's lists so I thought I'd share my own. I will try to keep this up to date.",
 		image: './illustrations/uses.svg',
-		link: '/blog/uses',
-		labels: ['minimalism', 'frontend', 'design'],
-		date: new Date(2023, 7, 31),
 	}, */}
 
 			<Routes>
