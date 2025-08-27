@@ -2,6 +2,15 @@ import { Label, Post } from '../utils/types'
 
 export const POSTS: Post[] = [
 	{
+		title: 'What is a tooltip and how to use it accessibly',
+		description:
+			'Tooltips, popovers, modals, dialogs... What is the semantic difference in all these pop up thingies. Lets start with the tooltip.',
+		image: './illustrations/tooltip.svg',
+		link: '/frontend-design/tooltips',
+		labels: ['frontend', 'accessibility'],
+		date: new Date(2025, 6, 30),
+	},
+	{
 		title: "Beginner's frontend setup guide for MacOS",
 		description:
 			'Learn about the basic tools and config files to set up your device for frontend development and how to build your own dotfiles repository.',

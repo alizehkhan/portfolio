@@ -1,0 +1,78 @@
+import { Container } from '../components/Container'
+
+# What is a tooltip and how to use it accessibly
+
+<Container>
+
+_⚠️ Important: tooltips as a UI pattern should be the last resort for conveying information as they are hidden by default with zero or little visual indicator of its existence. But if you must use it, here’s how to do it accessibly._
+
+---
+
+Semantically, a tooltip is a **label** or **description** for an interactive button or link that is hidden by default and revealed on hover or focus. Lets look at what these two things are.
+
+## What’s a label?
+
+All interactive elements must have a label so we know what they’ll do when we click it 🙃. Using a button as an example, there are three ways you can label it.
+
+### Use the content as the label:
+
+```html
+<button>Settings</button>
+```
+
+This is the best option. If you can do this, do it. Because sighted users can always see what this button does and the screenreader will of course also pick this up.
+
+### Apply an aria-label to the button
+
+```html
+<button aria-label="Settings">⚙️</button>
+```
+
+This option kinda sucks because sure a screen reader picks this up but sighted users have to guess what this button does based on the emoji or icon. Not a great UX.
+
+Note: An `aria-label` will override the content inside the button so in this case the screen reader will say “Settings“ and ignore the ⚙️ emoji.
+
+### Reference the content of another element to use as a label with aria-labelledby
+
+```html
+<button aria-labelledby="1">⚙️</button>
+
+<p id="1">Settings</p>
+```
+
+The use of `aria-labelledby` overrides both `aria-label` and content as the label.
+
+If you want to use a tooltip to label your button, this would be what you do semantically. The `<p>` element would appear in the UI and the DOM on hover and on focus.
+
+This is better than using `aria-label` because now sighted users can also see the label if they hover or focus on the button.
+
+### What about HTML’s title attribute?
+
+The HTML title attribute displays on hover however:
+
+- they are not accessible on focus so keyboard users miss out.
+- they are not accessible to mobile users.
+- they appear on hover after a delay which makes it harder to discover and can be annoying.
+- it’s not supported consistently across screen readers.
+
+## What’s a description?
+
+A description is information in addition to the label so the screen reader will read the label first and then the description associated with that element.
+
+You can use a tooltip to provide a description to your labelled button or link using `aria-describedby`.
+
+```html
+<button aria-describedby="2">Settings</button>
+
+<p id="2">Sharing options, themes and notification preferences</p>
+```
+
+So the screen reader would say “Settings. Sharing options, themes and notification preferences“.
+
+## Summary of criteria to be an accessible tooltip
+
+- The tooltip trigger must be a `button` or `a`.
+- The tooltip content (label or description) shows on hover and on focus but not on click. This is because the click is for the interactive element’s actual reason for existence eg. go to the settings page or open a modal.
+- The tooltip content must not contain interactive elements. This is because the tooltip’s content is not accessible via keyboard, (it’s just a label or description, remember).
+
+</Container>

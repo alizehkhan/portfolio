@@ -10,6 +10,7 @@ import Feedback from './feedback.mdx'
 import FrontendSetup from './frontend-setup.mdx'
 import List from './List'
 import ManualTesting from './manual-testing.mdx'
+import Tooltips from './tooltips.mdx'
 
 const routes = [
 	{ path: 'frontend-setup/', component: FrontendSetup },
@@ -19,6 +20,7 @@ const routes = [
 	{ path: 'design-system-feedback/', component: Feedback },
 	{ path: 'declutter-ui/', component: DeclutterUi },
 	{ path: 'linting-formatting/', component: Eslint },
+	{ path: 'tooltips/', component: Tooltips },
 ]
 
 export const FrontendDesign = () => {

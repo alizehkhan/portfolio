@@ -11,27 +11,20 @@ export const Home = () => {
 				<h1 className="mb-6 font-serif text-2xl leading-tight font-bold md:text-4xl">
 					👋🏼 I'm Alizeh
 				</h1>
-				<p className="font-serif text-4xl leading-tight font-bold md:text-6xl">
-					Frontend Engineer
-				</p>
-				<p className="font-serif text-4xl leading-tight font-bold md:text-6xl">
-					Product Designer
-				</p>
-				<div className="my-6 inline-flex gap-1">
-					{['react', 'typescript', 'css', 'html'].map((tag) => (
-						<span
-							key={tag}
-							className="w-fit rounded-sm border-2 border-neutral-300 bg-white px-1 font-mono text-lg text-red-700"
-						>
-							{tag}
-						</span>
-					))}
-				</div>
 				<div className="max-w-[600px]">
 					<p className="mb-6 text-2xl">
 						I build and advocate for web experiences that prioritise content,
 						inclusivity and simplicity. I specialise in design systems,
 						accessibility and form UX.
+					</p>
+					<p className="mb-6 text-2xl">
+						I am the co-founder of{' '}
+						<a
+							className="font-serif font-bold hover:underline"
+							href="https://www.altamiga.com"
+						>
+							Altamiga
+						</a>
 					</p>
 				</div>
 
