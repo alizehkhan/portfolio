@@ -4,22 +4,22 @@ import { Code } from './Code'
 
 export const components = {
 	h1: ({ children }: { children?: ReactNode }) => (
-		<h1 className="mb-10 font-serif text-5xl max-w-[850px] leading-[1.2] md:leading-[1.2] text-neutral-700 md:text-7xl font-bold">
+		<h1 className="mb-10 max-w-[850px] font-serif text-5xl leading-[1.2] font-bold text-neutral-700 md:text-7xl md:leading-[1.2]">
 			{children}
 		</h1>
 	),
 	h2: ({ children }: { children?: ReactNode }) => (
-		<h2 className="mt-12 font-serif md:text-4xl text-2xl leading-[1.2] font-bold text-neutral-700">
+		<h2 className="mt-12 font-serif text-2xl leading-[1.2] font-bold text-neutral-700 md:text-4xl">
 			{children}
 		</h2>
 	),
 	h3: ({ children }: { children?: ReactNode }) => (
-		<h3 className="mt-8 font-serif md:text-xl text-lg font-bold text-neutral-700">
+		<h3 className="mt-8 font-serif text-lg font-bold text-neutral-700 md:text-xl">
 			{children}
 		</h3>
 	),
 	p: ({ children }: { children?: ReactNode }) => (
-		<p className="my-4 font-sans text-xl leading-normal text-neutral-700 ">
+		<p className="my-4 font-sans text-xl leading-normal text-neutral-700">
 			{children}
 		</p>
 	),
@@ -38,7 +38,7 @@ export const components = {
 		</a>
 	),
 	li: ({ children }: { children?: ReactNode }) => (
-		<li className=" font-sans text-xl leading-normal text-neutral-700">
+		<li className="font-sans text-xl leading-normal text-neutral-700">
 			{children}
 		</li>
 	),
@@ -49,7 +49,7 @@ export const components = {
 		<ul className="list-decimal pl-10">{children}</ul>
 	),
 	code: ({ children }: { children?: ReactNode }) => (
-		<code className="rounded-md bg-grey-200 p-1 font-mono text-sm text-neutral-700">
+		<code className="bg-grey-100 border-grey-300 rounded-md border px-1 py-0.5 font-mono text-sm text-red-700">
 			{children}
 		</code>
 	),

@@ -1,5 +1,4 @@
 import { Container } from '../components/Container'
-import { Key } from '../components/Key'
 import { Helmet } from 'react-helmet-async'
 
 <Helmet>
@@ -12,7 +11,7 @@ import { Helmet } from 'react-helmet-async'
 
 _Tackling accessibility can feel overwhelming and it's pretty much impossible to have a 100% accessible website. So instead of creating a guide that tries to boil the ocean, I thought I would share the manual testing rituals I've managed to incorporate into my development workflow. I'll try to keep this up to date as I learn more._
 
-_If you've never used the screen reader on your Mac, my hope is that by the end of this post you will have at least pressed <Key>command</Key> + <Key>F5</Key>. I mean you could even press it now if you want 🤷._
+_If you've never used the screen reader on your Mac, my hope is that by the end of this post you will have at least pressed <kbd>command</kbd> + <kbd>F5</kbd>. I mean you could even press it now if you want 🤷._
 
 ---
 
@@ -22,29 +21,29 @@ Not everyone uses a mouse to navigate a website, so here are the commands and to
 
 ### ⌨️ Keyboard user commands
 
-<Key>tab</Key> to focus on the next interactive element.
+<kbd>tab</kbd> to focus on the next interactive element.
 
-<Key>shift</Key> + <Key>tab</Key> to focus on the previous interactive element.
+<kbd>shift</kbd> + <kbd>tab</kbd> to focus on the previous interactive element.
 
-<Key>↑</Key>/<Key>↓</Key>/<Key>←</Key>/<Key>→</Key> to cycle through related
+<kbd>↑</kbd>/<kbd>↓</kbd>/<kbd>←</kbd>/<kbd>→</kbd> to cycle through related
 controls such a dropdown list or radio group.
 
-<Key>spacebar</Key> to toggle states (eg. for a checkbox) or move down the page
+<kbd>spacebar</kbd> to toggle states (eg. for a checkbox) or move down the page
 
-<Key>enter</Key> to interact.
+<kbd>enter</kbd> to interact.
 
 ### 🔉 Screen reader user commands
 
 _Screen readers are software applications that render text and image content as speech or braille output._
 
-<Key>command</Key> + <Key>F5</Key> to activate MacOS's built-in screen reader,
+<kbd>command</kbd> + <kbd>F5</kbd> to activate MacOS's built-in screen reader,
 Voiceover.
 
-<Key>control</Key> + <Key>option</Key> + <Key>←</Key>/<Key>→</Key> to move
+<kbd>control</kbd> + <kbd>option</kbd> + <kbd>←</kbd>/<kbd>→</kbd> to move
 between elements
 
-<Key>control</Key> + <Key>option</Key> + <Key>U</Key> to open up the rotor. Then
-<Key>←</Key>/<Key>→</Key> to navigate through the lists available eg. landmarks,
+<kbd>control</kbd> + <kbd>option</kbd> + <kbd>U</kbd> to open up the rotor. Then
+<kbd>←</kbd>/<kbd>→</kbd> to navigate through the lists available eg. landmarks,
 headers, links etc.
 
 ### 🌳 Accessibility tree
@@ -65,7 +64,7 @@ _To view a site's accessibility tree click on the `Accessibility` tab in Chrome'
 
 ### Structure
 
-- Open up the screen reader rotor <Key>control</Key> + <Key>option</Key> + <Key>U</Key> and check the headings list for the page. Are there any headings missing or heading tags being misused?
+- Open up the screen reader rotor <kbd>control</kbd> + <kbd>option</kbd> + <kbd>U</kbd> and check the headings list for the page. Are there any headings missing or heading tags being misused?
 - Check that each heading accurately describes the content that immediately follows it.
 - Check that the page title (shown in the browser's tab) accurately describes the purpose of the page.
 - Check that any `div` or `span` elements that have semantic meaning are replaced with semantic elements or given an appropriate `aria-role` attribute.
@@ -73,7 +72,7 @@ _To view a site's accessibility tree click on the `Accessibility` tab in Chrome'
 
 ### Interactive elements
 
-<Key>tab</Key> through the page and check:
+<kbd>tab</kbd> through the page and check:
 
 - The tabbing order is logical and intuitive.
 - There are no interactive elements missing from the tab sequence
