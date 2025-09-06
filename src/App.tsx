@@ -1,11 +1,10 @@
-import './stylesheets/index.css'
+import './index.css'
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Analytics } from '@vercel/analytics/react'
 import { HelmetProvider } from 'react-helmet-async'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import { Altamiga } from './altamiga/Altamiga'
 import { Header } from './components/Header'
 import { FrontendDesign } from './frontend-design/FrontendDesign'
 import { Hiking } from './hiking/Hiking'
@@ -29,7 +28,6 @@ const App = () => {
 							<Route path="/frontend-design/*" element={<FrontendDesign />} />
 							<Route path="/minimalism/*" element={<Minimalism />} />
 							<Route path="/hiking/*" element={<Hiking />} />
-							<Route path="/altamiga" element={<Altamiga />} />
 						</Routes>
 					</main>
 					<Footer />

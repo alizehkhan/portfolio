@@ -2,6 +2,15 @@ import { Label, Post } from '../utils/types'
 
 export const POSTS: Post[] = [
 	{
+		title: 'Component API design principles',
+		description:
+			'Component APIs are the interface between the design system and its consumers. A well-designed API should be intuitive, predictable, and flexible.',
+		image: './illustrations/api.svg',
+		link: '/frontend-design/api-design',
+		labels: ['frontend', 'design-systems'],
+		date: new Date(2025, 7, 30),
+	},
+	{
 		title: 'What is a tooltip and how to use it accessibly',
 		description:
 			'Tooltips, popovers, modals, dialogs... What is the semantic difference in all these pop up thingies. Lets start with the tooltip.',

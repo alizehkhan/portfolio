@@ -19,14 +19,6 @@ export const Header = () => {
 							<NavLink to={link.to}>{link.name}</NavLink>
 						</li>
 					))}
-					<li>
-						<NavLink
-							className="rounded-full bg-neutral-700 px-3 py-1.5 text-white hover:no-underline"
-							to="/altamiga"
-						>
-							Altamiga
-						</NavLink>
-					</li>
 				</ul>
 			</nav>
 		</header>

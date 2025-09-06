@@ -21,7 +21,7 @@ export const Home = () => {
 						I am the co-founder of{' '}
 						<a
 							className="font-serif font-bold hover:underline"
-							href="https://www.altamiga.com"
+							href="https://www.altamiga.com/hut"
 						>
 							Altamiga
 						</a>
