@@ -129,11 +129,11 @@ Instead of importing each subcomponent separately, group them under the parent c
 
 import { Dialog } from '@design-system'
 
-render(
+return (
 	<Dialog.Root>
 		<Dialog.Trigger>Open</Dialog.Trigger>
 		<Dialog.Content>Content goes here</Dialog.Content>
-	</Dialog.Root>,
+	</Dialog.Root>
 )
 ```
 
@@ -142,11 +142,11 @@ render(
 
 import { DialogRoot, DialogTrigger, DialogContent } from '@design-system'
 
-render(
+return (
 	<DialogRoot>
 		<DialogTrigger>Open</DialogTrigger>
 		<DialogContent>Content goes here</DialogContent>
-	</DialogRoot>,
+	</DialogRoot>
 )
 ```
 

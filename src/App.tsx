@@ -11,7 +11,6 @@ import { Hiking } from './hiking/Hiking'
 import { Home } from './Home'
 import { Footer } from './layout/Footer'
 import { Minimalism } from './minimalism/Minimalism'
-import { Thoughts } from './thoughts/Thoughts'
 import { ScrollToTop } from './utils/ScrollToTop'
 
 const queryClient = new QueryClient()
@@ -29,7 +28,6 @@ const App = () => {
 							<Route path="/frontend-design/*" element={<FrontendDesign />} />
 							<Route path="/minimalism/*" element={<Minimalism />} />
 							<Route path="/hiking/*" element={<Hiking />} />
-							<Route path="/thoughts" element={<Thoughts />} />
 						</Routes>
 					</main>
 					<Footer />
