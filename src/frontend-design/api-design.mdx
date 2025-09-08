@@ -40,22 +40,22 @@ Instead of bloated components overloaded with props, prefer composition.
 // ✅ Preferred
 
 <Modal>
-  <Modal.Header>Title</Modal.Header>
-  <Modal.Body>Content goes here</Modal.Body>
-  <Modal.Footer>
-    <Button>Cancel</Button>
-    <Button variant="primary">Save</Button>
-  </Modal.Footer>
+	<Modal.Header>Title</Modal.Header>
+	<Modal.Body>Content goes here</Modal.Body>
+	<Modal.Footer>
+		<Button>Cancel</Button>
+		<Button variant="primary">Save</Button>
+	</Modal.Footer>
 </Modal>
 ```
 
 ```tsx
 // ❌ Avoid
 
-<Modal 
-  header="Title" 
-  body="Content goes here" 
-  footerButtons={[{ text: "Cancel" }, { text: "Save", variant: "primary" }]}
+<Modal
+	header="Title"
+	body="Content goes here"
+	footerButtons={[{ text: 'Cancel' }, { text: 'Save', variant: 'primary' }]}
 />
 ```
 
@@ -83,12 +83,9 @@ Consistency is key for usability and predictability.
 
 ## Align similar components
 
-APIs for components that share a mental model should be aligned. This reduces cognitive overhead and makes the system feel cohesive.
+APIs for components that share a mental model should be aligned. Once an engineer learns the API for one component, they should be able to apply the same knowledge to another without relearning new names.
 
-- Use consistent subcomponents across related patterns.
-- For example, both Tooltip and Popover should expose a Root, Trigger, and Content.
-
-Once an engineer learns the API for one component, they should be able to apply the same knowledge to another without relearning new names.
+Use consistent subcomponents across related patterns. For example, both Tooltip and Popover should expose a Root, Trigger, and Content.
 
 ```tsx
 // ✅ Preferred
