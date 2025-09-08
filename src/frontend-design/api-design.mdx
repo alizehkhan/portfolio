@@ -59,6 +59,38 @@ Instead of bloated components overloaded with props, prefer composition.
 />
 ```
 
+## Use object notation for subcomponents
+
+To improve developer experience and take advantage of type suggestions in IDEs, expose subcomponents via object notation.
+
+Instead of importing each subcomponent separately, group them under the parent component. This gives users auto-complete discoverability without needing to read docs.
+
+```tsx
+// ✅ Preferred
+
+import { Dialog } from '@design-system'
+
+return (
+	<Dialog.Root>
+		<Dialog.Trigger>Open</Dialog.Trigger>
+		<Dialog.Content>Content goes here</Dialog.Content>
+	</Dialog.Root>
+)
+```
+
+```tsx
+// ❌ Avoid
+
+import { DialogRoot, DialogTrigger, DialogContent } from '@design-system'
+
+return (
+	<DialogRoot>
+		<DialogTrigger>Open</DialogTrigger>
+		<DialogContent>Content goes here</DialogContent>
+	</DialogRoot>
+)
+```
+
 ## Consistency in naming
 
 Consistency is key for usability and predictability.
@@ -113,38 +145,6 @@ Use consistent subcomponents across related patterns. For example, both Tooltip 
   <Popover.Toggle>Click me</Popover.Toggle>
   <Popover.Panel>Popover content</Popover.Panel>
 </Popover>
-```
-
-## Use object notation for subcomponents
-
-To improve developer experience and take advantage of type suggestions in IDEs, expose subcomponents via object notation.
-
-Instead of importing each subcomponent separately, group them under the parent component. This gives users auto-complete discoverability without needing to read docs.
-
-```tsx
-// ✅ Preferred
-
-import { Dialog } from '@design-system'
-
-return (
-	<Dialog.Root>
-		<Dialog.Trigger>Open</Dialog.Trigger>
-		<Dialog.Content>Content goes here</Dialog.Content>
-	</Dialog.Root>
-)
-```
-
-```tsx
-// ❌ Avoid
-
-import { DialogRoot, DialogTrigger, DialogContent } from '@design-system'
-
-return (
-	<DialogRoot>
-		<DialogTrigger>Open</DialogTrigger>
-		<DialogContent>Content goes here</DialogContent>
-	</DialogRoot>
-)
 ```
 
 </Container>

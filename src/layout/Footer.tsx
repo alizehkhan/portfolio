@@ -11,9 +11,6 @@ export const Footer = () => (
 			<Link to="https://github.com/alizehkhan" className="block underline">
 				Github
 			</Link>
-			<Link to="https://substack.com/@alizehkhan" className="block underline">
-				Substack
-			</Link>
 		</div>
 	</footer>
 )
