@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async'
 import { Route, Routes } from 'react-router-dom'
 
 import { components } from '../components/MDXComponents'
+import ApiDesign from './api-design.mdx'
 import AutomatedTesting from './automated-testing.mdx'
 import Checkbox from './checkbox.mdx'
 import DeclutterUi from './declutter-ui.mdx'
@@ -21,6 +22,7 @@ const routes = [
 	{ path: 'declutter-ui/', component: DeclutterUi },
 	{ path: 'linting-formatting/', component: Eslint },
 	{ path: 'tooltips/', component: Tooltips },
+	{ path: 'api-design/', component: ApiDesign },
 ]
 
 export const FrontendDesign = () => {

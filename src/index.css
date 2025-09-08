@@ -106,11 +106,11 @@ kbd {
 }
 
 q::before {
-	@apply content-[open-quote;];
+	@apply content-[open-quote];
 }
 
 q::after {
-	@apply content-[close-quote;];
+	@apply content-[close-quote];
 }
 
 *:focus-visible {

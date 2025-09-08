@@ -8,9 +8,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Header } from './components/Header'
 import { FrontendDesign } from './frontend-design/FrontendDesign'
 import { Hiking } from './hiking/Hiking'
+import { Home } from './Home'
 import { Footer } from './layout/Footer'
-import { Home } from './layout/Home'
 import { Minimalism } from './minimalism/Minimalism'
+import { Thoughts } from './thoughts/Thoughts'
 import { ScrollToTop } from './utils/ScrollToTop'
 
 const queryClient = new QueryClient()
@@ -28,6 +29,7 @@ const App = () => {
 							<Route path="/frontend-design/*" element={<FrontendDesign />} />
 							<Route path="/minimalism/*" element={<Minimalism />} />
 							<Route path="/hiking/*" element={<Hiking />} />
+							<Route path="/thoughts" element={<Thoughts />} />
 						</Routes>
 					</main>
 					<Footer />

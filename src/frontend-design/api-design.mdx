@@ -1,0 +1,153 @@
+import { Container } from '../components/Container'
+
+# Component API design principles
+
+<Container>
+
+Component APIs are the interface between your design system and its consumers. A well-designed API should be intuitive, predictable, and flexible. These principles help ensure that components are easy to adopt and scale well across use cases.
+
+## Leverage familiar APIs
+
+When possible, leverage existing and familiar APIs:
+
+- Use native HTML attributes (`id`, `disabled`, `type`, `aria-\*`) rather than custom equivalents.
+- Use React's `children` instead of custom prop names such `content`, `label`, `value`.
+
+This lowers the cognitive load and makes components feel like natural extensions of its elements.
+
+```tsx
+// ✅ Preferred
+
+<Button disabled>Save</Button>
+```
+
+```tsx
+// ❌ Avoid
+
+<Button isDisabled label="Save" />
+```
+
+---
+
+## Composition over configuration
+
+Instead of bloated components overloaded with props, prefer composition.
+
+- High-level components should provide convenience for common use cases.
+- Low-level primitives should be exposed for advanced flexibility.
+
+```tsx
+// ✅ Preferred
+
+<Modal>
+  <Modal.Header>Title</Modal.Header>
+  <Modal.Body>Content goes here</Modal.Body>
+  <Modal.Footer>
+    <Button>Cancel</Button>
+    <Button variant="primary">Save</Button>
+  </Modal.Footer>
+</Modal>
+```
+
+```tsx
+// ❌ Avoid
+
+<Modal 
+  header="Title" 
+  body="Content goes here" 
+  footerButtons={[{ text: "Cancel" }, { text: "Save", variant: "primary" }]}
+/>
+```
+
+## Consistency in naming
+
+Consistency is key for usability and predictability.
+
+- Reuse the same prop name for the same concept across all components.
+- Avoid introducing synonyms (type, status, color) for the same thing.
+- Use variant for styling variations such as `success | error | warning`.
+
+```tsx
+// ✅ Preferred
+
+<Alert variant="error">Something went wrong</Alert>
+<Button variant="success">Continue</Button>
+```
+
+```tsx
+// ❌ Avoid
+
+<Alert type="error">Something went wrong</Alert>
+<Button color="green">Continue</Button>
+```
+
+## Align similar components
+
+APIs for components that share a mental model should be aligned. This reduces cognitive overhead and makes the system feel cohesive.
+
+- Use consistent subcomponents across related patterns.
+- For example, both Tooltip and Popover should expose a Root, Trigger, and Content.
+
+Once an engineer learns the API for one component, they should be able to apply the same knowledge to another without relearning new names.
+
+```tsx
+// ✅ Preferred
+
+<Tooltip.Root>
+  <Tooltip.Trigger>Hover me</Tooltip.Trigger>
+  <Tooltip.Content>Tooltip text</Tooltip.Content>
+</Tooltip.Root>
+
+<Popover.Root>
+  <Popover.Trigger>Click me</Popover.Trigger>
+  <Popover.Content>Popover content</Popover.Content>
+</Popover.Root>
+```
+
+```tsx
+// ❌ Avoid
+
+<Tooltip.Root>
+  <Tooltip.Target>Hover me</Tooltip.Target>
+  <Tooltip.Body>Tooltip text</Tooltip.Body>
+</Tooltip.Root>
+
+<Popover>
+  <Popover.Toggle>Click me</Popover.Toggle>
+  <Popover.Panel>Popover content</Popover.Panel>
+</Popover>
+```
+
+## Use object notation for subcomponents
+
+To improve developer experience and take advantage of type suggestions in IDEs, expose subcomponents via object notation.
+
+Instead of importing each subcomponent separately, group them under the parent component. This gives users auto-complete discoverability without needing to read docs.
+
+```tsx
+// ✅ Preferred
+
+import { Dialog } from '@design-system'
+
+render(
+	<Dialog.Root>
+		<Dialog.Trigger>Open</Dialog.Trigger>
+		<Dialog.Content>Content goes here</Dialog.Content>
+	</Dialog.Root>,
+)
+```
+
+```tsx
+// ❌ Avoid
+
+import { DialogRoot, DialogTrigger, DialogContent } from '@design-system'
+
+render(
+	<DialogRoot>
+		<DialogTrigger>Open</DialogTrigger>
+		<DialogContent>Content goes here</DialogContent>
+	</DialogRoot>,
+)
+```
+
+</Container>
