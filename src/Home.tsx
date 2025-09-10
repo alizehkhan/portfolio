@@ -13,12 +13,19 @@ export const Home = () => {
 				</h1>
 				<div className="max-w-[600px]">
 					<p className="mb-6 text-2xl">
-						I build and advocate for web experiences that prioritise content,
-						inclusivity and simplicity. I specialise in design systems,
-						accessibility and form UX.
+						I am a frontend engineer and designer.
 					</p>
 					<p className="mb-6 text-2xl">
-						I am the co-founder of{' '}
+						I build and advocate for web experiences that prioritise content,
+						inclusivity and simplicity. I specialise in Design Systems,
+						Accessibility and form UX.
+					</p>
+					<p className="mb-6 text-2xl">
+						I enjoy working with and learning from people who deeply care about
+						their craft.
+					</p>
+					<p className="mb-6 text-2xl">
+						I am currently building{' '}
 						<a
 							className="font-serif font-bold hover:underline"
 							href="https://www.altamiga.com/hut"
