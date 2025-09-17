@@ -13,16 +13,13 @@ export const Home = () => {
 				</h1>
 				<div className="max-w-[600px]">
 					<p className="mb-6 text-2xl">
-						I am a frontend engineer and designer.
+						A Frontend Engineer by title, a Designer at heart—focused on Design
+						Systems, Accessibility, and form UX. I build and advocate for web
+						experiences that prioritise content, inclusivity, and simplicity.
 					</p>
 					<p className="mb-6 text-2xl">
-						I build and advocate for web experiences that prioritise content,
-						inclusivity and simplicity. I specialise in Design Systems,
-						Accessibility and form UX.
-					</p>
-					<p className="mb-6 text-2xl">
-						I enjoy working with and learning from people who deeply care about
-						their craft.
+						I focus on nailing the “boring” basics over chasing novelty because
+						products should serve the user, not cure a designer’s boredom.{' '}
 					</p>
 					<p className="mb-6 text-2xl">
 						I am currently building{' '}
