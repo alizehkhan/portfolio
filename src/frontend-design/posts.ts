@@ -73,15 +73,6 @@ export const POSTS: Post[] = [
 		labels: ['frontend', 'design', 'design-systems'],
 		date: new Date(2024, 4, 8),
 	},
-	{
-		title: '“It clutters up the UI”',
-		description:
-			'What happens when designers are focused on reducing “clutter” and making things look “minimalist”?',
-		image: './illustrations/designer.svg',
-		link: '/frontend-design/declutter-ui',
-		labels: ['design'],
-		date: new Date(2024, 4, 18),
-	},
 ]
 
 export const labels: Label[] = [
